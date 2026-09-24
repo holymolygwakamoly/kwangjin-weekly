@@ -1,0 +1,763 @@
+[
+ {
+  "id": "brose",
+  "customers": [
+   "GM(Supplier of the Year 2025, 8회째)",
+   "현대차·기아(브로제코리아 공급)",
+   "르노코리아",
+   "KG모빌리티(구 쌍용)"
+  ],
+  "edited_by": "claude",
+  "hq": "독일 바이에른주 코부르크 (브로제코리아: 경기 수원시 영통구 광교로 156 광교비즈니스센터 10층)",
+  "name": "브로제 (Brose Fahrzeugteile)",
+  "overseas_summary": "2025년 중국 매출 감소폭이 가장 컸고 유럽은 전년 수준 하회, 북미는 소폭 성장했다. 2026년에도 매출 정체를 전망했으며, 2026년 말까지 고임금 지역 간접인건비 20% 감축(프랑켄 지역 약 1,000명)과 비경쟁 공장 정리를 추진 중이다. 도어 사업부 매출은 2025년 감소했다. 한국에서는 현대차·기아 국내외 프로젝트를 담당하며 2024년 생산거점을 대구로 이전했다.",
+  "overview": "독일 코부르크에 본사를 둔 1908년 창업 가족기업으로 도어·리프트게이트 기술, 시트 조정시스템, 전기모터·드라이브를 생산하는 메카트로닉스 부품사다. 76개 거점·25개국·약 3.3만 명 규모이며 '신차 3대 중 1대에 브로제 제품 1개 이상 장착'을 표방한다. 한국에는 2003년 설립된 브로제코리아가 있으며 수원 광교에 영업·엔지니어링 거점을 둔다.",
+  "ownership": "스토셱(Stoschek) 가문 소유 가족기업. 2025년 막시밀리안 스토셱이 이사회 의장 승계. 2025년 10월 블룸버그 보도로 일부 지분 매각 검토(초기 단계) 사실이 알려짐. 브로제코리아는 브로제 그룹 100% 자회사(2014 인터뷰 기준).",
+  "plants": [
+   {
+    "country": "독일",
+    "location": "코부르크",
+    "note": "본사"
+   },
+   {
+    "country": "독일",
+    "location": "부퍼탈 론스도르프",
+    "note": "잠금장치 시험·개발 거점(생산 중단), 2027년 말 임차계약 만료로 이전지 물색 중(2026.6 보도)"
+   },
+   {
+    "country": "미국",
+    "location": "미시간 오번힐스",
+    "note": "Brose Americas"
+   },
+   {
+    "country": "중국",
+    "location": "창춘 등",
+    "note": "2006년 중국 세 번째 생산거점(창춘) 개설. 상하이 HASCO와 합작 유지(2023.12 갱신)"
+   },
+   {
+    "country": "한국",
+    "location": "수원 광교",
+    "note": "브로제코리아 영업·엔지니어링"
+   },
+   {
+    "country": "한국",
+    "location": "대구",
+    "note": "2024년 인천 송도에서 대구로 공장 이전(사람인 연혁)"
+   },
+   {
+    "country": "글로벌",
+    "location": "25개국 76개 거점",
+    "note": "브로제 회사소개 기준"
+   }
+  ],
+  "products": [
+   "도어시스템(플라스틱 캐리어 도어모듈)",
+   "윈도우레귤레이터(케이블식)",
+   "래치 모듈·사이드도어 클로저(Unilatch II)",
+   "도어 컨트롤 유닛",
+   "파워리프트게이트 드라이브",
+   "파워 사이드도어 드라이브",
+   "시트 조정시스템",
+   "전기모터·드라이브(쿨링팬 등)"
+  ],
+  "recent_issues": [
+   "2025-10-23 일부 지분 매각 검토 보도(블룸버그)",
+   "2025-12-16 2025년 매출 77억 유로·순이익 2,100만 유로 흑자전환 전망 발표, 2026년 매출 정체 전망",
+   "2026-06-09 구매·IT·디지털화 통합한 '구매·디지털화' 사업부 신설(2027.1.1 발효)",
+   "2026-06-14 부퍼탈 론스도르프 거점(잠금장치 시험) 100여명 일자리 존폐 위기 보도",
+   "2026-06-25 GM 'Supplier of the Year 2025' 수상(8회째)"
+  ],
+  "revenue": "2025년 그룹 매출 77억 유로(전년比 -8,400만 유로), 순이익 2,100만 유로 흑자전환(2025.12.16 브로제 발표, 추정치). 브로제 회사소개 페이지는 2025 회계연도 79억 유로로 표기(수치 상이, 확인 필요). 브로제코리아 매출 1,148.99억원(한국자동차산업협동조합, 기준연도 미표기) / 977억원(사람인, 기준연도 미표기).",
+  "self": false,
+  "sources": [
+   {
+    "label": "Brose - Company",
+    "url": "https://www.brose.com/de-en/company/"
+   },
+   {
+    "label": "Brose - Brose improves its profitability (2025-12-16)",
+    "url": "https://www.brose.com/de-en/press/brose-improves-its-profitability.html"
+   },
+   {
+    "label": "automobil-industrie.vogel.de - Brose 2025 흑자전환 (2025-12-17)",
+    "url": "https://www.automobil-industrie.vogel.de/automobilzulieferer-brose-gewinn-2025-a-bfcc217864e54a6b0a997a24981354e7/"
+   },
+   {
+    "label": "Yahoo Finance - Brose exploring partial stake sale (2025-10-23)",
+    "url": "https://finance.yahoo.com/news/brose-exploring-partial-stake-sale-173227823.html"
+   },
+   {
+    "label": "Brose Americas - GM Supplier of the Year 2025 (2026-06-25)",
+    "url": "https://www.brose.com/us-en/brose-americas/press/brose-receives-supplier-of-the-year-2025-award-from-general-motors.html"
+   },
+   {
+    "label": "Brose - 구매·디지털화 부문 신설 (2026-06-09)",
+    "url": "https://www.brose.com/de-en/press/brose-establishes-new-division-for-procurement-and-digitalization.html"
+   },
+   {
+    "label": "Die Stadtzeitung - Brose 부퍼탈 (2026-06-14)",
+    "url": "https://www.die-stadtzeitung.de/index.php/2026/06/14/brose-aus-nur-noch-eine-frage-der-zeit/"
+   },
+   {
+    "label": "Brose - Technology for vehicle doors and liftgates",
+    "url": "https://www.brose.com/de-en/products/technology-for-vehicle-doors-and-liftgates/"
+   },
+   {
+    "label": "Gasgoo - Brose China 파워 사이드도어 드라이브 (2022-09-21)",
+    "url": "https://autonews.gasgoo.com/china_news/70021267.html"
+   },
+   {
+    "label": "Brose - Suwon location",
+    "url": "https://www.brose.com/de-en/company/locations/suwon.html"
+   },
+   {
+    "label": "사람인 - 브로제코리아 기업정보",
+    "url": "https://www.saramin.co.kr/zf_user/company-info/view/csn/ekZvbWVPKzI1N2lZcnNLLzVPUDZSZz09/company_nm/%EB%B8%8C%EB%A1%9C%EC%A0%9C%EC%BD%94%EB%A6%AC%EC%95%84(%EC%A3%BC)"
+   },
+   {
+    "label": "한국자동차산업협동조합 - 브로제코리아 업체정보",
+    "url": "https://kaica.or.kr/business/view.php?no=230&keycode=&keyword=&page=12"
+   },
+   {
+    "label": "오토일렉트로닉스 - 브로제, 숨은 혁신의 세 갈래 (2014-11)",
+    "url": "https://www.autoelectronics.co.kr/article/articleView.asp?idx=1550"
+   },
+   {
+    "label": "Neue Presse Coburg - Brose 주제 페이지(창춘 공장 회고)",
+    "url": "https://www.np-coburg.de/thema/Brose"
+   }
+  ],
+  "technologies": [
+   "파워 사이드도어 드라이브(79GHz 레이더 장애물 감지, 전동 래치 시칭, 경사 무단 정지)",
+   "플라스틱(섬유강화) 캐리어 도어시스템 경량화",
+   "콤팩트 모듈(플라스틱 윈도우레귤레이터, 차량당 최대 2kg 경량화)",
+   "래치 모듈(도어 조립시간 90초 단축)",
+   "Unilatch II 사이드도어 클로저",
+   "파워 리프트게이트 드라이브(45dB(A) 이하)",
+   "정전식 핸즈프리 센서"
+  ],
+  "updated": "2026-09-24",
+  "updated_at": "2026-09-24T05:59:52.450Z"
+ },
+ {
+  "id": "daedong-hilex",
+  "customers": [
+   "현대차",
+   "기아",
+   "한국GM(설립 당시 GM대우)"
+  ],
+  "edited_by": "claude",
+  "hq": "인천광역시 남동구 남동동로78번길 43",
+  "name": "대동하이렉스 (Daedong Hi-Lex)",
+  "overseas_summary": "중국(염성·장가항), 미국(앨라배마 도어모듈), 인도(첸나이 인근), 멕시코(몬테레이, 대동도어 래치) 거점을 보유. 모회사 하이렉스는 2026년 10월기 3분기 실적에서 한국 세그먼트 매출이 고객 상류(商流) 변경에 따른 파워리프트게이트 실주로 전년比 11.3% 감소했다고 밝혔다. 하이렉스 대동도어는 멕시코 사카테카스와 LOI를 체결했다고 홈페이지에 게시(일자 미표기).",
+  "overview": "2003년 대동시스템의 윈도우레귤레이터 사업부를 분리해 일본 TSK(현 하이렉스)와 대동시스템이 합작 설립한 회사로, 윈도우레귤레이터·도어모듈을 생산한다. 2005년 카니발·로체용 도어모듈을 양산했고 2007년 평택 포승에 도어모듈 전용공장을 준공했다. 도어래치·파워슬라이딩도어·파워리프트게이트 등은 같은 그룹의 대동도어(HI-LEX Daedong Door)가 담당한다.",
+  "ownership": "일본 하이렉스(HI-LEX Corporation) 지분 71.8%(하이렉스 2025년 10월기 유가증권보고서). 설립 당시 TSK:대동시스템 = 60:40 합작(한국자동차산업협동조합 2003). 계열사 대동도어(하이렉스 97.4%), 대동시스템, TSK(KOREA) 모두 하이렉스 그룹. 대표 송학성/테라우라 타로.",
+  "plants": [
+   {
+    "country": "한국",
+    "location": "인천 남동",
+    "note": "본사"
+   },
+   {
+    "country": "한국",
+    "location": "평택 포승",
+    "note": "포승공장(2007년 도어모듈 전용공장 준공). 대동도어 공장도 포승 소재"
+   },
+   {
+    "country": "한국",
+    "location": "울산 북구 모듈화산업로",
+    "note": "울산공장"
+   },
+   {
+    "country": "한국",
+    "location": "광주 광산구 평동산단",
+    "note": "광주공장"
+   },
+   {
+    "country": "한국",
+    "location": "인천 송도",
+    "note": "대동도어 본사·송도2공장"
+   },
+   {
+    "country": "중국",
+    "location": "장쑤성 염성",
+    "note": "Jiangsu Daedong Hi-Lex, 2006년 설립"
+   },
+   {
+    "country": "중국",
+    "location": "장쑤성 장가항",
+    "note": "Jiangsu Daedong Door, 2004년 설립"
+   },
+   {
+    "country": "미국",
+    "location": "앨라배마 커세타",
+    "note": "Daedong Hi-Lex of America(DDHLA), 2008년 설립, 도어모듈 제조·조립. 기아 조지아공장 약 12마일, HMMA 약 80마일 거리(Business Alabama)"
+   },
+   {
+    "country": "멕시코",
+    "location": "누에보레온 몬테레이",
+    "note": "Daedong Door Mexico(도어래치), 2023년 설립 발표"
+   },
+   {
+    "country": "인도",
+    "location": "타밀나두 스리페룸부두르",
+    "note": "HI-LEX Door India, 2018년 설립"
+   }
+  ],
+  "products": [
+   "도어모듈(플라스틱 실드/스틸 실드/스틸)",
+   "윈도우레귤레이터(암/케이블)",
+   "쿼터벤트",
+   "파워테일게이트",
+   "파워슬라이딩도어",
+   "사이드도어래치·후드래치·트렁크래치(대동도어)"
+  ],
+  "recent_issues": [
+   "2026-09-04 모회사 하이렉스 3Q 실적: 한국 매출 315억엔(-11.3%), 고객 상류 변경에 따른 파워리프트게이트 실주 영향",
+   "2026-05-16 대동하이렉스 2023~2025년 ESG 지표별 실적현황 공시(홈페이지)",
+   "2025-11 모회사 하이렉스, 미쓰이금속ACT(도어래치·파워슬라이드도어) 인수 완료 — 한국 래치 사업(대동도어)과 시너지 가능성"
+  ],
+  "revenue": "별도 매출 1,792억원(2025.09 결산, 캐치 게재; 동 페이지 연결 6,910억원 표기는 연결범위 미확인). 회사 홈페이지 그룹정보상 Net Sales 1.11억 달러(기준연도 미표기).",
+  "self": false,
+  "sources": [
+   {
+    "label": "대동하이렉스 홈페이지 - 오시는 길",
+    "url": "http://www.hi-lex.co.kr/show/map.php"
+   },
+   {
+    "label": "대동하이렉스 홈페이지 - Group info(영문)",
+    "url": "http://eng.hi-lex.co.kr/show/subsidiary.php"
+   },
+   {
+    "label": "대동하이렉스 홈페이지 - 제품안내",
+    "url": "http://www.hi-lex.co.kr/show/product.php"
+   },
+   {
+    "label": "대동하이렉스 홈페이지 - 회사소식",
+    "url": "http://www.hi-lex.co.kr/show/notice/index.php"
+   },
+   {
+    "label": "한국자동차산업협동조합 - 대동시스템, 대동HI-LEX 별도법인 설립 (2003)",
+    "url": "https://www.kaica.or.kr/bbs/board.php?bo_table=biznews&wr_id=27&page=275"
+   },
+   {
+    "label": "사람인 - 대동하이렉스 기업정보",
+    "url": "https://www.saramin.co.kr/zf_user/company-info/view/csn/SVZpb2hhSktZc0xnOWJTaWtWRWhiUT09/company_nm/%EB%8C%80%EB%8F%99%ED%95%98%EC%9D%B4%EB%A0%89%EC%8A%A4(%EC%A3%BC)"
+   },
+   {
+    "label": "캐치 - 대동하이렉스 기업정보",
+    "url": "https://www.catch.co.kr/Comp/CompSummary/223664"
+   },
+   {
+    "label": "하이렉스 유가증권보고서 2025년 10월기(관계회사 지분율)",
+    "url": "https://www.hi-lex.co.jp/wp-content/uploads/2026/01/202510.pdf"
+   },
+   {
+    "label": "하이렉스 2026년 10월기 3분기 결산설명자료 (2026-09-04)",
+    "url": "https://www.release.tdnet.info/inbs/140120260904531480.pdf"
+   },
+   {
+    "label": "HI-LEX Daedong Door 홈페이지",
+    "url": "https://www.hi-lexdoor.com/"
+   },
+   {
+    "label": "MarkLines - Daedong Door 멕시코 생산법인 설립 (2023-05-12)",
+    "url": "https://www.marklines.com/en/news/289748"
+   },
+   {
+    "label": "Business Alabama - Chambers & Tallapoosa (DDHLA 위치·도어모듈)",
+    "url": "https://businessalabama.com/spotlight-on-chambers-tallapoosa-economic-engines/"
+   }
+  ],
+  "technologies": [
+   "플라스틱 실드 도어모듈(윈도우레귤레이터·래치·핸들·스피커·와이어링 일체화)",
+   "케이블식 윈도우레귤레이터",
+   "파워슬라이딩도어(안티핀치)",
+   "파워리프트게이트",
+   "파워도어 시스템·파워후드 시스템(대동도어)",
+   "도어체커"
+  ],
+  "updated": "2026-09-24",
+  "updated_at": "2026-09-24T05:59:52.450Z"
+ },
+ {
+  "id": "hilex",
+  "customers": [
+   "기아(2025년 10월기 매출비중 12.1%)",
+   "현대차(11.4%)",
+   "토요타(11.4%)",
+   "스텔란티스(10.4%)"
+  ],
+  "edited_by": "claude",
+  "hq": "일본 효고현 다카라즈카시 사카에마치 1-12-28",
+  "name": "하이렉스 (HI-LEX Corporation)",
+  "overseas_summary": "도어모듈 사업은 한국·북미·유럽·중국 중심으로 전개(하이렉스 2026.9.4 공시). 2026년 들어 중국 동부 도어모듈 신규 수주에 대응한 상하이 도어모듈 법인 설립(8월), 쑤저우 기술센터 설립 결의(8월), 유럽 지역본부 설립(8월), 일본 첫 도어모듈 수주 및 규슈공장 증설(9월) 등 확장이 이어졌다. 반면 한국은 파워리프트게이트 실주로 매출이 감소했고, 멕시코는 노무비율 상승, 중국은 기존 고객 부진, 스페인 공장은 2026년 4월 가동을 멈췄다. 미국 관세 영향 1,060만 달러 중 약 79%를 고객으로부터 회수했다.",
+  "overview": "일본 효고현 다카라즈카 소재 자동차 부품사(도쿄증권거래소 스탠다드, 7279)로 컨트롤케이블에서 출발해 윈도우레귤레이터·도어모듈·도어래치·파워리프트게이트로 사업을 확장했다. 2025년 11월 미쓰이금속ACT(현 HI-LEX ACT, 도어래치·파워슬라이드도어)를 인수했고, '케이블 공급사에서 도어시스템 공급사로' 전환을 공식 전략으로 내세우고 있다. 한국에서는 대동하이렉스·대동도어·대동시스템·TSK(KOREA)를 거느린다.",
+  "ownership": "상장사(TSE 스탠다드 7279). 대표이사 사장 테라우라 타로. 한국 자회사 대동하이렉스(71.8%), 대동도어(97.4%) 등 연결.",
+  "plants": [
+   {
+    "country": "일본",
+    "location": "효고현 다카라즈카",
+    "note": "본사. 국내 생산거점 13→11개로 재편 중(2026.8)"
+   },
+   {
+    "country": "일본",
+    "location": "후쿠오카현 미야코마치",
+    "note": "HI-LEX ACT 규슈공장, 일본 첫 도어모듈 양산 위해 증축(2028.12 양산 예정)"
+   },
+   {
+    "country": "한국",
+    "location": "인천·평택·울산·광주",
+    "note": "대동하이렉스(도어모듈·윈도우레귤레이터), 대동도어(도어래치 등)"
+   },
+   {
+    "country": "한국",
+    "location": "창원",
+    "note": "TSK(KOREA), 컨트롤케이블"
+   },
+   {
+    "country": "미국",
+    "location": "미시간(배틀크릭·리치필드·허드슨·헤이즐파크)",
+    "note": "HI-LEX America/Controls. 헤이즐파크(Warren Plant)는 스텔란티스向 도어모듈 조립"
+   },
+   {
+    "country": "미국",
+    "location": "앨라배마 커세타",
+    "note": "Daedong Hi-Lex of America, 도어모듈"
+   },
+   {
+    "country": "멕시코",
+    "location": "케레타로·코아우일라·과나후아토·몬테레이",
+    "note": "HI-LEX Mexicana, HI-LEX Controls de Mexico, HI-LEX ACT Mexicana, Daedong Door Mexico"
+   },
+   {
+    "country": "중국",
+    "location": "충칭 외(생산·개발거점 21개)",
+    "note": "충칭 HI-LEX 케이블시스템 그룹 중심"
+   },
+   {
+    "country": "중국",
+    "location": "상하이 진산구",
+    "note": "상하이 HI-LEX 오토모티브 파츠(도어모듈), 2026.8.14 설립"
+   },
+   {
+    "country": "중국",
+    "location": "쑤저우",
+    "note": "기술개발센터(도어시스템·PCS 개발), 2026.9 설립 예정"
+   },
+   {
+    "country": "인도",
+    "location": "마네사르·첸나이·구자라트·스리페룸부두르",
+    "note": "HI-LEX India, HI-LEX Door India, HI-LEX ACT India"
+   },
+   {
+    "country": "헝가리/체코/세르비아/이탈리아/모로코",
+    "location": "",
+    "note": "유럽·아프리카 생산거점. 스페인 공장은 2026년 4월 가동 중단"
+   },
+   {
+    "country": "독일",
+    "location": "바이에른",
+    "note": "HI-LEX Europe(슈바인푸르트, 설계·영업), 유럽 지역본부 TSK of Europe GmbH 설립 결의(2026.8.7)"
+   },
+   {
+    "country": "베트남/인도네시아/태국",
+    "location": "",
+    "note": "기타 아시아 거점"
+   }
+  ],
+  "products": [
+   "컨트롤케이블",
+   "윈도우레귤레이터",
+   "도어모듈",
+   "도어래치",
+   "파워리프트게이트",
+   "파워슬라이드도어(하이렉스ACT)"
+  ],
+  "recent_issues": [
+   "2026-09-04 일본 내 첫 도어모듈 수주, HI-LEX ACT 규슈공장에 약 12억엔 투자(2028.12 양산)",
+   "2026-09-04 3분기 누계 매출 3,206억엔(+40.8%), 한국 매출 -11.3%(파워리프트게이트 실주)",
+   "2026-09-08 정책보유주식 매각, 회계연도 누적 매각익 153억엔",
+   "2026-08-19 상하이 도어모듈 법인 설립 완료(간접지분 50.4%)",
+   "2026-08-07 쑤저우 기술센터·유럽 지역본부 설립 결의",
+   "2026-08-03 일본 국내 생산 13→11거점 재편, 도어시스템 공급사 전환",
+   "2025-11 미쓰이금속ACT 인수 완료(현 HI-LEX ACT, 인수가 113억엔)"
+  ],
+  "revenue": "2025년 10월기 연결 매출 3,041억엔, 영업이익 33.9억엔(+828.9%). 부문별: 윈도우레귤레이터 927억엔, 도어모듈 758억엔(-5.8%), 도어래치 278억엔, 파워리프트게이트 243억엔. 2026년 10월기 3분기 누계 매출 3,206억엔(+40.8%, 하이렉스ACT 연결효과 784억엔), 통기 예상 매출 4,010억엔.",
+  "self": false,
+  "sources": [
+   {
+    "label": "하이렉스 유가증권보고서 2025년 10월기",
+    "url": "https://www.hi-lex.co.jp/wp-content/uploads/2026/01/202510.pdf"
+   },
+   {
+    "label": "하이렉스 2026년 10월기 3분기 결산단신 (2026-09-04)",
+    "url": "https://www.release.tdnet.info/inbs/140120260902530338.pdf"
+   },
+   {
+    "label": "하이렉스 2026년 10월기 3분기 결산설명자료 (2026-09-04)",
+    "url": "https://www.release.tdnet.info/inbs/140120260904531480.pdf"
+   },
+   {
+    "label": "하이렉스 공시 - 국내 도어모듈 양산체제 설비투자 (2026-09-04)",
+    "url": "https://www.hi-lex.co.jp/e/wp-content/uploads/2026/09/Announcement-Regarding-Capital-Investment-.pdf"
+   },
+   {
+    "label": "하이렉스 공시 - 상하이 해외자회사 설립 경과 (2026-08-19)",
+    "url": "https://www.hi-lex.co.jp/wp-content/uploads/2026/08/140120260819522993.pdf"
+   },
+   {
+    "label": "하이렉스 공시 - 쑤저우 기술센터 설립 (2026-08-07)",
+    "url": "https://www.hi-lex.co.jp/wp-content/uploads/2026/08/Notice-Regarding-the-Establishment-of-Technical-Center-Overseas-Subsidiary-in-Suzhou-China.pdf"
+   },
+   {
+    "label": "하이렉스 공시 - 유럽 지역본부 설립 (2026-08-07)",
+    "url": "https://www.hi-lex.co.jp/wp-content/uploads/2026/08/Notice-Regarding-the-Establishment-of-European-Regional-Headquarters-Overseas-Subsidiary-.pdf"
+   },
+   {
+    "label": "하이렉스 공시 - 국내 생산체제 재편 (2026-08-03)",
+    "url": "https://www.hi-lex.co.jp/wp-content/uploads/2026/08/140120260802505991ekaizi.pdf"
+   },
+   {
+    "label": "하이렉스 Global Network",
+    "url": "https://www.hi-lex.co.jp/e/base_world/"
+   },
+   {
+    "label": "닛케이 - 미쓰이금속ACT 주식취득 완료 공시 (2025-11-04)",
+    "url": "https://www.nikkei.com/nkd/disclosure/tdnr/20251024578281/"
+   },
+   {
+    "label": "고베신문 - 하이렉스, 미쓰이금속ACT 113억엔 인수 (2025-05)",
+    "url": "https://www.kobe-np.co.jp/news/economy/202505/0018980297.shtml"
+   },
+   {
+    "label": "MarkLines - 하이렉스 규슈공장 도어모듈 투자 (2026-09-04)",
+    "url": "https://www.marklines.com/en/news/350361"
+   }
+  ],
+  "technologies": [
+   "PCS(Power Closure Systems): 파워슬라이딩도어·파워테일게이트·파워힌지도어 글로벌 개발체제 구축",
+   "대형 플라스틱 모듈 플레이트 내재화(규슈공장)",
+   "도어래치·파워슬라이드도어(하이렉스ACT 인수)",
+   "도어모듈 일체형 시스템화('Door System Supplier' 전략)",
+   "케이블 기반 원격조작·로봇핸드(비차량)"
+  ],
+  "updated": "2026-09-24",
+  "updated_at": "2026-09-24T05:59:52.450Z"
+ },
+ {
+  "id": "kwangjin",
+  "customers": [
+   "GM",
+   "현대차",
+   "기아",
+   "폭스바겐",
+   "포드",
+   "혼다",
+   "스텔란티스",
+   "BYD",
+   "리오토",
+   "니오"
+  ],
+  "edited_by": "claude",
+  "hq": "충청남도 아산시 인주면 인주산단로 23-50",
+  "name": "광진 (Kwangjin)",
+  "overseas_summary": "북미·남미·중국·인도·멕시코·베트남·유럽(폴란드)·아프리카(모로코)·우즈베키스탄에 생산거점, 한국·독일·북미·중국에 R&D센터를 운영한다. GM·폭스바겐·포드·스텔란티스 등 글로벌 OEM과 BYD·리오토·니오 등 중국 OEM까지 고객 다변화.",
+  "overview": "1973년 광진기계공업사로 창업한 도어시스템 전문 그룹으로 윈도우레귤레이터·도어모듈·파워&전자시스템을 생산한다. 1998년 현대자동차로부터 한국 최초 도어모듈 공급업체로 승인받았고, 1994년부터 GM Tier1으로 윈도우레귤레이터를 공급해 GM 'Supplier of the Year'를 통산 23회 수상했다(2026.5 기준). 비전은 'The world best Open & Closing system provider'.",
+  "ownership": "광진그룹(회장 권영직). (주)광진(1999년 설립, 아산, 전략·기획·품질·영업 등 본사기능, 대표 권오철)과 (주)광진상공(1978년 법인전환, 경주, 생산), KKL(화성, 사이드도어래치) 등으로 구성.",
+  "plants": [
+   {
+    "country": "한국",
+    "location": "아산",
+    "note": "(주)광진 본사 기능"
+   },
+   {
+    "country": "한국",
+    "location": "경주",
+    "note": "광진상공(윈도우레귤레이터·도어모듈·차체부품), 2021.12 신공장 준공"
+   },
+   {
+    "country": "한국",
+    "location": "경주 아화",
+    "note": "광진상공 아화공장(도어모듈)"
+   },
+   {
+    "country": "한국",
+    "location": "광주",
+    "note": "광진상공 광주공장(윈도우레귤레이터·도어모듈)"
+   },
+   {
+    "country": "한국",
+    "location": "화성",
+    "note": "KKL(사이드도어래치)"
+   },
+   {
+    "country": "미국",
+    "location": "워런(미시간)",
+    "note": ""
+   },
+   {
+    "country": "멕시코",
+    "location": "산루이스포토시",
+    "note": "2007년 설립. 2015년 몬테레이공장 설립 이력"
+   },
+   {
+    "country": "브라질",
+    "location": "수마레",
+    "note": "2015년 설립"
+   },
+   {
+    "country": "폴란드",
+    "location": "티히",
+    "note": "2013년 설립"
+   },
+   {
+    "country": "모로코",
+    "location": "탕헤르",
+    "note": ""
+   },
+   {
+    "country": "인도",
+    "location": "푸네·첸나이",
+    "note": "첸나이 2006년 설립"
+   },
+   {
+    "country": "우즈베키스탄",
+    "location": "안디잔",
+    "note": "2012년 우즈벡공장 설립 이력"
+   },
+   {
+    "country": "중국",
+    "location": "충칭·북경·대풍·곤산",
+    "note": "북경 2003, 곤산 2007, 대풍 2013, 충칭 2016 설립"
+   },
+   {
+    "country": "베트남",
+    "location": "흥옌",
+    "note": "2008년 설립"
+   }
+  ],
+  "products": [
+   "윈도우레귤레이터(듀얼레일·싱글레일·X-arm·싱글암·쿼터글라스·플라스틱 싱글레일)",
+   "도어모듈(스틸 실드·플라스틱 실드)",
+   "PDS(파워도어시스템)",
+   "IDC(지능형 도어체커)",
+   "윈도우레귤레이터 모터 제어 ECU",
+   "사이드도어래치(KKL)",
+   "리어사이드멤버·백패널·후드힌지(광진상공)"
+  ],
+  "recent_issues": [
+   "2026-05 GM '2025 Supplier of the Year' 선정(통산 23회)",
+   "2025-04 GM '2024 Supplier of the Year' 선정(통산 22회)",
+   "2023-08 Ford 'Q1' 인증 획득"
+  ],
+  "revenue": "(주)광진상공 매출 1,193.88억원(사람인 게재, 기준연도 미표기). (주)광진 매출은 공개자료 미확인.",
+  "self": true,
+  "sources": [
+   {
+    "label": "광진 홈페이지(영문)",
+    "url": "https://www.kwangjin-kr.com/eng/"
+   },
+   {
+    "label": "광진 홈페이지 - 생산처 현황(영문)",
+    "url": "https://www.kwangjin-kr.com/eng/company/subsidiary.php?category=118&code=subsidiary_eng&code_page=company&pos=&ptype=list"
+   },
+   {
+    "label": "광진 홈페이지 - 연혁",
+    "url": "https://www.kwangjin-kr.com/company/history.php"
+   },
+   {
+    "label": "사람인 - (주)광진 기업정보",
+    "url": "https://www.saramin.co.kr/zf_user/company-info/view/csn/TWVZWFdqY21LRGlpUzRVenFOUlR5Zz09/company_nm/(%EC%A3%BC)%EA%B4%91%EC%A7%84"
+   },
+   {
+    "label": "사람인 - (주)광진상공 기업정보",
+    "url": "https://www.saramin.co.kr/zf_user/company-info/view/csn/WjN0Q0dDWEM0a2grTlE0RGVDYzA3QT09/company_nm/(%EC%A3%BC)%EA%B4%91%EC%A7%84%EC%83%81%EA%B3%B5"
+   }
+  ],
+  "technologies": [
+   "PDS(파워도어시스템)",
+   "IDC(지능형 도어체커)",
+   "플라스틱 실드 도어모듈(친환경)",
+   "플라스틱 싱글레일 윈도우레귤레이터(경량화)",
+   "윈도우레귤레이터 모터 제어 ECU"
+  ],
+  "updated": "2026-09-24",
+  "updated_at": "2026-09-24T05:59:52.450Z"
+ },
+ {
+  "id": "pha",
+  "customers": [
+   "현대차",
+   "기아",
+   "GM",
+   "스텔란티스(크라이슬러)"
+  ],
+  "edited_by": "claude",
+  "hq": "대구광역시 달서구 성서4차첨단로 392",
+  "name": "PHA (피에이치에이)",
+  "overseas_summary": "한국·미국·중국·유럽(체코/슬로바키아)·인도·베트남 6개 권역에서 매출이 발생한다. 2024년 하반기 미국 조지아 신공장(PHA Georgia)이 가동해 HMGMA·HMMA향 도어모듈·래치를 공급하며, 북미 매출이 2025년 2분기 전년比 30% 증가했다. 하나증권은 글로벌 OE 픽업 모델 수주, 기존 고객 전기차용 신제품 수주로 2028~2030년 추가 성장을 전망했다. 2025년 인도 푸네 공장을 설립해 2026년 이후 외형 성장에 기여할 것으로 전망됐다.",
+  "overview": "1985년 평화정공(주)으로 설립된 자동차 도어 무빙시스템(클로저) 전문 기업으로 2021년 3월 사명을 PHA로 변경했다. 도어모듈·래치·힌지·스트라이커와 전장부품을 생산하며 코스닥 상장사(043370)다. 2025년 창립 40주년을 맞아 'Beyond Boundaries' 비전과 'Mobility system Creator' 슬로건을 선포하고 4D 이미징 레이더·로봇 무선충전 등 신사업을 추진 중이다.",
+  "ownership": "최대주주 김상태 외 1인 54.63%, 브이아이피자산운용 6.20% (하나증권 2025.5.16 리포트 기준). PHC그룹 계열(홈페이지 패밀리사이트: 카펙발레오, 평화발레오, PHC). 미국 법인 PHA America가 PHA Georgia를 연결. 독일 Edscha와 합작사 PHA Edscha(2013 설립, 파워시스템).",
+  "plants": [
+   {
+    "country": "한국",
+    "location": "대구(본사·성서공장·이현공장)",
+    "note": "본사 및 대구기술연구소"
+   },
+   {
+    "country": "한국",
+    "location": "대구 현풍",
+    "note": "현풍공장/대구기술연구소"
+   },
+   {
+    "country": "한국",
+    "location": "아산",
+    "note": "아산공장"
+   },
+   {
+    "country": "한국",
+    "location": "외동",
+    "note": "외동공장"
+   },
+   {
+    "country": "한국",
+    "location": "수원",
+    "note": "수원기술연구소"
+   },
+   {
+    "country": "미국",
+    "location": "조지아(서배너)",
+    "note": "PHA Georgia, 2024년 하반기 가동. HMGMA·HMMA향 도어모듈·래치 공급"
+   },
+   {
+    "country": "미국",
+    "location": "앨라배마",
+    "note": "2010년 법인 설립"
+   },
+   {
+    "country": "미국",
+    "location": "미시간",
+    "note": "2011년 법인 설립, R&D센터"
+   },
+   {
+    "country": "인도",
+    "location": "첸나이",
+    "note": "1997년 법인 설립"
+   },
+   {
+    "country": "인도",
+    "location": "푸네",
+    "note": "2025년 공장 설립. 현대차 푸네공장향 도어래치 위주 공급 계획(인사이트코리아 2024.6)"
+   },
+   {
+    "country": "중국",
+    "location": "태창",
+    "note": "2002년 법인 설립"
+   },
+   {
+    "country": "중국",
+    "location": "북경",
+    "note": "2005년 법인 설립"
+   },
+   {
+    "country": "중국",
+    "location": "염성",
+    "note": "2011년 법인 설립"
+   },
+   {
+    "country": "중국",
+    "location": "충칭",
+    "note": "글로벌사업장 목록 기재"
+   },
+   {
+    "country": "슬로바키아",
+    "location": "질리나",
+    "note": "2005년 법인 설립"
+   },
+   {
+    "country": "체코",
+    "location": "체스키 테신",
+    "note": "2007년 법인 설립"
+   },
+   {
+    "country": "베트남",
+    "location": "하이퐁",
+    "note": "2018년 법인 설립"
+   },
+   {
+    "country": "영국",
+    "location": "",
+    "note": "2015년 R&D센터(PHA Europe R&D Center)"
+   }
+  ],
+  "products": [
+   "도어모듈",
+   "도어래치(사이드/테일게이트/후드)",
+   "힌지",
+   "스트라이커",
+   "파워트렁크리드",
+   "전장부품"
+  ],
+  "recent_issues": [
+   "2026-02-13 레인보우로보틱스·와이파워원과 AMR용 무선충전 시스템 공동개발 3자 MOU",
+   "2026-06-26 ISO 37301(컴플라이언스 경영) 인증 취득",
+   "2026-07-27 '2026 지속가능경영보고서' 발간, 에코바디스 플래티넘 2년 연속, 'Beyond Boundaries' 비전 및 피지컬 AI 모빌리티 시스템 파트너 전략 발표",
+   "2026-03-18 2025년 사업보고서 공고(홈페이지 공지)"
+  ],
+  "revenue": "2024년 연결 매출 1조1,529억원(하나증권 2025.5). 2025년 연결 매출 약 1.2조원(전년比 +4.1%), 영업이익 484억원(치킨스탁 공시 집계). 2025년 2분기 매출 3,165억원·영업이익 135억원(비즈니스포스트 2025.8.25).",
+  "self": false,
+  "sources": [
+   {
+    "label": "비즈니스포스트 - 하나증권 '피에이치에이 미국 공장 2030년까지 성장' (2025-08-25)",
+    "url": "https://www.businesspost.co.kr/BP?command=article_view&num=409015"
+   },
+   {
+    "label": "하나증권 기업분석 피에이치에이 1Q25 (2025-05-16)",
+    "url": "https://www.hanaw.com/download/research/FileServer/WEB/industry/enterprise/2025/05/15/PHA_250515_1Q25.pdf"
+   },
+   {
+    "label": "인사이트코리아 - PHA 조지아·푸네 공장 (2024-06-11)",
+    "url": "https://www.insightkorea.co.kr/news/articleView.html?idxno=201889"
+   },
+   {
+    "label": "PHA 홈페이지 - 역사관",
+    "url": "https://www.phakr.com/kor/s1/s1_3.asp"
+   },
+   {
+    "label": "PHA 홈페이지 - 글로벌사업장",
+    "url": "https://www.phakr.com/kor/s1/s1_6_1.asp"
+   },
+   {
+    "label": "PHA 홈페이지 - 국내사업장",
+    "url": "https://www.phakr.com/kor/s1/s1_6_2.asp"
+   },
+   {
+    "label": "ESG타임즈 - PHA 'Beyond Boundaries' 선포 (2026-07-28)",
+    "url": "https://www.esgn.co.kr/news/articleView.html?idxno=10884"
+   },
+   {
+    "label": "한국경제(다음) - PHA·레인보우로보틱스 AMR 무선충전 공동개발 (2026-02-13)",
+    "url": "https://v.daum.net/v/20260213105145493"
+   },
+   {
+    "label": "치킨스탁 - 피에이치에이 재무",
+    "url": "https://www.chickstockfi.com/stocks/043370/financials"
+   },
+   {
+    "label": "나무위키 - 평화정공(사명변경·고객사 참고, 교차확인 필요)",
+    "url": "https://namu.wiki/w/%ED%8F%89%ED%99%94%EC%A0%95%EA%B3%B5"
+   }
+  ],
+  "technologies": [
+   "도어모듈(2025년 1분기 도어모듈 매출 +17% YoY)",
+   "저소음·경량 컴팩트 파워트렁크리드 시스템(2021 IR52 장영실상, 현대차 공동)",
+   "파워시스템(PHA Edscha 합작)",
+   "4D 이미징 레이더(오픈이노베이션)",
+   "차량용·로봇용 고효율 무선충전(AMR 무선충전 시스템)",
+   "차량용 지능형 센싱"
+  ],
+  "updated": "2026-09-24",
+  "updated_at": "2026-09-24T05:59:52.450Z"
+ }
+]

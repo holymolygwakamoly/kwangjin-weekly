@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>광진 주간 동향 브리프</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0}
+[hidden]{display:none!important}
+img{max-width:100%}
+:root{
+  --bg:#EDF0F2; --surface:#FFFFFF; --surface-2:#F5F7F8; --ink:#14202A; --ink-2:#3F4D59; --muted:#687581;
+  --line:#D3DAE0; --line-2:#E3E8EC;
+  --accent:#0D6B70; --accent-ink:#FFFFFF; --accent-soft:#DCEDEE;
+  --hi:#BF3328; --hi-soft:#FBE5E2; --mid:#9E630C; --mid-soft:#FAEDD5; --lo:#6F7C88; --lo-soft:#E9EDF0;
+  --ok:#28733F; --ok-soft:#DFF0E4;
+  --shadow:0 1px 2px rgba(20,32,42,.06),0 6px 20px rgba(20,32,42,.07);
+  --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+  --r:8px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E1418; --surface:#161F25; --surface-2:#1B252C; --ink:#E4EAEE; --ink-2:#B5C0C9; --muted:#86939E;
+    --line:#2A363F; --line-2:#212C34;
+    --accent:#4DB3AF; --accent-ink:#0A1819; --accent-soft:#15343A;
+    --hi:#EE7C70; --hi-soft:#3A1F1C; --mid:#DEA84E; --mid-soft:#372A15; --lo:#8C99A4; --lo-soft:#232E36;
+    --ok:#6BBF89; --ok-soft:#163120;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E1418; --surface:#161F25; --surface-2:#1B252C; --ink:#E4EAEE; --ink-2:#B5C0C9; --muted:#86939E;
+  --line:#2A363F; --line-2:#212C34;
+  --accent:#4DB3AF; --accent-ink:#0A1819; --accent-soft:#15343A;
+  --hi:#EE7C70; --hi-soft:#3A1F1C; --mid:#DEA84E; --mid-soft:#372A15; --lo:#8C99A4; --lo-soft:#232E36;
+  --ok:#6BBF89; --ok-soft:#163120;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.app{display:grid;grid-template-columns:248px minmax(0,1fr);min-height:100vh}
+.rail{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;height:100vh;display:flex;flex-direction:column;gap:22px;padding:22px 16px;border-right:1px solid var(--line);background:var(--surface)}
+.brand{display:flex;gap:10px;align-items:center}
+.brand-mark{width:34px;height:34px;border-radius:7px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.04em;flex:none}
+.brand-name{font-weight:700;font-size:15px;letter-spacing:-.01em}
+.brand-sub{font-size:11.5px;color:var(--muted)}
+.label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+.week-ctrl{display:flex;gap:4px;align-items:stretch}
+.week-ctrl select{flex:1;min-width:0;padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface-2);font-family:var(--mono);font-size:12.5px}
+.icon-btn{border:1px solid var(--line);background:var(--surface-2);border-radius:6px;width:32px;cursor:pointer;display:grid;place-items:center;font-size:15px;line-height:1}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.icon-btn:disabled{opacity:.4;cursor:default;border-color:var(--line);color:inherit}
+.week-range{margin-top:6px;font-size:12px;color:var(--ink-2)}
+.tabs{display:flex;flex-direction:column;gap:2px}
+.tab{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 10px;border:0;background:none;border-radius:6px;cursor:pointer;text-align:left;color:var(--ink-2);font-weight:500}
+.tab:hover{background:var(--surface-2);color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.tab .count{font-family:var(--mono);font-size:11.5px;color:var(--muted);font-weight:400}
+.tab[aria-selected="true"] .count{color:var(--accent)}
+.rail-foot{margin-top:auto;font-size:11.5px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--lo);margin-right:6px;vertical-align:1px}
+.dot.ok{background:var(--ok)} .dot.bad{background:var(--hi)}
+
+main{padding-block:26px 60px;padding-inline:clamp(16px,3.2vw,40px);min-width:0;display:flex;flex-direction:column;gap:18px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.eyebrow{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.02em}
+h1{font-size:26px;line-height:1.2;margin:4px 0 4px;letter-spacing:-.02em;text-wrap:balance}
+.lede{margin:0;color:var(--muted);max-width:68ch}
+.head-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:7px 12px;cursor:pointer;font-weight:500;font-size:13px;white-space:nowrap}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08);color:var(--accent-ink)}
+.btn.danger{color:var(--hi);border-color:var(--hi)}
+.btn.small{padding:3px 8px;font-size:12px}
+
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:7px;background:var(--surface);padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:none;padding:6px 12px;border-radius:5px;cursor:pointer;color:var(--ink-2);font-weight:500}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+.filters{display:flex;flex-direction:column;gap:8px;padding:12px 14px;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r)}
+.frow{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.frow .flabel{font-size:11.5px;color:var(--muted);width:44px;flex:none}
+.search{flex:1;min-width:180px;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface-2)}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 10px;font-size:12.5px;cursor:pointer;color:var(--ink-2);line-height:1.5}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.chip .n{font-family:var(--mono);font-size:11px;opacity:.7;margin-left:3px}
+.tagchip{border:0;background:var(--surface-2);border-radius:4px;padding:1px 7px;font-size:12px;color:var(--ink-2);cursor:pointer}
+.tagchip:hover{color:var(--accent)}
+.tagchip b{font-weight:500;color:var(--muted);margin-right:3px;font-size:10.5px}
+.tagchip[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent)}
+.active-filters{font-size:12px;color:var(--muted)}
+.linkbtn{border:0;background:none;color:var(--accent);cursor:pointer;padding:0;font-size:12px;text-decoration:underline}
+
+.list{display:flex;flex-direction:column;gap:10px}
+.news{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:14px;padding:14px 16px;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r);border-left:3px solid var(--lo)}
+.news.imp-상{border-left-color:var(--hi)} .news.imp-중{border-left-color:var(--mid)}
+.news-side{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.news-date{font-size:13px;color:var(--ink-2)}
+.imp{font-size:11px;font-weight:600;padding:1px 7px;border-radius:4px;background:var(--lo-soft);color:var(--lo)}
+.imp.상{background:var(--hi-soft);color:var(--hi)} .imp.중{background:var(--mid-soft);color:var(--mid)}
+.news-body{min-width:0;display:flex;flex-direction:column;gap:6px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted);align-items:center}
+.meta .co{font-weight:600;color:var(--ink)}
+.meta .cat{padding:0 7px;border:1px solid var(--line);border-radius:4px;color:var(--ink-2)}
+.news h3{margin:0;font-size:15.5px;line-height:1.45;font-weight:600;letter-spacing:-.01em;text-wrap:pretty}
+.news h3 a{text-decoration:none}
+.news h3 a:hover{color:var(--accent);text-decoration:underline}
+.ext{font-size:12px;color:var(--muted);margin-left:4px}
+.sum{margin:0;color:var(--ink-2);max-width:78ch}
+.mp{font-size:13px;background:var(--accent-soft);color:var(--ink);padding:7px 10px;border-radius:6px;max-width:78ch}
+.mp b{color:var(--accent);font-weight:600;margin-right:6px;font-size:12px}
+details.det summary{cursor:pointer;font-size:12.5px;color:var(--accent);width:max-content;list-style:none}
+details.det summary::-webkit-details-marker{display:none}
+details.det summary::before{content:"▸ ";}
+details.det[open] summary::before{content:"▾ ";}
+details.det ul{margin:6px 0 0;padding-left:18px;color:var(--ink-2);max-width:78ch;display:flex;flex-direction:column;gap:3px}
+.tags{display:flex;gap:5px;flex-wrap:wrap}
+.edit{align-self:start;border:1px solid transparent;background:none;color:var(--muted);cursor:pointer;border-radius:5px;padding:3px 8px;font-size:12px}
+.edit:hover{border-color:var(--line);color:var(--accent)}
+.empty{padding:28px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:var(--r)}
+.notice{padding:12px 14px;border-radius:var(--r);background:var(--mid-soft);color:var(--ink);font-size:13px}
+
+.section-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:8px 0 2px;flex-wrap:wrap}
+.section-h h2{font-size:16px;margin:0;letter-spacing:-.01em}
+.section-h .sub{font-size:12px;color:var(--muted)}
+
+/* briefing */
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.kpi{background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:8px;cursor:pointer;text-align:left}
+.kpi:hover{border-color:var(--accent)}
+.kpi-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.kpi-name{font-weight:600}
+.kpi-num{font-family:var(--mono);font-size:22px;font-weight:500}
+.kpi-num small{font-size:12px;color:var(--muted);margin-left:2px}
+.kpi-brief{margin:0;color:var(--ink-2);font-size:13px}
+.kpi-cats{display:flex;gap:4px;flex-wrap:wrap}
+.kpi-cats span{font-size:11.5px;color:var(--muted);background:var(--surface-2);border-radius:4px;padding:0 6px}
+.headline{background:var(--ink);color:var(--bg);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.headline .eyebrow{color:inherit;opacity:.7}
+.headline p{margin:0;font-size:15px;line-height:1.6;max-width:90ch}
+.top{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.topcard{background:var(--surface);border:1px solid var(--line-2);border-top:3px solid var(--hi);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.topcard h3{margin:0;font-size:14.5px;line-height:1.45}
+.topcard h3 a{text-decoration:none} .topcard h3 a:hover{color:var(--accent);text-decoration:underline}
+.topcard p{margin:0;font-size:13px;color:var(--ink-2)}
+.brief-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden}
+.brief-table th,.brief-table td{padding:9px 12px;border-bottom:1px solid var(--line-2);text-align:left;vertical-align:top;font-size:13px}
+.brief-table th{font-size:11.5px;color:var(--muted);font-weight:600;background:var(--surface-2);letter-spacing:.02em}
+.brief-table td.t a{font-weight:600;text-decoration:none} .brief-table td.t a:hover{color:var(--accent)}
+.brief-table td.mpc{color:var(--ink-2)}
+.brief-table tr:last-child td{border-bottom:0}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r)}
+table.grid{width:100%;border-collapse:collapse;min-width:760px}
+table.grid th,table.grid td{padding:9px 12px;border-bottom:1px solid var(--line-2);text-align:left;vertical-align:top;font-size:13px}
+table.grid th{position:sticky;top:0;background:var(--surface-2);font-size:11.5px;color:var(--muted);font-weight:600;white-space:nowrap}
+table.grid tr:last-child td{border-bottom:0}
+table.grid td.strong{font-weight:600;white-space:nowrap}
+.grp td{background:var(--surface-2);font-weight:600;font-size:12px;color:var(--ink-2)}
+.st{display:inline-block;font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.st.확인{background:var(--ok-soft);color:var(--ok)}
+.st.추정{background:var(--mid-soft);color:var(--mid)}
+.st.미확인{background:transparent;color:var(--lo);border:1px dashed var(--line)}
+.bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--lo-soft);max-width:520px}
+.bar span{display:block;height:100%}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-2)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:0}
+.sup-share{display:flex;gap:6px;flex-wrap:wrap}
+.sup-share span{font-size:12px;background:var(--surface);border:1px solid var(--line-2);border-radius:5px;padding:2px 8px}
+.sup-share b{font-family:var(--mono);font-weight:500;margin-left:4px}
+
+/* profiles */
+.profiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.pcard{background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:10px}
+.pcard.self{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.pcard-h{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.pcard h3{margin:0;font-size:16px;letter-spacing:-.01em}
+.badge{font-size:11px;font-weight:600;padding:1px 7px;border-radius:4px;background:var(--accent);color:var(--accent-ink);margin-left:6px;vertical-align:2px}
+.pcard p{margin:0;color:var(--ink-2);font-size:13px}
+.kv{display:grid;grid-template-columns:72px minmax(0,1fr);gap:6px 10px;margin:0;font-size:13px}
+.kv dt{color:var(--muted);font-size:12px}
+.kv dd{margin:0}
+.chips{display:flex;gap:4px;flex-wrap:wrap}
+.chips span{font-size:12px;background:var(--surface-2);border-radius:4px;padding:0 7px;color:var(--ink-2)}
+.chips.tech span{background:var(--accent-soft);color:var(--accent)}
+.plist{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:2px;font-size:12.5px;color:var(--ink-2)}
+.srcs{font-size:11.5px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.srcs a{color:var(--muted)} .srcs a:hover{color:var(--accent)}
+
+/* modal */
+.overlay{position:fixed;inset:0;background:rgba(10,16,20,.45);display:flex;align-items:flex-start;justify-content:center;padding:max(24px,env(safe-area-inset-top,0px)) 16px 24px;z-index:50;overflow-y:auto}
+.modal{background:var(--surface);border-radius:10px;box-shadow:var(--shadow);width:min(680px,100%);padding:20px;display:flex;flex-direction:column;gap:14px}
+.modal h2{margin:0;font-size:17px}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field.wide{grid-column:1/-1}
+.field label{font-size:12px;color:var(--muted);font-weight:500}
+.field input,.field select,.field textarea{padding:7px 9px;border:1px solid var(--line);border-radius:6px;background:var(--surface-2);width:100%}
+.field textarea{min-height:64px;resize:vertical}
+.field .hint{font-size:11px;color:var(--muted)}
+.modal-foot{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.modal-foot .r{display:flex;gap:8px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:7px;font-size:13px;z-index:60;box-shadow:var(--shadow)}
+
+@media (max-width:860px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .rail{position:static;height:auto;flex-direction:column;gap:12px;border-right:0;border-bottom:1px solid var(--line);padding:14px 16px}
+  .tabs{flex-direction:row;overflow-x:auto;gap:4px;margin-inline:-4px;padding-bottom:2px}
+  .tab{white-space:nowrap;flex:none}
+  .rail-foot{display:none}
+  .kpis{grid-template-columns:minmax(0,1fr)}
+  .news{grid-template-columns:minmax(0,1fr);gap:8px}
+  .news-side{flex-direction:row;align-items:center}
+  .edit{justify-self:start}
+  .form{grid-template-columns:minmax(0,1fr)}
+  h1{font-size:22px}
+  .brief-table .hide-sm{display:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .btn,.chip,.tab,.kpi{transition:background-color .12s,border-color .12s,color .12s}
+}
+@media print{
+  body{background:#fff;color:#000}
+  .rail,.filters,.head-actions,.edit,.seg,.linkbtn{display:none!important}
+  .app{display:block}
+  main{padding:0}
+  .news,.pcard,.topcard,.kpi{break-inside:avoid;box-shadow:none}
+  details.det > *{display:block}
+  .tbl-wrap{overflow:visible}
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <aside class="rail">
+    <div class="brand">
+      <div class="brand-mark">KJ</div>
+      <div>
+        <div class="brand-name">광진 주간 동향</div>
+        <div class="brand-sub">도어모듈 영업 · 현대/기아 · GM</div>
+      </div>
+    </div>
+    <div>
+      <div class="label">주차 (월요일 기준)</div>
+      <div class="week-ctrl">
+        <button class="icon-btn" id="wkPrev" type="button" aria-label="이전 주">‹</button>
+        <select id="wkSel" aria-label="주차 선택"></select>
+        <button class="icon-btn" id="wkNext" type="button" aria-label="다음 주">›</button>
+      </div>
+      <div class="week-range mono" id="wkRange"></div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="대시보드 탭" id="tabs"></nav>
+    <div class="rail-foot">
+      <div id="dbStatus"><span class="dot"></span>불러오는 중…</div>
+      <div id="lastUpd"></div>
+      <label style="display:flex;gap:6px;align-items:center;cursor:pointer"><input type="checkbox" id="expandAll"> 상세 모두 펼치기</label>
+    </div>
+  </aside>
+  <main>
+    <header class="head">
+      <div>
+        <div class="eyebrow" id="eyebrow"></div>
+        <h1 id="title"></h1>
+        <p class="lede" id="lede"></p>
+      </div>
+      <div class="head-actions" id="actions"></div>
+    </header>
+    <div id="subnav"></div>
+    <div id="filters"></div>
+    <div id="content"></div>
+  </main>
+</div>
+
+<script>
+(function(){
+"use strict";
+const TABS = {
+  brief:{name:'이번 주 브리핑', lede:'월요일 회의용 요약 — 세 영역의 핵심 이슈와 회의 포인트를 한 화면에서.'},
+  oem:{name:'완성차 동향', lede:'현대차·기아 글로벌(해외공장 포함) + 한국GM 중심의 GM 동향과 신기술.',
+       cats:['신차/생산','판매/실적','전략/투자','신기술','구매/공급망','정책/통상','노사']},
+  competitor:{name:'도어모듈 경쟁사', lede:'PHA · 대동하이렉스 · 하이렉스 · 브로제의 동향, 신기술, 해외사업 현황.',
+       cats:['동향','신기술','해외사업'], subs:[['news','주간 뉴스'],['profiles','경쟁사 프로필'],['matrix','차종별 공급사']]},
+  industry:{name:'국내 부품업계', lede:'현대/기아 1차~2차 벤더의 M&A, 신사업 진출, 공장·투자, 실적 동향.',
+       cats:['M&A','신사업','공장/투자','실적/재무','정책/지원','기타'], subs:[['news','주간 뉴스'],['directory','업체 현황']]},
+};
+const TAB_ORDER = ['brief','oem','competitor','industry'];
+const IMP_RANK = {'상':0,'중':1,'하':2};
+const TAG_KINDS = [['models','차종'],['projects','프로젝트'],['regions','지역']];
+
+const S = {
+  dbState:'loading', canWrite:false,
+  weeks:[], week:null, tab:'brief', sub:{competitor:'news', industry:'news'},
+  news:[], background:[], competitors:[], supply:[], suppliers:[],
+  f:{q:'', cat:null, company:null, imp:null, tags:new Set()},
+  mx:{oem:null, status:null, supplier:null}, dir:{tier:null},
+  expandAll:false, openIds:new Set(),
+};
+
+const $ = s => document.querySelector(s);
+const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeUrl = u => /^https?:\/\//i.test(String(u||'')) ? String(u) : '';
+const arr = v => Array.isArray(v) ? v : [];
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+};
+
+/* ---------- dates ---------- */
+function toDate(s){ return new Date(s + 'T00:00:00Z'); }
+function ymd(d){ return d.toISOString().slice(0,10); }
+function addDays(s,n){ const d = toDate(s); d.setUTCDate(d.getUTCDate()+n); return ymd(d); }
+function mondayOf(s){ const d = toDate(s); const day = d.getUTCDay() || 7; d.setUTCDate(d.getUTCDate()-(day-1)); return ymd(d); }
+function todayStr(){ const n = new Date(); return ymd(new Date(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()))); }
+function isoWeek(s){
+  const t = toDate(s); const day = t.getUTCDay() || 7; t.setUTCDate(t.getUTCDate()+4-day);
+  const y0 = Date.UTC(t.getUTCFullYear(),0,1);
+  return {year:t.getUTCFullYear(), week:Math.ceil(((t - y0)/86400000 + 1)/7)};
+}
+const md = s => s ? s.slice(5).replace('-','.') : '';
+function weekCode(w){ const {year,week} = isoWeek(w); return `${year} W${String(week).padStart(2,'0')}`; }
+function weekLabel(w){ return `${weekCode(w)} · ${md(w)}–${md(addDays(w,6))}`; }
+
+/* ---------- data helpers ---------- */
+function tabNews(tab){ return S.news.filter(n => n.tab === tab); }
+function sortNews(list){
+  return list.slice().sort((a,b) => (IMP_RANK[a.importance]??3) - (IMP_RANK[b.importance]??3) || String(b.date).localeCompare(String(a.date)));
+}
+function applyFilters(list){
+  const f = S.f, q = f.q.trim().toLowerCase();
+  return list.filter(n => {
+    if (f.cat && n.category !== f.cat) return false;
+    if (f.company && n.company !== f.company) return false;
+    if (f.imp && n.importance !== f.imp) return false;
+    for (const t of f.tags){ const [k,v] = t.split('::'); if (!arr(n.tags?.[k]).includes(v)) return false; }
+    if (q){
+      const hay = [n.title,n.summary,n.company,n.source,n.meeting_point,...arr(n.details),...TAG_KINDS.flatMap(([k]) => arr(n.tags?.[k]))].join(' ').toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+function countBy(list, fn){ const m = new Map(); list.forEach(x => { const k = fn(x); if (k) m.set(k,(m.get(k)||0)+1); }); return m; }
+const weekDoc = () => S.weeks.find(w => w.id === S.week) || null;
+
+/* ---------- render ---------- */
+function render(){
+  renderRail(); renderHead(); renderSubnav(); renderFilters(); renderContent();
+}
+function weekIds(){
+  const ids = S.weeks.map(w => w.id);
+  if (S.week && !ids.includes(S.week)) ids.push(S.week);
+  return ids.sort().reverse();
+}
+function renderRail(){
+  const sel = $('#wkSel');
+  const ids = weekIds();
+  sel.innerHTML = ids.length ? ids.map(id => `<option value="${esc(id)}"${id===S.week?' selected':''}>W${esc(String(isoWeek(id).week).padStart(2,"0"))} · ${esc(md(id))}</option>`).join('') : '<option>—</option>';
+  const i = ids.indexOf(S.week);
+  $('#wkPrev').disabled = i < 0 || i >= ids.length-1;
+  $('#wkNext').disabled = i <= 0;
+  $('#wkRange').textContent = S.week ? `${S.week} ~ ${addDays(S.week,6)}` : '';
+  $('#tabs').innerHTML = TAB_ORDER.map(t => {
+    const c = t === 'brief' ? S.news.length : tabNews(t).length;
+    return `<button class="tab" role="tab" type="button" data-tab="${t}" aria-selected="${S.tab===t}"><span>${esc(TABS[t].name)}</span><span class="count">${S.dbState==='ok'?c:''}</span></button>`;
+  }).join('');
+  const st = $('#dbStatus');
+  st.innerHTML = S.dbState === 'ok' ? `<span class="dot ok"></span>${S.weeks.length}개 주차 · 뉴스 ${ALL_NEWS.length}건`
+    : S.dbState === 'none' ? '<span class="dot bad"></span>데이터를 불러오지 못함' : '<span class="dot"></span>불러오는 중…';
+  const wd = weekDoc();
+  $('#lastUpd').textContent = wd?.updated_at ? `이 주차 업데이트: ${String(wd.updated_at).slice(0,10)}` : '';
+  $('#expandAll').checked = S.expandAll;
+}
+function renderHead(){
+  const t = TABS[S.tab];
+  $('#eyebrow').textContent = S.week ? weekLabel(S.week) : '';
+  $('#title').textContent = t.name;
+  $('#lede').textContent = t.lede;
+  let a = '';
+  if (S.canWrite && S.dbState === 'ok'){
+    const sub = S.sub[S.tab];
+    if (S.tab === 'brief') a = `<button class="btn" type="button" data-act="edit-week">브리핑 편집</button><button class="btn primary" type="button" data-act="add-news">뉴스 추가</button>`;
+    else if (sub === 'matrix') a = `<button class="btn primary" type="button" data-act="add-supply">차종 추가</button>`;
+    else if (sub === 'directory') a = `<button class="btn primary" type="button" data-act="add-supplier">업체 추가</button>`;
+    else if (sub !== 'profiles') a = `<button class="btn primary" type="button" data-act="add-news">뉴스 추가</button>`;
+  }
+  $('#actions').innerHTML = a + (S.dbState === 'ok' ? `<button class="btn" type="button" data-act="print">인쇄 / PDF 저장</button>` : '');
+}
+function renderSubnav(){
+  const t = TABS[S.tab];
+  $('#subnav').innerHTML = t.subs ? `<div class="seg" role="group" aria-label="보기 선택">${t.subs.map(([k,l]) => `<button type="button" data-sub="${k}" aria-pressed="${S.sub[S.tab]===k}">${esc(l)}</button>`).join('')}</div>` : '';
+}
+function chipRow(label, map, key, cur){
+  if (!map.size) return '';
+  const items = [...map.entries()].sort((a,b) => b[1]-a[1]);
+  return `<div class="frow"><span class="flabel">${esc(label)}</span>${items.map(([v,n]) => `<button type="button" class="chip" data-f="${key}" data-v="${esc(v)}" aria-pressed="${cur===v}">${esc(v)}<span class="n">${n}</span></button>`).join('')}</div>`;
+}
+function renderFilters(){
+  const el = $('#filters');
+  const sub = S.sub[S.tab];
+  if (S.tab === 'brief' || S.dbState !== 'ok' || (sub && sub !== 'news')){ el.innerHTML = ''; return; }
+  const list = tabNews(S.tab).concat(S.tab === 'competitor' ? S.background : []);
+  const catMap = new Map(TABS[S.tab].cats.map(c => [c,0])); list.forEach(n => catMap.set(n.category,(catMap.get(n.category)||0)+1));
+  [...catMap].forEach(([k,v]) => { if (!v) catMap.delete(k); });
+  const tagMap = new Map();
+  list.forEach(n => TAG_KINDS.forEach(([k,l]) => arr(n.tags?.[k]).forEach(v => { const key = `${k}::${v}`; tagMap.set(key,(tagMap.get(key)||0)+1); })));
+  const tagsHtml = [...tagMap.entries()].sort((a,b) => b[1]-a[1]).slice(0,40).map(([key,n]) => {
+    const [k,v] = key.split('::'); const l = TAG_KINDS.find(x => x[0]===k)[1];
+    return `<button type="button" class="tagchip" data-tag="${esc(key)}" aria-pressed="${S.f.tags.has(key)}"><b>${esc(l)}</b>${esc(v)} <span class="mono" style="opacity:.6">${n}</span></button>`;
+  }).join('');
+  const active = S.f.q || S.f.cat || S.f.company || S.f.imp || S.f.tags.size;
+  el.innerHTML = `<div class="filters">
+    <div class="frow"><input class="search" id="q" type="search" placeholder="제목·요약·태그 검색" value="${esc(S.f.q)}" aria-label="검색">
+      ${active ? `<button type="button" class="linkbtn" data-act="clear-filters">필터 초기화</button>` : ''}</div>
+    ${chipRow('분류', catMap, 'cat', S.f.cat)}
+    ${chipRow('회사', countBy(list, n => n.company), 'company', S.f.company)}
+    ${chipRow('중요도', new Map(['상','중','하'].map(k => [k, list.filter(n => n.importance===k).length]).filter(x => x[1])), 'imp', S.f.imp)}
+    ${tagsHtml ? `<div class="frow"><span class="flabel">태그</span>${tagsHtml}</div>` : ''}
+  </div>`;
+}
+function newsCard(n){
+  const url = safeUrl(n.url);
+  const open = S.expandAll || S.openIds.has(n.id);
+  const details = arr(n.details);
+  const tags = TAG_KINDS.flatMap(([k,l]) => arr(n.tags?.[k]).map(v => {
+    const key = `${k}::${v}`;
+    return `<button type="button" class="tagchip" data-tag="${esc(key)}" aria-pressed="${S.f.tags.has(key)}"><b>${esc(l)}</b>${esc(v)}</button>`;
+  })).join('');
+  return `<article class="news imp-${esc(n.importance)}" data-id="${esc(n.id)}">
+    <div class="news-side"><div class="news-date mono">${esc(md(n.date))}</div><span class="imp ${esc(n.importance)}">${esc(n.importance||'—')}</span></div>
+    <div class="news-body">
+      <div class="meta"><span class="co">${esc(n.company)}</span><span class="cat">${esc(n.category)}</span><span>${esc(n.source)}</span>${n.edited_by==='user'?'<span title="사용자가 수정한 항목">· 수정됨</span>':''}</div>
+      <h3>${url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(n.title)}<span class="ext" aria-hidden="true">↗</span></a>` : esc(n.title)}</h3>
+      ${n.summary ? `<p class="sum">${esc(n.summary)}</p>` : ''}
+      ${n.meeting_point ? `<div class="mp"><b>회의 포인트</b>${esc(n.meeting_point)}</div>` : ''}
+      ${details.length ? `<details class="det" data-id="${esc(n.id)}"${open?' open':''}><summary>상세 ${details.length}건</summary><ul>${details.map(d => `<li>${esc(d)}</li>`).join('')}</ul></details>` : ''}
+      ${tags ? `<div class="tags">${tags}</div>` : ''}
+    </div>
+    ${S.canWrite && S.dbState==='ok' ? `<button type="button" class="edit" data-act="edit-news" data-id="${esc(n.id)}">편집</button>` : '<span></span>'}
+  </article>`;
+}
+function stateBlock(){
+  if (S.dbState === 'loading') return '<div class="empty">데이터를 불러오는 중…</div>';
+  if (S.dbState === 'none') return '<div class="notice">데이터를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</div>';
+  return '';
+}
+function renderContent(){
+  const el = $('#content');
+  const sb = stateBlock(); if (sb){ el.innerHTML = sb; return; }
+  if (S.tab === 'brief') el.innerHTML = renderBrief();
+  else {
+    const sub = S.sub[S.tab] || 'news';
+    if (sub === 'profiles') el.innerHTML = renderProfiles();
+    else if (sub === 'matrix') el.innerHTML = renderMatrix();
+    else if (sub === 'directory') el.innerHTML = renderDirectory();
+    else el.innerHTML = renderNews();
+  }
+}
+function renderNews(){
+  const items = sortNews(applyFilters(tabNews(S.tab)));
+  let html = items.length ? `<div class="list">${items.map(newsCard).join('')}</div>`
+    : `<div class="empty">${tabNews(S.tab).length ? '조건에 맞는 항목이 없습니다. 필터를 초기화해 보세요.' : '이 주차에 등록된 항목이 없습니다.'}</div>`;
+  if (S.tab === 'competitor' && S.background.length){
+    const bg = applyFilters(S.background).sort((a,b) => String(b.date).localeCompare(String(a.date)));
+    html += `<div class="section-h"><h2>배경 자료</h2><span class="sub">주차와 무관하게 참고할 경쟁사 주요 이슈 (2026년) · ${bg.length}건</span></div>
+      ${bg.length ? `<div class="list">${bg.map(newsCard).join('')}</div>` : '<div class="empty">조건에 맞는 배경 자료가 없습니다.</div>'}`;
+  }
+  return html;
+}
+function renderBrief(){
+  const wd = weekDoc() || {};
+  const byId = new Map(S.news.map(n => [n.id,n]));
+  let top = arr(wd.top_ids).map(id => byId.get(id)).filter(Boolean);
+  if (!top.length) top = sortNews(S.news.filter(n => n.importance === '상')).slice(0,3);
+  const kpi = t => {
+    const list = tabNews(t); const hi = list.filter(n => n.importance==='상').length;
+    const cats = [...countBy(list, n => n.category).entries()].sort((a,b) => b[1]-a[1]);
+    return `<button type="button" class="kpi" data-tab="${t}">
+      <div class="kpi-top"><span class="kpi-name">${esc(TABS[t].name)}</span><span class="kpi-num">${list.length}<small>건 · 상 ${hi}</small></span></div>
+      ${wd['brief_'+t] ? `<p class="kpi-brief">${esc(wd['brief_'+t])}</p>` : ''}
+      <div class="kpi-cats">${cats.map(([c,n]) => `<span>${esc(c)} ${n}</span>`).join('')}</div>
+    </button>`;
+  };
+  const rows = t => sortNews(tabNews(t)).map(n => `<tr>
+      <td class="mono" style="white-space:nowrap">${esc(md(n.date))}</td>
+      <td><span class="imp ${esc(n.importance)}">${esc(n.importance)}</span></td>
+      <td style="white-space:nowrap;font-weight:500">${esc(n.company)}</td>
+      <td class="t">${safeUrl(n.url) ? `<a href="${esc(safeUrl(n.url))}" target="_blank" rel="noopener noreferrer">${esc(n.title)}</a>` : esc(n.title)}</td>
+      <td class="mpc hide-sm">${esc(n.meeting_point)}</td></tr>`).join('');
+  if (!S.news.length) return `${wd.headline ? `<div class="headline"><div class="eyebrow">이번 주 한 줄 요약</div><p>${esc(wd.headline)}</p></div>` : ''}<div class="empty">이 주차에 등록된 뉴스가 없습니다.</div>`;
+  return `<div style="display:flex;flex-direction:column;gap:16px">
+    ${wd.headline ? `<div class="headline"><div class="eyebrow">이번 주 한 줄 요약 · ${esc(weekCode(S.week))}</div><p>${esc(wd.headline)}</p></div>` : ''}
+    <div class="kpis">${['oem','competitor','industry'].map(kpi).join('')}</div>
+    ${top.length ? `<div class="section-h"><h2>이번 주 핵심</h2><span class="sub">회의에서 먼저 다룰 이슈</span></div>
+    <div class="top">${top.map(n => `<div class="topcard">
+      <div class="meta"><span class="co">${esc(n.company)}</span><span class="cat">${esc(TABS[n.tab]?.name||'')}</span><span class="mono">${esc(md(n.date))}</span></div>
+      <h3>${safeUrl(n.url) ? `<a href="${esc(safeUrl(n.url))}" target="_blank" rel="noopener noreferrer">${esc(n.title)}</a>` : esc(n.title)}</h3>
+      <p>${esc(n.summary)}</p>
+      ${n.meeting_point ? `<div class="mp"><b>회의 포인트</b>${esc(n.meeting_point)}</div>` : ''}
+    </div>`).join('')}</div>` : ''}
+    ${['oem','competitor','industry'].filter(t => tabNews(t).length).map(t => `
+      <div class="section-h"><h2>${esc(TABS[t].name)}</h2><button type="button" class="linkbtn" data-tab="${t}">탭에서 자세히 보기 →</button></div>
+      <div class="tbl-wrap"><table class="brief-table"><thead><tr><th>날짜</th><th>중요</th><th>회사</th><th>내용</th><th class="hide-sm">회의 포인트</th></tr></thead><tbody>${rows(t)}</tbody></table></div>`).join('')}
+  </div>`;
+}
+function renderProfiles(){
+  if (!S.competitors.length) return '<div class="empty">등록된 경쟁사 프로필이 없습니다.</div>';
+  const order = ['pha','daedong-hilex','hilex','brose','kwangjin'];
+  const list = S.competitors.slice().sort((a,b) => (order.indexOf(a.id)+99)%99 - (order.indexOf(b.id)+99)%99);
+  return `<div class="profiles">${list.map(p => `<article class="pcard${p.self?' self':''}">
+    <div class="pcard-h"><h3>${esc(p.name)}${p.self?'<span class="badge">자사</span>':''}</h3>
+      ${S.canWrite ? `<button type="button" class="edit" data-act="edit-competitor" data-id="${esc(p.id)}">편집</button>` : ''}</div>
+    ${p.overview ? `<p>${esc(p.overview)}</p>` : ''}
+    <dl class="kv">
+      ${p.ownership ? `<dt>지분구조</dt><dd>${esc(p.ownership)}</dd>` : ''}
+      ${p.revenue ? `<dt>매출</dt><dd>${esc(p.revenue)}</dd>` : ''}
+      ${p.hq ? `<dt>본사</dt><dd>${esc(p.hq)}</dd>` : ''}
+      ${arr(p.customers).length ? `<dt>고객사</dt><dd><div class="chips">${arr(p.customers).map(c => `<span>${esc(c)}</span>`).join('')}</div></dd>` : ''}
+      ${arr(p.products).length ? `<dt>제품</dt><dd><div class="chips">${arr(p.products).map(c => `<span>${esc(c)}</span>`).join('')}</div></dd>` : ''}
+      ${arr(p.technologies).length ? `<dt>신기술</dt><dd><div class="chips tech">${arr(p.technologies).map(c => `<span>${esc(c)}</span>`).join('')}</div></dd>` : ''}
+      ${arr(p.plants).length ? `<dt>거점</dt><dd><ul class="plist">${arr(p.plants).map(x => `<li><b style="font-weight:500">${esc(x.country)}</b> ${esc(x.location)}${x.note?` — ${esc(x.note)}`:''}</li>`).join('')}</ul></dd>` : ''}
+      ${p.overseas_summary ? `<dt>해외사업</dt><dd>${esc(p.overseas_summary)}</dd>` : ''}
+      ${arr(p.recent_issues).length ? `<dt>최근 이슈</dt><dd><ul class="plist">${arr(p.recent_issues).map(x => `<li>${esc(x)}</li>`).join('')}</ul></dd>` : ''}
+    </dl>
+    ${arr(p.sources).length ? `<div class="srcs">출처: ${arr(p.sources).filter(s => safeUrl(s.url)).map(s => `<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${esc(s.label||'링크')}</a>`).join('')}</div>` : ''}
+    ${p.updated ? `<div class="srcs">기준일 ${esc(p.updated)}</div>` : ''}
+  </article>`).join('')}</div>`;
+}
+function renderMatrix(){
+  const all = S.supply;
+  if (!all.length) return '<div class="empty">등록된 차종이 없습니다.</div>';
+  const OEMS = ['현대','기아','제네시스','GM'];
+  const sts = ['확인','추정','미확인'];
+  const stCount = sts.map(s => [s, all.filter(r => (r.status||'미확인')===s).length]);
+  const col = {'확인':'var(--ok)','추정':'var(--mid)','미확인':'var(--lo-soft)'};
+  const supMap = new Map();
+  all.filter(r => r.status !== '미확인' && r.supplier).forEach(r => String(r.supplier).split(/[,/]/).map(s => s.trim()).filter(Boolean).forEach(s => supMap.set(s,(supMap.get(s)||0)+1)));
+  const suppliers = [...supMap.keys()].sort();
+  const mx = S.mx;
+  const rows = all.filter(r => (!mx.oem || r.oem===mx.oem) && (!mx.status || (r.status||'미확인')===mx.status) && (!mx.supplier || String(r.supplier||'').includes(mx.supplier)));
+  const groups = OEMS.concat([...new Set(rows.map(r => r.oem))].filter(o => !OEMS.includes(o)));
+  const body = groups.map(o => {
+    const g = rows.filter(r => r.oem === o).sort((a,b) => String(a.model).localeCompare(String(b.model),'ko'));
+    if (!g.length) return '';
+    return `<tr class="grp"><td colspan="${S.canWrite?7:6}">${esc(o)} · ${g.length}개 차종</td></tr>` + g.map(r => `<tr>
+      <td class="strong">${esc(r.model)}</td>
+      <td>${esc(r.plant)}</td>
+      <td class="strong">${esc(r.supplier || '—')}</td>
+      <td><span class="st ${esc(r.status||'미확인')}">${esc(r.status||'미확인')}</span></td>
+      <td>${esc(r.evidence)}${safeUrl(r.evidence_url) ? ` <a href="${esc(safeUrl(r.evidence_url))}" target="_blank" rel="noopener noreferrer" class="ext">출처↗</a>` : ''}</td>
+      <td style="color:var(--muted)">${esc(r.note)}${r.edited_by==='user'?' <span title="사용자가 수정">· 수정됨</span>':''}</td>
+      ${S.canWrite ? `<td><button type="button" class="edit" data-act="edit-supply" data-id="${esc(r.id)}">편집</button></td>` : ''}
+    </tr>`).join('');
+  }).join('');
+  const segBtn = (key,v,l) => `<button type="button" class="chip" data-mx="${key}" data-v="${esc(v)}" aria-pressed="${(S.mx[key]||'')===v}">${esc(l)}</button>`;
+  return `<div style="display:flex;flex-direction:column;gap:12px">
+    <div class="filters">
+      <div class="frow"><span class="flabel">현황</span><div style="flex:1;min-width:220px;display:flex;flex-direction:column;gap:6px">
+        <div class="bar" role="img" aria-label="${stCount.map(([s,n]) => `${s} ${n}`).join(', ')}">${stCount.map(([s,n]) => n ? `<span style="width:${n/all.length*100}%;background:${col[s]}"></span>` : '').join('')}</div>
+        <div class="legend">${stCount.map(([s,n]) => `<span><i style="background:${col[s]}${s==='미확인'?';border:1px dashed var(--lo)':''}"></i>${s} <b class="mono" style="font-weight:500">${n}</b></span>`).join('')}<span style="color:var(--muted)">전체 ${all.length}개 차종</span></div>
+      </div></div>
+      ${suppliers.length ? `<div class="frow"><span class="flabel">공급사</span><div class="sup-share">${suppliers.map(s => `<span>${esc(s)}<b>${supMap.get(s)}</b></span>`).join('')}</div><span style="font-size:11.5px;color:var(--muted)">확인·추정 기준</span></div>` : ''}
+      <div class="frow"><span class="flabel">OEM</span>${segBtn('oem','','전체')}${OEMS.map(o => segBtn('oem',o,o)).join('')}</div>
+      <div class="frow"><span class="flabel">상태</span>${segBtn('status','','전체')}${sts.map(s => segBtn('status',s,s)).join('')}</div>
+      ${suppliers.length ? `<div class="frow"><span class="flabel">공급사</span>${segBtn('supplier','','전체')}${suppliers.map(s => segBtn('supplier',s,s)).join('')}</div>` : ''}
+    </div>
+    <p class="lede" style="font-size:12.5px">공개 자료로 확인된 경우만 <b>확인</b>, 간접 근거(공장 위치·업계 보도 등)는 <b>추정</b>으로 표시했습니다. 영업 현장에서 파악한 정보로 직접 채워주세요.</p>
+    <div class="tbl-wrap"><table class="grid"><thead><tr><th>차종</th><th>생산공장</th><th>도어모듈 공급사</th><th>상태</th><th>근거</th><th>메모</th>${S.canWrite?'<th></th>':''}</tr></thead><tbody>${body || `<tr><td colspan="${S.canWrite?7:6}" style="color:var(--muted)">조건에 맞는 차종이 없습니다.</td></tr>`}</tbody></table></div>
+  </div>`;
+}
+function renderDirectory(){
+  const all = S.suppliers;
+  if (!all.length) return '<div class="empty">등록된 업체가 없습니다.</div>';
+  const rows = all.filter(r => !S.dir.tier || r.tier === S.dir.tier)
+    .sort((a,b) => String(a.tier).localeCompare(String(b.tier)) || String(a.name).localeCompare(String(b.name),'ko'));
+  const n1 = all.filter(r => r.tier==='1차').length, n2 = all.filter(r => r.tier==='2차').length;
+  const tb = (v,l) => `<button type="button" class="chip" data-dir="${esc(v)}" aria-pressed="${(S.dir.tier||'')===v}">${esc(l)}</button>`;
+  return `<div style="display:flex;flex-direction:column;gap:12px">
+    <div class="filters"><div class="frow"><span class="flabel">구분</span>${tb('','전체 '+all.length)}${tb('1차','1차 벤더 '+n1)}${tb('2차','2차 벤더 '+n2)}</div></div>
+    <div class="tbl-wrap"><table class="grid" style="min-width:1100px"><thead><tr><th>업체</th><th>구분</th><th>주력 품목</th><th>주요 고객사</th><th>매출</th><th>본사</th><th>해외 거점</th><th>최근 이슈</th><th>광진과의 관련성</th>${S.canWrite?'<th></th>':''}</tr></thead><tbody>
+    ${rows.map(r => `<tr>
+      <td class="strong">${safeUrl(r.source_url) ? `<a href="${esc(safeUrl(r.source_url))}" target="_blank" rel="noopener noreferrer" style="text-decoration:none">${esc(r.name)}</a>` : esc(r.name)}</td>
+      <td><span class="st ${r.tier==='1차'?'확인':'추정'}">${esc(r.tier)}</span></td>
+      <td>${esc(arr(r.products).join(', '))}</td>
+      <td>${esc(arr(r.customers).join(', '))}</td>
+      <td>${esc(r.revenue)}</td>
+      <td style="white-space:nowrap">${esc(r.hq)}</td>
+      <td>${esc(r.overseas)}</td>
+      <td>${esc(r.recent_issue)}</td>
+      <td style="color:var(--ink-2)">${esc(r.relevance)}</td>
+      ${S.canWrite ? `<td><button type="button" class="edit" data-act="edit-supplier" data-id="${esc(r.id)}">편집</button></td>` : ''}
+    </tr>`).join('') || `<tr><td colspan="${S.canWrite?10:9}" style="color:var(--muted)">조건에 맞는 업체가 없습니다.</td></tr>`}</tbody></table></div>
+  </div>`;
+}
+
+/* ---------- events ---------- */
+function setTab(t){
+  if (!TABS[t]) return;
+  S.tab = t; S.f = {q:'',cat:null,company:null,imp:null,tags:new Set()};
+  store.set('kj.tab', t); render(); window.scrollTo({top:0});
+}
+function setWeek(w){ if (!w || w === S.week) return; S.week = w; S.openIds.clear(); selectWeekNews(); render(); }
+document.addEventListener('click', e => {
+  const b = e.target.closest('button,[data-tab]'); if (!b) return;
+  if (b.dataset.tab){ setTab(b.dataset.tab); return; }
+  if (b.dataset.sub){ S.sub[S.tab] = b.dataset.sub; S.f = {q:'',cat:null,company:null,imp:null,tags:new Set()}; render(); return; }
+  if (b.dataset.f){ const k = b.dataset.f; S.f[k] = S.f[k] === b.dataset.v ? null : b.dataset.v; renderFilters(); renderContent(); return; }
+  if (b.dataset.tag){ const k = b.dataset.tag; S.f.tags.has(k) ? S.f.tags.delete(k) : S.f.tags.add(k); renderFilters(); renderContent(); return; }
+  if (b.dataset.mx){ S.mx[b.dataset.mx] = b.dataset.v || null; renderContent(); return; }
+  if ('dir' in b.dataset){ S.dir.tier = b.dataset.dir || null; renderContent(); return; }
+  const act = b.dataset.act;
+  if (act === 'clear-filters'){ S.f = {q:'',cat:null,company:null,imp:null,tags:new Set()}; renderFilters(); renderContent(); }
+  else if (act === 'print') window.print();
+});
+let qT;
+document.addEventListener('input', e => {
+  if (e.target.id === 'q'){ clearTimeout(qT); const v = e.target.value; qT = setTimeout(() => { S.f.q = v; renderContent(); }, 180); }
+});
+document.addEventListener('toggle', e => {
+  const d = e.target; if (!d.classList || !d.classList.contains('det')) return;
+  d.open ? S.openIds.add(d.dataset.id) : S.openIds.delete(d.dataset.id);
+}, true);
+$('#wkSel').addEventListener('change', e => setWeek(e.target.value));
+$('#wkPrev').addEventListener('click', () => { const ids = weekIds(); const i = ids.indexOf(S.week); if (i >= 0 && i < ids.length-1) setWeek(ids[i+1]); });
+$('#wkNext').addEventListener('click', () => { const ids = weekIds(); const i = ids.indexOf(S.week); if (i > 0) setWeek(ids[i-1]); });
+$('#expandAll').addEventListener('change', e => { S.expandAll = e.target.checked; store.set('kj.expand', S.expandAll ? '1' : '0'); renderContent(); });
+
+/* ---------- data ---------- */
+let ALL_NEWS = [];
+function selectWeekNews(){ S.news = ALL_NEWS.filter(n => n.week === S.week); }
+async function loadJson(name){
+  const r = await fetch('data/' + name + '.json', {cache:'no-cache'});
+  if (!r.ok) throw new Error(name + ' ' + r.status);
+  return r.json();
+}
+async function boot(){
+  const saved = store.get('kj.tab'); if (saved && TABS[saved]) S.tab = saved;
+  const h = (location.hash || '').slice(1); if (TABS[h]) S.tab = h;
+  S.expandAll = store.get('kj.expand') === '1';
+  render();
+  try{
+    const [news, weeks, competitors, supply, suppliers] = await Promise.all(['news','weeks','competitors','supply','suppliers'].map(loadJson));
+    ALL_NEWS = news;
+    S.weeks = weeks.slice().sort((a,b) => b.id.localeCompare(a.id));
+    S.background = news.filter(n => n.week === 'background');
+    S.competitors = competitors; S.supply = supply; S.suppliers = suppliers;
+    S.week = S.weeks[0] ? S.weeks[0].id : mondayOf(todayStr());
+    selectWeekNews();
+    S.dbState = 'ok';
+  }catch(e){ S.dbState = 'none'; }
+  render();
+}
+boot();
+})();
+</script>
+
+</body>
+</html>
