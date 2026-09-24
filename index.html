@@ -53,7 +53,7 @@ a{color:inherit}
 .app{display:grid;grid-template-columns:248px minmax(0,1fr);min-height:100vh}
 .rail{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;height:100vh;display:flex;flex-direction:column;gap:22px;padding:22px 16px;border-right:1px solid var(--line);background:var(--surface)}
 .brand{display:flex;gap:10px;align-items:center}
-.brand-mark{width:34px;height:34px;border-radius:7px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.04em;flex:none}
+.brand-mark{width:42px;height:42px;border-radius:7px;background:#1D5FD1;color:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--sans);font-weight:700;font-size:12px;line-height:1.2;letter-spacing:.02em;flex:none}
 .brand-name{font-weight:700;font-size:15px;letter-spacing:-.01em}
 .brand-sub{font-size:11.5px;color:var(--muted)}
 .label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
@@ -250,7 +250,7 @@ table.grid td.strong{font-weight:600;white-space:nowrap}
 <div class="app">
   <aside class="rail">
     <div class="brand">
-      <div class="brand-mark">주간</div>
+      <div class="brand-mark" aria-label="광진 영업"><span>광진</span><span>영업</span></div>
       <div>
         <div class="brand-name">주간 동향</div>
         <div class="brand-sub">도어모듈 영업 · 현대/기아 · GM</div>
