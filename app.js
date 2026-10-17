@@ -1,4 +1,4 @@
-/* 광진 주간 동향 대시보드 — 뉴스·이슈·브리핑 화면. IR 탭은 ir.js, 데이터는 data/*.json(읽기 전용). */
+/* 광진 주간 동향 대시보드 — 뉴스·이슈·브리핑 화면. IR 탭은 ir.js·irsite.js, 데이터는 data/*.json(읽기 전용). */
 (function(){
 "use strict";
 const TABS = {
@@ -12,8 +12,10 @@ const TABS = {
   issues:{name:'이슈 추적', lede:'주차를 넘어 이어지는 사안을 한 줄기로 — 첫 보도부터 최신 보도까지, 그리고 광진에 미치는 영향.'},
   ir:{name:'현대기아 판매 현황', lede:'현대차·기아 IR 월별 판매 실적(2025~2026)을 회사·기간·기준을 바꿔가며 비교합니다. 모든 그래프는 표로 볼 수 있고 CSV·이미지로 저장할 수 있습니다.',
        subs:[['overview','요약'],['explore','자유 분석'],['global','국내·해외 생산'],['export','수출 지역'],['momentum','뜨는 차·지는 차'],['monthly','월별 변동'],['door','도어모듈 물량']]},
+  irs:{name:'IR 경영 실적', lede:'현대차·기아 IR 사이트의 분기 실적발표·가이던스·공시·IR 일정 — 고객사의 수익성·원가 압박·물량·전동화 흐름을 협력사 관점에서 봅니다.',
+       subs:[['summary','한눈에'],['profit','수익성·원가'],['bridge','영업이익 요인'],['sales','판매·전동화'],['guide','가이던스·목표'],['events','공시·일정'],['docs','원문 자료']]},
 };
-const TAB_ORDER = ['brief','oem','competitor','industry','issues','ir'];
+const TAB_ORDER = ['brief','oem','competitor','industry','issues','ir','irs'];
 const NEWS_TABS = ['oem','competitor','industry'];
 const IMP_RANK = {'상':0,'중':1,'하':2};
 const TAG_KINDS = [['models','차종'],['projects','프로젝트'],['regions','지역']];
@@ -21,7 +23,7 @@ const STATUS_CLASS = s => (s || '').startsWith('진행') ? '진행' : (s || '').
 
 const S = {
   dbState:'loading',
-  weeks:[], week:null, tab:'brief', sub:{competitor:'news', industry:'news', ir:'overview'},
+  weeks:[], week:null, tab:'brief', sub:{competitor:'news', industry:'news', ir:'overview', irs:'summary'},
   news:[], background:[], competitors:[], supply:[], suppliers:[], issues:[],
   f:{q:'', cat:null, company:null, imp:null, tags:new Set(), issue:null}, allWeeks:false,
   mx:{oem:null, status:null, supplier:null}, dir:{tier:null},
@@ -97,7 +99,7 @@ function writeHash(){
   if (S.tab === 'issues' && S.issue) h += '/' + S.issue;
   else if (TABS[S.tab].subs) h += '/' + S.sub[S.tab];
   const p = new URLSearchParams();
-  if (S.week && S.week !== weekIds()[0] && S.tab !== 'ir' && S.tab !== 'issues') p.set('week', S.week);
+  if (S.week && S.week !== weekIds()[0] && S.tab !== 'ir' && S.tab !== 'irs' && S.tab !== 'issues') p.set('week', S.week);
   if (S.allWeeks && NEWS_TABS.includes(S.tab)) p.set('all', '1');
   if (S.q) p.set('q', S.q);
   const qs = p.toString();
@@ -117,7 +119,7 @@ function renderRail(){
   const strip = ids.slice().reverse().slice(-10);
   const counts = strip.map(w => ALL_NEWS.filter(n => n.week === w).length), max = Math.max(1, ...counts);
   $('#wkStrip').innerHTML = strip.map((w, k) => `<button type="button" data-week="${esc(w)}" aria-current="${w===S.week}" title="${esc(weekLabel(w))} · ${counts[k]}건" style="height:${Math.max(4, counts[k]/max*26)}px"></button>`).join('');
-  $('#wkBlock').hidden = S.tab === 'ir' || S.tab === 'issues';
+  $('#wkBlock').hidden = S.tab === 'ir' || S.tab === 'irs' || S.tab === 'issues';
   const prev = prevWeekId();
   $('#tabs').innerHTML = TAB_ORDER.map(t => {
     let c = '';
@@ -136,7 +138,7 @@ function renderRail(){
 }
 function renderHead(){
   const t = TABS[S.tab];
-  $('#eyebrow').textContent = S.tab === 'ir' ? '현대차·기아 IR 월별 판매 실적' : S.tab === 'issues' ? `${S.weeks.length}개 주차 · ${ALL_NEWS.filter(n => n.week !== 'background').length}건의 기사에서 추린 ${S.issues.length}개 이슈` : S.week ? weekLabel(S.week) : '';
+  $('#eyebrow').textContent = S.tab === 'ir' ? '현대차·기아 IR 월별 판매 실적' : S.tab === 'irs' ? '현대차·기아 IR 분기 실적발표 · 연결 기준' : S.tab === 'issues' ? `${S.weeks.length}개 주차 · ${ALL_NEWS.filter(n => n.week !== 'background').length}건의 기사에서 추린 ${S.issues.length}개 이슈` : S.week ? weekLabel(S.week) : '';
   $('#title').textContent = t.name;
   $('#lede').textContent = t.lede;
   $('#gq').value = S.q;
@@ -207,6 +209,11 @@ function renderContent(){
     el.innerHTML = '<div class="ir"></div>';
     if (window.IR) window.IR.mount(el.firstChild, S.sub.ir, S.irParams); else el.innerHTML = '<div class="notice">분석 화면을 불러오지 못했습니다. 새로고침해 주세요.</div>';
     S.irParams = null; return;
+  }
+  if (S.tab === 'irs'){
+    el.innerHTML = '<div class="ir irs"></div>';
+    if (window.IRS) window.IRS.mount(el.firstChild, S.sub.irs); else el.innerHTML = '<div class="notice">IR 경영 실적 화면을 불러오지 못했습니다. 새로고침해 주세요.</div>';
+    return;
   }
   const sb = stateBlock(); if (sb){ el.innerHTML = sb; return; }
   if (S.q) el.innerHTML = renderSearch();
@@ -475,7 +482,7 @@ document.addEventListener('keydown', e => {
   const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName);
   if (e.key === 'Escape' && S.q){ S.q = ''; $('#gq').value = ''; render(); return; }
   if (e.key === '/' && !typing){ e.preventDefault(); $('#gq').focus(); return; }
-  if (typing || S.tab === 'ir' || S.tab === 'issues') return;
+  if (typing || S.tab === 'ir' || S.tab === 'irs' || S.tab === 'issues') return;
   if (e.key === 'ArrowLeft'){ const w = prevWeekId(); if (w) setWeek(w); }
   if (e.key === 'ArrowRight'){ const ids = weekIds(), i = ids.indexOf(S.week); if (i > 0) setWeek(ids[i-1]); }
 });
