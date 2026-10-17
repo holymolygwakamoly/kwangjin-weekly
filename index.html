@@ -217,7 +217,7 @@ table.grid td.strong{font-weight:600;white-space:nowrap}
 .modal-foot .r{display:flex;gap:8px}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:7px;font-size:13px;z-index:60;box-shadow:var(--shadow)}
 
-/* IR 판매 분석 — 차트 색은 검증된 기본 팔레트(라이트/다크 각각) */
+/* 현대기아 판매 현황(IR) — 차트 색은 검증된 기본 팔레트(라이트/다크 각각) */
 :root{
   --viz-1:#2a78d6; --viz-2:#eb6834; --viz-3:#1baf7a; --viz-4:#eda100; --viz-5:#e87ba4; --viz-6:#008300; --viz-7:#6250d6; --viz-8:#e34948;
   --viz-prev:#b9b8b1; --viz-pos:#2a78d6; --viz-neg:#e34948; --viz-mid:#ecebe7;
@@ -376,13 +376,13 @@ table.grid td.strong{font-weight:600;white-space:nowrap}
 "use strict";
 const TABS = {
   brief:{name:'이번 주 브리핑', lede:'월요일 회의용 요약 — 세 영역의 핵심 이슈와 회의 포인트를 한 화면에서.'},
-  oem:{name:'완성차 동향', lede:'현대차·기아 글로벌(해외공장 포함) + 한국GM 중심의 GM 동향, 폭스바겐그룹·스텔란티스·르노(르노코리아 포함)의 주요 동향과 신기술.',
+  oem:{name:'완성차 동향', lede:'현대차·기아 글로벌(해외공장 포함) + GM그룹(한국GM 포함) 동향, 폭스바겐그룹·스텔란티스·르노(르노코리아 포함)의 주요 동향과 신기술.',
        cats:['신차/생산','판매/실적','전략/투자','신기술','구매/공급망','정책/통상','노사']},
   competitor:{name:'도어모듈 경쟁사', lede:'PHA · 대동하이렉스 · 하이렉스 · 브로제의 동향, 신기술, 해외사업 현황.',
        cats:['동향','신기술','해외사업'], subs:[['news','주간 뉴스'],['background','배경 자료'],['profiles','경쟁사 프로필'],['matrix','차종별 공급사']]},
   industry:{name:'국내 부품업계', lede:'현대/기아 1차~2차 벤더의 M&A, 신사업 진출, 공장·투자, 실적 동향.',
        cats:['M&A','신사업','공장/투자','실적/재무','정책/지원','기타'], subs:[['news','주간 뉴스'],['directory','업체 현황']]},
-  ir:{name:'IR 판매 분석', lede:'현대차·기아 IR 월별 판매 실적(2025~2026)을 회사·기간·기준을 바꿔가며 비교합니다. 모든 그래프는 표로 볼 수 있고 CSV·이미지로 저장할 수 있습니다.',
+  ir:{name:'현대기아 판매 현황', lede:'현대차·기아 IR 월별 판매 실적(2025~2026)을 회사·기간·기준을 바꿔가며 비교합니다. 모든 그래프는 표로 볼 수 있고 CSV·이미지로 저장할 수 있습니다.',
        subs:[['overview','요약'],['explore','자유 분석'],['global','국내·해외 생산'],['export','수출 지역'],['momentum','뜨는 차·지는 차'],['monthly','월별 변동'],['door','도어모듈 물량']]},
 };
 const TAB_ORDER = ['brief','oem','competitor','industry','ir'];
