@@ -22,7 +22,7 @@
     "AMR 무선충전"
    ],
    "regions": [
-    "한국"
+    "국내"
    ]
   },
   "title": "PHA, 레인보우로보틱스·와이파워원과 AMR 무선충전 시스템 공동개발 MOU",
@@ -110,7 +110,7 @@
    "models": [],
    "projects": [],
    "regions": [
-    "미주"
+    "미국"
    ]
   },
   "title": "브로제, GM 'Supplier of the Year 2025' 수상…통산 8번째",
@@ -142,7 +142,7 @@
     "로봇 무선충전"
    ],
    "regions": [
-    "한국",
+    "국내",
     "중국"
    ]
   },
@@ -332,16 +332,20 @@
     "파워리프트게이트"
    ],
    "regions": [
-    "한국",
+    "국내",
     "일본",
-    "미주",
+    "미국",
     "중국"
    ]
   },
   "title": "하이렉스, 3분기 누적 매출 40.8%↑…한국은 파워리프트게이트 실주로 11.3% 감소",
   "updated_at": "2026-09-24T05:59:52.450Z",
   "url": "https://www.release.tdnet.info/inbs/140120260904531480.pdf",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "door-tech",
+   "competitors"
+  ]
  },
  {
   "id": "cmp-20260904-02",
@@ -374,7 +378,11 @@
   "title": "하이렉스, 일본 내 첫 도어모듈 수주…규슈공장에 12억엔 투자해 2028년 양산",
   "updated_at": "2026-09-24T05:59:52.450Z",
   "url": "https://www.hi-lex.co.jp/e/wp-content/uploads/2026/09/Announcement-Regarding-Capital-Investment-.pdf",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "door-tech",
+   "competitors"
+  ]
  },
  {
   "id": "cmp-20260908-01",
@@ -403,7 +411,10 @@
   "title": "하이렉스, 정책보유주식 추가 매각…회계연도 누적 매각익 153억엔",
   "updated_at": "2026-09-24T05:59:52.450Z",
   "url": "https://www.hi-lex.co.jp/wp-content/uploads/2026/09/140120260908532936.pdf",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "competitors"
+  ]
  },
  {
   "id": "cmp-20260908-02",
@@ -433,7 +444,10 @@
   "title": "하이렉스, '제29회 모노즈쿠리 월드 오사카' 출전…케이블 원격조작·로봇핸드 전시",
   "updated_at": "2026-09-24T05:59:52.450Z",
   "url": "https://www.hi-lex.co.jp/2026/09/08/%e7%ac%ac29%e5%9b%9e-%e3%82%82%e3%81%ae%e3%81%a5%e3%81%8f%e3%82%8a%e3%83%af%e3%83%bc%e3%83%ab%e3%83%89%ef%bc%bb%e5%a4%a7%e9%98%aa%ef%bc%bd%e5%87%ba%e5%b1%95%e3%81%ae%e3%81%94%e6%a1%88%e5%86%85/",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "competitors"
+  ]
  },
  {
   "id": "cmp-20260928-01",
@@ -463,7 +477,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "competitors"
+  ]
  },
  {
   "id": "cmp-20261009-01",
@@ -494,7 +511,11 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "door-tech",
+   "competitors"
+  ]
  },
  {
   "id": "ind-20260831-01",
@@ -526,7 +547,10 @@
   "title": "현대모비스 램프사업 매각, 9월로 또 넘어갔다…OP모빌리티와 본계약 '안갯속'",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://m.news.nate.com/view/20260831n23310",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "mobis-portfolio"
+  ]
  },
  {
   "id": "ind-20260831-02",
@@ -551,13 +575,16 @@
     "창원 투자협약"
    ],
    "regions": [
-    "경남 창원"
+    "국내"
    ]
   },
   "title": "창원시, 방산·자동차부품 기업과 2500억원 규모 투자협약",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=%EC%B0%BD%EC%9B%90%EC%8B%9C+%EB%B0%A9%EC%82%B0+%EC%9E%90%EB%8F%99%EC%B0%A8%EB%B6%80%ED%92%88+%ED%88%AC%EC%9E%90%ED%98%91%EC%95%BD&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20260831-03",
@@ -588,7 +615,11 @@
   "title": "현대모비스, 휴머노이드 로봇용 액추에이터 양산 착수…'로봇 부품' 독립 성장축 추진",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=%ED%98%84%EB%8C%80%EB%AA%A8%EB%B9%84%EC%8A%A4+%ED%9C%B4%EB%A8%BC%EB%85%B8%EC%9D%B4%EB%93%9C+%EC%8B%AC%EC%9E%A5+%EC%96%91%EC%82%B0&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "mobis-portfolio",
+   "robotics"
+  ]
  },
  {
   "id": "ind-20260901-01",
@@ -619,7 +650,10 @@
   "title": "SNT모티브, 자회사 SNT로보틱스 흡수합병…로봇사업 경쟁력 강화",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=03024166645575856",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20260902-01",
@@ -641,13 +675,16 @@
    "models": [],
    "projects": [],
    "regions": [
-    "대구·경북"
+    "국내"
    ]
   },
   "title": "대구시, 대경권 성장엔진 '첨단 모빌리티 부품' 기업 적극 지원",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=%EB%8C%80%EA%B5%AC%EC%8B%9C+%EC%B2%A8%EB%8B%A8+%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0+%EB%B6%80%ED%92%88+%EC%A7%80%EC%9B%90&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20260904-01",
@@ -673,14 +710,17 @@
    ],
    "regions": [
     "국내",
-    "북미",
+    "미국",
     "유럽"
    ]
   },
   "title": "디와이씨, 자회사 디와이씨다이나믹스 편입…방산 넘어 로보틱스·우주항공으로 확장",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://www.newspim.com/news/view/20260904000262",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20260904-02",
@@ -705,13 +745,16 @@
     "새만금 로봇특구"
    ],
    "regions": [
-    "전북 새만금"
+    "국내"
    ]
   },
   "title": "현대차, 새만금에 로봇 부품사 유치 추진…특구 지정으로 실증까지",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=%ED%98%84%EB%8C%80%EC%B0%A8+%EC%83%88%EB%A7%8C%EA%B8%88+%EB%A1%9C%EB%B4%87+%EB%B6%80%ED%92%88%EC%82%AC+%EC%9C%A0%EC%B9%98&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20260906-01",
@@ -740,7 +783,10 @@
   "title": "車 부품사, 하이브리드·전동화 중심 포트폴리오 전환 가속",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://m.news.nate.com/view/20260906n19100",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20260907-01",
@@ -771,7 +817,10 @@
   "title": "디와이씨, 드론·로봇·우주항공 신사업 TF 구성",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://www.newspim.com/news/view/20260907000267",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20260907-02",
@@ -802,7 +851,10 @@
   "title": "세방전지, 현대차·LG에너지솔루션서 조단위 배터리팩 장기공급계약 수주",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://www.hankyung.com/article/202609078602i",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20260907-03",
@@ -827,8 +879,7 @@
     "MSPO 2026"
    ],
    "regions": [
-    "유럽",
-    "폴란드"
+    "유럽"
    ]
   },
   "title": "SNT다이내믹스·SNT모티브, 폴란드 방산전시회 'MSPO 2026' 공동 참가",
@@ -864,7 +915,10 @@
   "title": "토요타 핵심 밴더 日 아이신, 韓 부품사 28곳과 접촉…전동화 공급망 확대 모색",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=%EC%95%84%EC%9D%B4%EC%8B%A0+K-%EB%B6%80%ED%92%88%EC%82%AC+28%EA%B3%B3&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20260911-01",
@@ -893,7 +947,10 @@
   "title": "9월 상순 자동차부품 수출 6.6억달러…전년比 1.3%↑, 8월 급감세서 반등",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://www.datatooza.com/article/202609111020006888edd30f73a8_80",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "domestic-slump"
+  ]
  },
  {
   "id": "ind-20260912-01",
@@ -922,7 +979,10 @@
   "title": "완성차 대신 협력사부터 뚫는다…자동차 업계 해킹, 공급망 타고 확산",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=%ED%98%84%EB%8C%80%EC%B0%A8+%ED%98%91%EB%A0%A5%EC%82%AC%EB%8F%84+%ED%95%B4%ED%82%B9&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "security-safety"
+  ]
  },
  {
   "id": "ind-20260913-01",
@@ -951,7 +1011,10 @@
   "title": "AI 매칭 플랫폼 통해 자동차부품 공급업체 매각 대상자 탐색 확산",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://m.news.nate.com/view/20260913n04588",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "supplier-finance"
+  ]
  },
  {
   "id": "ind-20260914-01",
@@ -982,7 +1045,10 @@
   "title": "KB오토텍, 인도 첸나이 공장 1.7배 확장…현대차·기아 승용차 부품 신규 수주",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=KB%EC%98%A4%ED%86%A0%ED%85%8D+%EC%9D%B8%EB%8F%84+%EC%B2%B8%EB%82%98%EC%9D%B4+%EA%B3%B5%EC%9E%A5+%ED%99%95%EC%9E%A5&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "india"
+  ]
  },
  {
   "id": "ind-20260917-01",
@@ -1011,7 +1077,10 @@
   "title": "삼성증권, 현대모비스 목표주가 80만원→65만원 18.8% 하향…현대차·기아 실적 둔화 반영",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://m.news.nate.com/view/20260917n11330",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "domestic-slump"
+  ]
  },
  {
   "id": "ind-20260917-02",
@@ -1040,7 +1109,11 @@
   "title": "8월 자동차부품 수출 14억9800만달러…전년比 9.8% 감소, 車 생산·수출·내수 '트리플 감소'",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://www.etnews.com/20260917000311",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "domestic-slump",
+   "supplier-finance"
+  ]
  },
  {
   "id": "ind-20260917-03",
@@ -1065,13 +1138,16 @@
     "우즈베키스탄 투자"
    ],
    "regions": [
-    "우즈베키스탄"
+    "중앙아시아"
    ]
   },
   "title": "한세예스24, 우즈베키스탄에 최대 2500만달러 투자…자동차부품 사업 이어 패션·콘텐츠 검토",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=%ED%95%9C%EC%84%B8%EC%98%88%EC%8A%A424+%EC%9A%B0%EC%A6%88%EB%B2%A0%ED%81%AC%EC%8A%A4%ED%83%84+%EC%B0%A8%EB%B6%80%ED%92%88&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20260920-01",
@@ -1102,7 +1178,10 @@
   "title": "소프트뱅크, 현대차그룹 로봇연구소 RAI 인수 합의…CFIUS 심사 진행",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://www.g-enews.com/article/Global-Biz/2026/09/2026092017541495052bd56fbc3c_1",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20260921-01",
@@ -1125,13 +1204,17 @@
    "models": [],
    "projects": [],
    "regions": [
-    "경남"
+    "국내"
    ]
   },
   "title": "전기차 전환에 경남 내연기관 부품기업 38% '소멸 위기'…로봇 부품산업 전환 필요성 제기",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=%EA%B2%BD%EB%82%A8%20%EC%9E%90%EB%8F%99%EC%B0%A8%EB%B6%80%ED%92%88%20%EC%86%8C%EB%A9%B8%EC%9C%84%EA%B8%B0&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "robotics",
+   "supplier-finance"
+  ]
  },
  {
   "id": "ind-20260922-01",
@@ -1162,7 +1245,10 @@
   "title": "현대모비스, 하나은행·기술보증기금과 '상생보증 MOU'…협력사 금융지원 확대",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://www.newspim.com/news/view/20260922001030",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "supplier-finance"
+  ]
  },
  {
   "id": "ind-20260922-02",
@@ -1193,7 +1279,10 @@
   "title": "대동기어, 현대차그룹 차세대 EV·EREV 기어모듈 대규모 수주로 성장 가속",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=%EB%8C%80%EB%8F%99%EA%B8%B0%EC%96%B4+%ED%98%84%EB%8C%80%EC%B0%A8%EA%B7%B8%EB%A3%B9+EV%EB%AA%A8%EB%93%88&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20260922-03",
@@ -1221,7 +1310,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-09-29T02:32:37.438Z"
+  "updated_at": "2026-09-29T02:32:37.438Z",
+  "issues": [
+   "labor"
+  ]
  },
  {
   "id": "ind-20260923-01",
@@ -1252,7 +1344,10 @@
   "title": "한호산업, 단조·가공 넘어 설계까지…로봇·방산 정조준",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://m.sedaily.com/article/20094287",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20260923-02",
@@ -1278,14 +1373,17 @@
    ],
    "regions": [
     "국내",
-    "북미",
+    "미국",
     "유럽"
    ]
   },
   "title": "현대차·토요타·테슬라, 휴머노이드 큰손…부품사 수주전 불붙었다",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=%ED%9C%B4%EB%A8%BC%EB%85%B8%EC%9D%B4%EB%93%9C%20%EB%B6%80%ED%92%88%EC%82%AC%20%EC%88%98%EC%A3%BC%EC%A0%84&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20260923-03",
@@ -1310,13 +1408,16 @@
     "완주 신공장"
    ],
    "regions": [
-    "전북 완주"
+    "국내"
    ]
   },
   "title": "태양기계, 현대차 친환경 상용차 부품 양산 대응 완주 신공장에 80억원 투자",
   "updated_at": "2026-09-24T06:06:25.230Z",
   "url": "https://news.google.com/rss/search?q=%ED%83%9C%EC%96%91%EA%B8%B0%EA%B3%84+%EC%99%84%EC%A3%BC+%EC%8B%A0%EA%B3%B5%EC%9E%A5&hl=ko&gl=KR&ceid=KR:ko",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20260923-04",
@@ -1344,7 +1445,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-09-29T02:32:37.438Z"
+  "updated_at": "2026-09-29T02:32:37.438Z",
+  "issues": [
+   "supplier-finance"
+  ]
  },
  {
   "id": "ind-20260925-01",
@@ -1374,7 +1478,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-09-29T02:32:37.438Z"
+  "updated_at": "2026-09-29T02:32:37.438Z",
+  "issues": [
+   "supplier-finance"
+  ]
  },
  {
   "id": "ind-20260927-01",
@@ -1406,7 +1513,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-09-29T02:32:37.438Z"
+  "updated_at": "2026-09-29T02:32:37.438Z",
+  "issues": [
+   "supplier-finance"
+  ]
  },
  {
   "id": "ind-20260928-01",
@@ -1436,7 +1546,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20260928-02",
@@ -1467,7 +1580,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "mobis-portfolio"
+  ]
  },
  {
   "id": "ind-20260929-01",
@@ -1497,7 +1613,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "security-safety"
+  ]
  },
  {
   "id": "ind-20260929-02",
@@ -1527,7 +1646,11 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "labor",
+   "supplier-finance"
+  ]
  },
  {
   "id": "ind-20260929-03",
@@ -1563,7 +1686,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20260930-01",
@@ -1595,7 +1721,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "mobis-portfolio"
+  ]
  },
  {
   "id": "ind-20260930-02",
@@ -1623,7 +1752,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "supplier-finance"
+  ]
  },
  {
   "id": "ind-20261001-01",
@@ -1657,7 +1789,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20261001-02",
@@ -1687,7 +1822,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20261001-03",
@@ -1718,7 +1856,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "us-tariff"
+  ]
  },
  {
   "id": "ind-20261004-01",
@@ -1749,7 +1890,10 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "us-tariff"
+  ]
  },
  {
   "id": "ind-20261005-01",
@@ -1781,7 +1925,11 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "us-tariff",
+   "supplier-finance"
+  ]
  },
  {
   "id": "ind-20261005-02",
@@ -1809,7 +1957,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "security-safety"
+  ]
  },
  {
   "id": "ind-20261006-01",
@@ -1839,7 +1990,11 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "us-tariff",
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20261006-02",
@@ -1867,7 +2022,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20261006-03",
@@ -1896,7 +2054,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "security-safety"
+  ]
  },
  {
   "id": "ind-20261006-04",
@@ -1924,7 +2085,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "supplier-finance"
+  ]
  },
  {
   "id": "ind-20261007-01",
@@ -1952,7 +2116,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "labor"
+  ]
  },
  {
   "id": "ind-20261007-02",
@@ -1983,7 +2150,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20261007-03",
@@ -2014,7 +2184,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "ind-20261007-04",
@@ -2042,7 +2215,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "security-safety"
+  ]
  },
  {
   "id": "ind-20261008-01",
@@ -2073,7 +2249,10 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "mobis-portfolio"
+  ]
  },
  {
   "id": "ind-20261009-01",
@@ -2104,7 +2283,11 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "us-tariff",
+   "supplier-invest"
+  ]
  },
  {
   "id": "ind-20261010-01",
@@ -2135,7 +2318,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "mobis-portfolio"
+  ]
  },
  {
   "id": "oem-20260901-01",
@@ -2164,7 +2350,10 @@
   "title": "현대차 노사, 2026년 임금협상 최종 타결…성과금 400%+1270만원",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.mt.co.kr/industry/2026/09/01/2026090107293157611",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "labor"
+  ]
  },
  {
   "id": "oem-20260901-02",
@@ -2194,7 +2383,10 @@
   "title": "현대차 인도법인, 8월 역대 최대 판매 실적 경신",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://m.news.nate.com/view/20260901n28920",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "india"
+  ]
  },
  {
   "id": "oem-20260901-03",
@@ -2227,7 +2419,10 @@
   "title": "한국GM, 8월 2만3042대 판매…트랙스 수출 16% 증가",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.hankyung.com/article/202609017096g",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "gm-group"
+  ]
  },
  {
   "id": "oem-20260901-04",
@@ -2255,7 +2450,10 @@
   "title": "현대차, 파업 손실 만회 위해 9월 특근 총동원",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://m.news.nate.com/view/20260901n28940",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "labor"
+  ]
  },
  {
   "id": "oem-20260902-01",
@@ -2288,7 +2486,10 @@
   "title": "현대차 8월 미국 판매 소폭 감소, 기아는 역대 최다 판매",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.khan.co.kr/article/202609021042001",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "us-sales"
+  ]
  },
  {
   "id": "oem-20260902-02",
@@ -2321,7 +2522,10 @@
   "title": "현대차 하반기 전략…북미는 하이브리드, 유럽은 아이오닉3로 승부",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.newspim.com/news/view/20260902000497",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "europe-market"
+  ]
  },
  {
   "id": "oem-20260904-01",
@@ -2351,7 +2555,10 @@
   "title": "현대모비스, 슬로바키아서 유럽 첫 전동화 구동시스템(PE) 신공장 가동",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.seoul.co.kr/news/economy/car/2026/09/04/20260904030003",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "supplier-invest"
+  ]
  },
  {
   "id": "oem-20260904-02",
@@ -2385,7 +2592,10 @@
   "title": "현대차, 팰리세이드 하이브리드 생산 美 HMGMA로 이전",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://biz.newdaily.co.kr/site/data/html/2026/09/04/2026090400121.html",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "ulsan-reshuffle"
+  ]
  },
  {
   "id": "oem-20260906-01",
@@ -2416,7 +2626,10 @@
   "title": "현대제철·포스코, 美 루이지애나 전기로 제철소 착공…자동차강판 공급망 현지화",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.newspim.com/news/view/20260906000077",
-  "week": "2026-08-31"
+  "week": "2026-08-31",
+  "issues": [
+   "us-tariff"
+  ]
  },
  {
   "id": "oem-20260907-01",
@@ -2444,7 +2657,10 @@
   "title": "헥터 비자레알 한국GM 사장, 수원서비스센터 방문…고객 접점 강화",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.asiatoday.co.kr/kn/view.php?key=20260907010002676",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "gm-group"
+  ]
  },
  {
   "id": "oem-20260909-01",
@@ -2477,7 +2693,10 @@
   "title": "현대차, 인도네시아 판매순위 12위…도요타·다이하츠에 밀려",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.fnnews.com/news/202609091530266718",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "asean"
+  ]
  },
  {
   "id": "oem-20260910-01",
@@ -2513,7 +2732,10 @@
   "title": "기아, 오토랜드 화성서 'PBV 생산허브테크데이' 개최…로봇 자동화 공개",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.mt.co.kr/industry/2026/09/10/2026090919114552895",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "new-models"
+  ]
  },
  {
   "id": "oem-20260910-02",
@@ -2545,7 +2767,10 @@
   "title": "기아, 인도네시아 반둥국제모터쇼 참가…셀토스·카렌스·쏘넷 전시",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.fnnews.com/news/202609101217291816",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "asean"
+  ]
  },
  {
   "id": "oem-20260911-01",
@@ -2578,7 +2803,10 @@
   "title": "현대차그룹, 자율주행 미디어데이 개최…'데이터 플라이휠' 본격 가동",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.financialpost.co.kr/news/articleView.html?idxno=275311",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "sdv-autonomy"
+  ]
  },
  {
   "id": "oem-20260911-02",
@@ -2610,7 +2838,11 @@
   "title": "제네시스 GV90, 국내 첫 공개…서울 수지서 특별전시",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.g-enews.com/article/Industry/2026/09/20260911083546741112616b072_1",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "door-tech",
+   "new-models"
+  ]
  },
  {
   "id": "oem-20260912-01",
@@ -2642,7 +2874,10 @@
   "title": "기아 인도법인, 카렌스·카렌스 클라비스 CNG 모델 사전예약 개시",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.g-enews.com/article/Global-Biz/2026/09/2026091206283076032bd56fbc3c_1",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "india"
+  ]
  },
  {
   "id": "oem-20260913-01",
@@ -2673,7 +2908,10 @@
   "title": "GM, 나트륨이온 배터리 자체 개발 선언…중국 리튬 의존 탈피 추진",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.g-enews.com/article/Global-Biz/2026/09/2026091306110858102bd56fbc3c_1",
-  "week": "2026-09-07"
+  "week": "2026-09-07",
+  "issues": [
+   "gm-group"
+  ]
  },
  {
   "id": "oem-20260914-01",
@@ -2707,7 +2945,10 @@
   "title": "기아, 대형 전동화 PBV '더 기아 PV7' 세계 최초 공개…獨 IAA 트랜스포테이션",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.asiatoday.co.kr/kn/view.php?key=20260915010005356",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "new-models"
+  ]
  },
  {
   "id": "oem-20260915-01",
@@ -2742,7 +2983,10 @@
   "title": "PV7 띄운 기아·수소 넓힌 현대차…상용차 전동화 '투트랙' 분업",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.newspim.com/news/view/20260915000732",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "new-models"
+  ]
  },
  {
   "id": "oem-20260915-02",
@@ -2775,7 +3019,11 @@
   "title": "제네시스 GV90, 필러리스 코치도어 실물 공개…가격대 1억8000만원 예상",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.news-wa.com/article/automobiles/new-car/2026/09/15/20260915500085",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "door-tech",
+   "new-models"
+  ]
  },
  {
   "id": "oem-20260915-03",
@@ -2807,7 +3055,10 @@
   "title": "보스턴다이내믹스 지분 100% 확보 추진…IPO는 로봇업황 둔화로 연기",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://m.news.nate.com/view/20260915n27969",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "oem-20260917-01",
@@ -2840,7 +3091,11 @@
   "title": "관세 여파로 전기차 라인업 재편…아이오닉6 단종·EV6 GT 美 출시 연기",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://newsway.co.kr/news/view?ud=2026091715392412837",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "us-tariff",
+   "new-models"
+  ]
  },
  {
   "id": "oem-20260917-02",
@@ -2873,7 +3128,10 @@
   "title": "현대차 유럽 판매 10% 감소 속 전기차는 증가…아이오닉3로 소형차 승부수",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.mt.co.kr/industry/2026/09/17/2026091614151816701",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "europe-market"
+  ]
  },
  {
   "id": "oem-20260918-01",
@@ -2906,7 +3164,10 @@
   "title": "기아 인도, 연간 생산량 10~15% 상향…셀토스·쏘렌토 수요 호조",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.g-enews.com/article/Global-Biz/2026/09/2026091816130633442bd56fbc3c_1",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "india"
+  ]
  },
  {
   "id": "oem-20260920-01",
@@ -2938,7 +3199,10 @@
   "title": "트럼프-셰인바움 관세 협상 불발…기아 멕시코 공장 '비상'",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.g-enews.com/article/Global-Biz/2026/09/2026092006430934582bd56fbc3c_1",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "us-tariff"
+  ]
  },
  {
   "id": "oem-20260920-02",
@@ -2969,7 +3233,10 @@
   "title": "GM 뷰익, 9월 30일 한국 공식 론칭…첫 모델 '엘렉트라 E7' 유력",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.autospy.net/free/27050",
-  "week": "2026-09-14"
+  "week": "2026-09-14",
+  "issues": [
+   "gm-group"
+  ]
  },
  {
   "id": "oem-20260921-01",
@@ -2999,7 +3266,11 @@
   "title": "관세 충격 넘은 현대차·기아…다음 고비는 中 전기차 美 진출",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.asiatoday.co.kr/kn/view.php?key=20260922010008074",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "us-tariff",
+   "europe-market"
+  ]
  },
  {
   "id": "oem-20260921-02",
@@ -3028,7 +3299,10 @@
   "title": "\"현대차 80만원→36만원, 반토막\"…증권사 목표주가 줄줄이 하향",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.fnnews.com/news/202609210809437497",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "domestic-slump"
+  ]
  },
  {
   "id": "oem-20260921-03",
@@ -3059,7 +3333,10 @@
   "title": "인니 하이브리드차 판매 43% 증가…현대차 팰리세이드 9위, 산타페 14위",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.fnnews.com/news/202609211356086681",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "asean"
+  ]
  },
  {
   "id": "oem-20260922-02",
@@ -3094,7 +3371,10 @@
   "title": "기아, 전기차 판매 비중 12.7%로 상승…성장엔진은 전기차",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.mt.co.kr/industry/2026/09/22/2026092213040463929",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "europe-market"
+  ]
  },
  {
   "id": "oem-20260922-03",
@@ -3125,7 +3405,10 @@
   "title": "현대차, 중국 전용 전기차 '아이오닉 V' 출시…CATL 배터리로 원가 절감",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.g-enews.com/article/Global-Biz/2026/09/2026092219014279812bd56fbc3c_1",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "new-models"
+  ]
  },
  {
   "id": "oem-20260922-04",
@@ -3158,7 +3441,11 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-09-29T02:32:37.438Z"
+  "updated_at": "2026-09-29T02:32:37.438Z",
+  "issues": [
+   "us-tariff",
+   "new-models"
+  ]
  },
  {
   "id": "oem-20260923-01",
@@ -3190,7 +3477,10 @@
   "title": "관세 전쟁이 바꾼 캐나다 신차 지도…한국산 점유율 상승",
   "updated_at": "2026-09-24T05:55:27.013Z",
   "url": "https://www.g-enews.com/article/Global-Biz/2026/09/2026092306491396572bd56fbc3c_1",
-  "week": "2026-09-21"
+  "week": "2026-09-21",
+  "issues": [
+   "us-tariff"
+  ]
  },
  {
   "id": "oem-20260925-01",
@@ -3222,7 +3512,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-09-29T02:32:37.438Z"
+  "updated_at": "2026-09-29T02:32:37.438Z",
+  "issues": [
+   "us-sales"
+  ]
  },
  {
   "id": "oem-20260926-01",
@@ -3256,7 +3549,11 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-09-29T02:32:37.438Z"
+  "updated_at": "2026-09-29T02:32:37.438Z",
+  "issues": [
+   "us-tariff",
+   "us-sales"
+  ]
  },
  {
   "id": "oem-20260926-02",
@@ -3287,7 +3584,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-09-29T02:32:37.438Z"
+  "updated_at": "2026-09-29T02:32:37.438Z",
+  "issues": [
+   "us-tariff"
+  ]
  },
  {
   "id": "oem-20260928-01",
@@ -3320,7 +3620,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "us-sales"
+  ]
  },
  {
   "id": "oem-20260928-02",
@@ -3351,7 +3654,11 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "ulsan-reshuffle",
+   "us-sales"
+  ]
  },
  {
   "id": "oem-20260928-03",
@@ -3388,7 +3695,10 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "india"
+  ]
  },
  {
   "id": "oem-20260929-01",
@@ -3419,7 +3729,10 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "new-models"
+  ]
  },
  {
   "id": "oem-20260929-02",
@@ -3451,7 +3764,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "oem-20260929-03",
@@ -3484,7 +3800,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "europe-market"
+  ]
  },
  {
   "id": "oem-20260929-04",
@@ -3515,7 +3834,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "sdv-autonomy"
+  ]
  },
  {
   "id": "oem-20260930-01",
@@ -3548,7 +3870,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "gm-group"
+  ]
  },
  {
   "id": "oem-20261001-01",
@@ -3583,7 +3908,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "domestic-slump"
+  ]
  },
  {
   "id": "oem-20261001-02",
@@ -3615,7 +3943,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "domestic-slump"
+  ]
  },
  {
   "id": "oem-20261002-01",
@@ -3651,7 +3982,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "us-sales"
+  ]
  },
  {
   "id": "oem-20261002-02",
@@ -3685,7 +4019,10 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "new-models"
+  ]
  },
  {
   "id": "oem-20261002-03",
@@ -3718,7 +4055,11 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "domestic-slump",
+   "labor"
+  ]
  },
  {
   "id": "oem-20261002-04",
@@ -3750,7 +4091,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-05T23:48:44.054Z"
+  "updated_at": "2026-10-05T23:48:44.054Z",
+  "issues": [
+   "gm-group"
+  ]
  },
  {
   "id": "oem-20261005-01",
@@ -3782,7 +4126,10 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "new-models"
+  ]
  },
  {
   "id": "oem-20261005-02",
@@ -3819,7 +4166,11 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "sdv-autonomy",
+   "new-models"
+  ]
  },
  {
   "id": "oem-20261005-03",
@@ -3855,7 +4206,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "us-sales"
+  ]
  },
  {
   "id": "oem-20261005-04",
@@ -3891,7 +4245,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "europe-market"
+  ]
  },
  {
   "id": "oem-20261005-05",
@@ -3922,7 +4279,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-oems"
+  ]
  },
  {
   "id": "oem-20261005-06",
@@ -3953,7 +4313,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-oems"
+  ]
  },
  {
   "id": "oem-20261005-07",
@@ -3981,7 +4344,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-oems"
+  ]
  },
  {
   "id": "oem-20261006-01",
@@ -4016,7 +4382,11 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "ulsan-reshuffle",
+   "us-tariff"
+  ]
  },
  {
   "id": "oem-20261006-02",
@@ -4044,7 +4414,10 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "domestic-slump"
+  ]
  },
  {
   "id": "oem-20261006-03",
@@ -4076,7 +4449,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "new-models"
+  ]
  },
  {
   "id": "oem-20261006-04",
@@ -4110,7 +4486,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "domestic-slump"
+  ]
  },
  {
   "id": "oem-20261006-05",
@@ -4143,7 +4522,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "gm-group"
+  ]
  },
  {
   "id": "oem-20261006-06",
@@ -4176,7 +4558,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-06T02:03:53.386Z"
+  "updated_at": "2026-10-06T02:03:53.386Z",
+  "issues": [
+   "sdv-autonomy"
+  ]
  },
  {
   "id": "oem-20261006-07",
@@ -4208,7 +4593,11 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-oems",
+   "sdv-autonomy"
+  ]
  },
  {
   "id": "oem-20261006-08",
@@ -4239,7 +4628,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-oems"
+  ]
  },
  {
   "id": "oem-20261007-01",
@@ -4272,7 +4664,10 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "new-models"
+  ]
  },
  {
   "id": "oem-20261007-02",
@@ -4306,7 +4701,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-oems"
+  ]
  },
  {
   "id": "oem-20261007-03",
@@ -4335,7 +4733,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-oems"
+  ]
  },
  {
   "id": "oem-20261007-04",
@@ -4368,7 +4769,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-oems"
+  ]
  },
  {
   "id": "oem-20261008-01",
@@ -4399,7 +4803,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "robotics"
+  ]
  },
  {
   "id": "oem-20261008-02",
@@ -4431,7 +4838,11 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "us-tariff",
+   "gm-group"
+  ]
  },
  {
   "id": "oem-20261008-03",
@@ -4461,7 +4872,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "asean"
+  ]
  },
  {
   "id": "oem-20261008-04",
@@ -4493,7 +4907,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "door-tech"
+  ]
  },
  {
   "id": "oem-20261009-01",
@@ -4527,7 +4944,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "us-tariff"
+  ]
  },
  {
   "id": "oem-20261009-02",
@@ -4561,7 +4981,11 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-oems",
+   "sdv-autonomy"
+  ]
  },
  {
   "id": "oem-20261010-01",
@@ -4593,7 +5017,11 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-oems",
+   "door-tech"
+  ]
  },
  {
   "id": "oem-20261011-01",
@@ -4634,7 +5062,10 @@
   },
   "importance": "상",
   "edited_by": "claude",
-  "updated_at": "2026-10-16T12:13:52.736Z"
+  "updated_at": "2026-10-16T12:13:52.736Z",
+  "issues": [
+   "ulsan-reshuffle"
+  ]
  },
  {
   "id": "oem-20261011-02",
@@ -4664,7 +5095,10 @@
   },
   "importance": "하",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-oems"
+  ]
  },
  {
   "id": "oem-20261011-03",
@@ -4696,7 +5130,11 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-market",
+   "europe-oems"
+  ]
  },
  {
   "id": "oem-20261011-04",
@@ -4727,6 +5165,10 @@
   },
   "importance": "중",
   "edited_by": "claude",
-  "updated_at": "2026-10-17T13:21:03.100Z"
+  "updated_at": "2026-10-17T13:21:03.100Z",
+  "issues": [
+   "europe-market",
+   "europe-oems"
+  ]
  }
 ]

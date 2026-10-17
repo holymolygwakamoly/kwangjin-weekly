@@ -31,7 +31,7 @@ const store = {
   set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
 };
 
-let D = null, PROD = null, SUPPLY = [], loading = null, root = null, view = 'overview';
+let D = null, PROD = null, SUPPLY = [], loading = null, dataLoading = null, root = null, view = 'overview';
 let charts = [], pending = [];
 const st = Object.assign({
   co:'HK', y:null, m0:1, m1:null, ckd:false,
@@ -47,11 +47,10 @@ const save = () => store.set('kj.ir', st);
 function loadScript(src){
   return new Promise((ok, fail) => { if (window.echarts) return ok(); const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = fail; document.head.appendChild(s); });
 }
-function load(){
-  if (!loading) loading = Promise.all([
+function loadData(){
+  if (!dataLoading) dataLoading = Promise.all([
     fetch('data/ir.json', {cache:'no-cache'}).then(r => { if (!r.ok) throw new Error('ir ' + r.status); return r.json(); }),
     fetch('data/supply.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : []).catch(() => []),
-    loadScript(ECHARTS_URL),
   ]).then(([ir, supply]) => {
     D = ir; SUPPLY = supply;
     PROD = D.series.filter(s => s.d === 'model' || s.d === 'plant').map(s => s.d === 'model' ? Object.assign({}, s, {ct: s.loc === 'CKD' ? 'CKD' : '한국'}) : s);
@@ -59,7 +58,33 @@ function load(){
     if (!ys.includes(st.y)) st.y = ys[ys.length - 1];
     clampMonths();
   });
-  return loading;
+  return dataLoading;
+}
+function load(){ if (!loading) loading = Promise.all([loadData(), loadScript(ECHARTS_URL)]); return loading; }
+/* 브리핑 상단용 최신 숫자: 회사별 최신 공개월 글로벌 판매와 전년 동월 대비, 연초~공통 최근월의 해외 생산·미국 수출 비중 */
+async function snapshot(){
+  await loadData();
+  const saved = {co: st.co, y: st.y, m0: st.m0, m1: st.m1, ckd: st.ckd};
+  const out = {};
+  const yAll = years(), y = yAll[yAll.length - 1];
+  for (const c of ['H', 'K']){
+    const m = D.last['model|' + c + '|' + y] || 0; if (!m) continue;
+    const list = PROD.filter(s => s.c === c && s.loc !== 'CKD');
+    const cur = monthsSum(list, y)[m - 1], prev = monthsSum(list, y - 1)[m - 1];
+    out[c] = {y, m, sales: cur, yoy: prev ? (cur - prev) / prev * 100 : null};
+  }
+  Object.assign(st, {co: 'HK', y, m0: 1, ckd: false}); st.m1 = null; clampMonths();
+  const prod = prodList().filter(s => s.loc !== 'CKD');
+  const os = tot(monthsSum(prod.filter(s => s.loc === '해외'), y)), g = tot(monthsSum(prod, y));
+  const osP = tot(monthsSum(prod.filter(s => s.loc === '해외'), y - 1)), gP = tot(monthsSum(prod, y - 1));
+  const ex = D.series.filter(s => s.d === 'export' && s.s !== 'CKD');
+  const us = tot(monthsSum(ex.filter(s => s.rg === '미국'), y)), exT = tot(monthsSum(ex, y));
+  const usP = tot(monthsSum(ex.filter(s => s.rg === '미국'), y - 1)), exTP = tot(monthsSum(ex, y - 1));
+  out.osShare = {v: g ? os / g * 100 : 0, d: gP ? os / g * 100 - osP / gP * 100 : null};
+  out.usShare = {v: exT ? us / exT * 100 : 0, d: exTP ? us / exT * 100 - usP / exTP * 100 : null};
+  out.asof = `${y}년 1~${st.m1}월 기준`;
+  Object.assign(st, saved); clampMonths();
+  return out;
 }
 
 /* ---------- 기간·집계 ---------- */
@@ -329,6 +354,8 @@ function vExplore(c){
     if ((ex.sel || []).length > 8) note = '<p class="ir-note">선 그래프·누적 막대는 색을 구분할 수 있도록 최대 8개 항목까지 그립니다.</p>';
   }
 
+  const missingPick = (ex.sel || []).filter(k => !allKeys.includes(k));
+  if (missingPick.length) note = `<p class="ir-note">'${esc(missingPick.join(', '))}'은(는) 현재 조건의 IR 자료에 없는 이름입니다 — 아래 항목에서 비슷한 이름을 고르거나 데이터·기간을 바꿔 보세요.</p>` + note;
   const chips = rows.slice(0, 60).map(r => {
     const on = items.includes(r.k), slot = slotMap.get(r.k);
     return `<button type="button" class="ir-chip" data-ir-pick="${esc(r.k)}" aria-pressed="${on}">${on && slot != null && slot >= 0 && ex.chart !== 'bar' && ex.chart !== 'delta' ? `<i style="background:var(--viz-${slot + 1})"></i>` : ''}${esc(r.k)}<span>${short(r.c)}</span></button>`;
@@ -552,7 +579,7 @@ function vDoor(c){
   return `<div class="notice ir-door-note"><b>공급사는 이 화면에서 직접 입력할 수 있습니다.</b> 입력값은 <b>이 브라우저에만 저장</b>되고 공개 사이트에는 올라가지 않습니다. 입력이 없으면 '차종별 공급사' 표의 공개 자료(확인·추정)를 씁니다. 물량은 차량 대수 기준입니다(도어 수 아님).</div>
     <div class="ir-toolbar"><label class="ir-check"><input type="checkbox" data-ir-toggle="dr.pv"${dr.pv ? ' checked' : ''}> 승용·RV만 (상용·특장 제외)</label>
       <input type="search" class="ir-search" placeholder="차종·공장 찾기" value="${esc(q)}" data-ir-door-q aria-label="차종 찾기">
-      ${Object.keys(doorMine).length ? `<button type="button" class="ir-mini" data-ir-act="door-reset">내 입력 모두 지우기 (${Object.keys(doorMine).length}건)</button>` : ''}</div>
+      ${Object.keys(doorMine).length ? `<button type="button" class="ir-mini" data-ir-act="door-export">내 입력 내보내기(JSON)</button><button type="button" class="ir-mini" data-ir-act="door-reset">내 입력 모두 지우기 (${Object.keys(doorMine).length}건)</button>` : ''}</div>
     <div class="ir-kpis three">
       ${kpi('대상 물량', fmt(T.c) + '<small>대</small>', `${CO_NAME[st.co]} · ${periodLabel()}`)}
       ${kpi('광진 물량', kj ? fmt(kj.c) + '<small>대</small>' : '—', kj ? `점유율 ${(kj.c / T.c * 100).toFixed(1)}%${hasPrev() && kj.p ? ` · 전년 동기 ${fmtPct(kj.r)}` : ''}` : '아래 표에서 광진 공급 차종을 입력하면 계산됩니다')}
@@ -610,6 +637,10 @@ function onClick(e){
   else if (d.irAct === 'last1'){ st.m1 = lastM(st.y); st.m0 = st.m1; }
   else if (d.irAct === 'cond-clear'){ st.ex.cond = {}; }
   else if (d.irAct === 'sel-clear'){ st.ex.sel = null; slotMap.clear(); }
+  else if (d.irAct === 'door-export'){
+    const rows = Object.entries(doorMine).map(([k, v]) => { const [c, m, pl] = k.split('|'); return {company: c === 'H' ? '현대' : '기아', model: m, plant: pl, supplier: v}; });
+    const blob = new Blob([JSON.stringify(rows, null, 1)], {type: 'application/json'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'door-suppliers-입력.json'; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 0); return;
+  }
   else if (d.irAct === 'door-reset'){ if (!confirm('이 브라우저에 저장한 공급사 입력을 모두 지울까요?')) return; for (const k of Object.keys(doorMine)) delete doorMine[k]; store.set('kj.ir.door', doorMine); }
   else return;
   save(); rerenderKeepScroll();
@@ -645,8 +676,12 @@ window.addEventListener('resize', () => { clearTimeout(resizeT); resizeT = setTi
 try{ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { if (root && document.body.contains(root)) render(); }); }catch(e){}
 
 window.IR = {
-  mount(el, sub){
+  snapshot,
+  mount(el, sub, params){
     root = el; view = VIEWS[sub] ? sub : 'overview';
+    if (params && params.pick){
+      st.ex.ds = DS[params.ds] ? params.ds : 'prod'; st.ex.by = params.by || 'm'; st.ex.sel = [params.pick]; st.ex.cond = {}; st.ex.chart = st.ex.chart === 'pie' ? 'bar' : st.ex.chart; slotMap.clear(); save();
+    }
     root.addEventListener('click', onClick); root.addEventListener('change', onChange); root.addEventListener('input', onInput);
     if (!D) root.innerHTML = '<div class="empty">IR 데이터를 불러오는 중…</div>';
     load().then(() => { if (root === el) render(); }).catch(err => { el.innerHTML = `<div class="notice">IR 데이터를 불러오지 못했습니다 (${esc(err.message)}). 잠시 후 새로고침해 주세요.</div>`; loading = null; });
