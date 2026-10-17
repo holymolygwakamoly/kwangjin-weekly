@@ -1,5 +1,68 @@
 [
  {
+  "id": "cmp-20251113-01",
+  "week": "background",
+  "tab": "competitor",
+  "company": "인테바",
+  "category": "해외사업",
+  "title": "Inteva Products Expands India Operations, Announces Second Pune Plant and New Product Launches (인테바, 인도 푸네 2공장 신설)",
+  "date": "2025-11-13",
+  "source": "인테바 보도자료",
+  "url": "https://www.intevaproducts.com/news/press-release/inteva-products-expands-india-operations-announces-second-pune-plant-and-new-product-launches/",
+  "summary": "인테바가 인도 푸네에 두 번째 생산공장을 세운다고 발표했다. 5억 루피(₹50 크로르)를 투자해 400명 이상을 새로 고용하고, 인도 시장용 차세대 제품군도 소개했다.",
+  "details": [
+   "기존 푸네 공장과 벵갈루루 기술센터(320명 이상)를 기반으로 생산능력 확대 — 인도 진출 17년",
+   "안전·경량화·전동화 관련 신제품을 인도 주요 완성차 고객에 맞춰 출시한다고 밝힘(고객사명 미공개)",
+   "'메이크 인 인디아'에 맞춘 현지화 강조"
+  ],
+  "meeting_point": "현대차·기아 인도 증산 국면에 도어 래치·레귤레이터 경쟁사가 현지 생산을 늘리는 중 — 인도 도어모듈 소싱 구도 점검 시 참고",
+  "tags": {
+   "models": [],
+   "projects": [],
+   "regions": [
+    "인도"
+   ]
+  },
+  "importance": "중",
+  "issues": [
+   "competitors",
+   "india"
+  ],
+  "edited_by": "claude",
+  "updated_at": "2026-10-17T14:57:17.735Z"
+ },
+ {
+  "id": "cmp-20251201-01",
+  "week": "background",
+  "tab": "competitor",
+  "company": "인테바",
+  "category": "해외사업",
+  "title": "Inteva Products Strengthens Interiors Position with Acquisition of Portions of IAC Group in Europe (인테바, IAC 유럽 사업 일부 인수 완료)",
+  "date": "2025-12-01",
+  "source": "인테바 보도자료",
+  "url": "https://www.intevaproducts.com/news/press-release/inteva-products-strengthens-interiors-position-with-acquisition-of-portions-of-international-automotive-components-iac-group-in-europe/",
+  "summary": "인테바가 IAC(International Automotive Components) 그룹의 유럽 사업 일부를 인수해 인테리어 사업을 강화했다. 인수 후 규모는 임직원 1만 2,000명, 37개 거점이다.",
+  "details": [
+   "2025년 10월 28일 인수 합의 발표 후 12월 1일 완료",
+   "인수 대상에 폴란드 오폴레 공장 포함 — 이후 2026년 10월 독일 플라틀링 생산을 오폴레로 이전",
+   "북미·유럽·아시아의 엔지니어링·기술센터에서 설계·개발·시험까지 전 과정 지원"
+  ],
+  "meeting_point": "인테바의 최근 성장은 도어보다 인테리어 쪽 인수에서 나옴 — 도어시스템 사업에 대한 투자 우선순위가 어떻게 바뀌는지 관찰",
+  "tags": {
+   "models": [],
+   "projects": [],
+   "regions": [
+    "유럽"
+   ]
+  },
+  "importance": "하",
+  "issues": [
+   "competitors"
+  ],
+  "edited_by": "claude",
+  "updated_at": "2026-10-17T14:57:17.735Z"
+ },
+ {
   "id": "cmp-20260213-01",
   "category": "신기술",
   "company": "PHA",
@@ -29,6 +92,37 @@
   "updated_at": "2026-09-24T05:59:52.450Z",
   "url": "https://v.daum.net/v/20260213105145493",
   "week": "background"
+ },
+ {
+  "id": "cmp-20260601-01",
+  "week": "background",
+  "tab": "competitor",
+  "company": "인테바",
+  "category": "동향",
+  "title": "Inteva Products Recognized as 2025 Supplier of the Year by General Motors (인테바, GM 2025 올해의 공급사 — 계기판·도어시스템 2개 부문)",
+  "date": "2026-06-01",
+  "source": "인테바 보도자료",
+  "url": "https://www.intevaproducts.com/news/news/inteva-products-recognized-as-2025-supplier-of-the-year-by-general-motors/",
+  "summary": "인테바가 GM의 제34회 Supplier of the Year에서 계기판(Instrument Panels)과 도어시스템(Door Systems) 2개 부문으로 수상했다. 통산 6번째 수상이다.",
+  "details": [
+   "GM 2025 Supplier of the Year·Overdrive 시상: 14개국 103개 공급사 선정, 텍사스 오스틴 행사",
+   "같은 행사에서 브로제도 GM Supplier of the Year를 받았다(통산 8회, 경쟁사 배경 자료 참고)",
+   "인테바는 2017·2019·2022·2024·2025년 등 GM 수상 이력을 회사 사이트에 게시"
+  ],
+  "meeting_point": "GM 도어시스템 부문에서 인테바·브로제가 함께 우수 공급사 — 한국GM·GM그룹 물량을 볼 때 두 회사가 직접 경쟁자",
+  "tags": {
+   "models": [],
+   "projects": [],
+   "regions": [
+    "미국"
+   ]
+  },
+  "importance": "중",
+  "issues": [
+   "competitors"
+  ],
+  "edited_by": "claude",
+  "updated_at": "2026-10-17T14:57:17.735Z"
  },
  {
   "id": "cmp-20260609-01",
@@ -450,6 +544,39 @@
   ]
  },
  {
+  "id": "cmp-20260924-01",
+  "week": "2026-09-21",
+  "tab": "competitor",
+  "company": "인테바",
+  "category": "동향",
+  "title": "Inteva Products Announces New Manufacturing and Sequencing Facility in Auburn Hills, Michigan (인테바, 미시간 오번힐스에 생산·시퀀싱 시설 신설)",
+  "date": "2026-09-24",
+  "source": "인테바 보도자료",
+  "url": "https://www.intevaproducts.com/news/press-release/inteva-products-announces-new-manufacturing-and-sequencing-facility-in-auburn-hills-michigan/",
+  "summary": "인테바가 미시간주 오번힐스에 신규 생산·시퀀싱(완성차 조립 순서대로 부품을 공급) 시설을 연다고 발표했다. 2026년 말 개소, 2027년 봄 생산 시작 예정이며 '가장 큰 고객사 중 하나'의 신규 프로그램을 지원한다.",
+  "details": [
+   "인테바의 38번째 거점이자 미시간 세 번째 사이트(트로이 본사·기술센터, 에이드리언 공장에 이어)",
+   "회사 측: 고객 공장 가까이에서 생산·시퀀싱을 제공해 북미 생산 거점을 강화 — 고객사 이름은 밝히지 않음",
+   "인테바는 2025년 GM Supplier of the Year(계기판·도어시스템 부문)를 받은 GM 주요 공급사"
+  ],
+  "meeting_point": "북미 경쟁사들이 고객 공장 인근에 시퀀싱 거점을 늘리는 흐름 — HMGMA·HMMA 현지 공급 체계를 검토할 때 비교할 운영 모델",
+  "tags": {
+   "models": [],
+   "projects": [
+    "오번힐스 시설"
+   ],
+   "regions": [
+    "미국"
+   ]
+  },
+  "importance": "하",
+  "issues": [
+   "competitors"
+  ],
+  "edited_by": "claude",
+  "updated_at": "2026-10-17T14:57:17.735Z"
+ },
+ {
   "id": "cmp-20260928-01",
   "week": "2026-09-28",
   "tab": "competitor",
@@ -516,6 +643,39 @@
    "door-tech",
    "competitors"
   ]
+ },
+ {
+  "id": "cmp-20261011-01",
+  "week": "2026-10-05",
+  "tab": "competitor",
+  "company": "인테바",
+  "category": "해외사업",
+  "title": "Przenoszą całą fabrykę z Niemiec do Opola. Szukają ludzi do pracy (인테바, 독일 플라틀링 공장 생산을 폴란드 오폴레로 이전)",
+  "date": "2026-10-11",
+  "source": "Nowa Trybuna Opolska",
+  "url": "https://nto.pl/przenosza-cala-fabryke-z-niemiec-do-opola-szukaja-ludzi-do-pracy/ar/c1p2-29198363",
+  "summary": "인테바가 2025년 12월 IAC 그룹으로부터 인수한 폴란드 오폴레 공장으로 독일 플라틀링 공장의 생산을 옮긴다. 인수 후 폐쇄설이 돌던 공장이지만 오히려 인원을 550명에서 약 600명으로 늘리고, 새 사출기·라미네이팅 라인을 들이고 있다.",
+  "details": [
+   "오폴레 공장은 메르세데스-벤츠(A·C·E·CLE·EQE·EQS 등), 아우디 e-트론, 스코다 엔야크·엘록의 인테리어 부품을 생산 — 사출기 8대, 필러·휠하우스용 라미네이팅 라인 7개를 가동 중",
+   "2028년부터 폭스바겐 대형 프로젝트(ID. 버즈 전면 패널 등)를 시작할 예정이며 이를 위해 대형 금형 25벌을 구매",
+   "인테바는 IAC 유럽 사업 일부 인수로 임직원 1.2만 명·37개 거점 규모가 됐다(회사 발표). 이번 이전은 인테리어 사업으로, 도어모듈 사업 변화는 아님"
+  ],
+  "meeting_point": "인테바는 IAC 인수로 인테리어를 키우면서 고임금 독일 생산을 동유럽으로 옮기는 중 — 브로제의 감원·거점 정리와 같은 방향의 유럽 경쟁사 원가 구조 재편으로 참고",
+  "tags": {
+   "models": [],
+   "projects": [
+    "오폴레 공장"
+   ],
+   "regions": [
+    "유럽"
+   ]
+  },
+  "importance": "하",
+  "issues": [
+   "competitors"
+  ],
+  "edited_by": "claude",
+  "updated_at": "2026-10-17T14:57:17.735Z"
  },
  {
   "id": "ind-20260831-01",

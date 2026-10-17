@@ -5,7 +5,7 @@ const TABS = {
   brief:{name:'이번 주 브리핑', lede:'월요일 회의용 요약 — 이어지는 이슈, 세 영역의 핵심, IR 최신 숫자를 한 화면에서.'},
   oem:{name:'완성차 동향', lede:'현대차·기아 글로벌(해외공장 포함) + GM그룹(한국GM 포함) 동향, 폭스바겐그룹·스텔란티스·르노(르노코리아 포함)의 주요 동향과 신기술.',
        cats:['신차/생산','판매/실적','전략/투자','신기술','구매/공급망','정책/통상','노사']},
-  competitor:{name:'도어모듈 경쟁사', lede:'PHA · 대동하이렉스 · 하이렉스 · 브로제의 동향, 신기술, 해외사업 현황.',
+  competitor:{name:'도어모듈 경쟁사', lede:'PHA · 대동하이렉스 · 하이렉스 · 브로제 · 인테바의 동향, 신기술, 해외사업 현황.',
        cats:['동향','신기술','해외사업'], subs:[['news','주간 뉴스'],['background','배경 자료'],['profiles','경쟁사 프로필'],['matrix','차종별 공급사']]},
   industry:{name:'국내 부품업계', lede:'현대/기아 1차~2차 벤더의 M&A, 신사업 진출, 공장·투자, 실적 동향.',
        cats:['M&A','신사업','공장/투자','실적/재무','정책/지원','기타'], subs:[['news','주간 뉴스'],['directory','업체 현황']]},
@@ -232,7 +232,7 @@ function renderNews(){
 }
 function renderBackground(){
   const bg = applyFilters(S.background).sort((a,b) => String(b.date).localeCompare(String(a.date)));
-  return `<div class="section-h"><h2>배경 자료</h2><span class="sub">주차와 무관하게 참고할 경쟁사 주요 이슈 (2026년) · ${bg.length}건</span></div>
+  return `<div class="section-h"><h2>배경 자료</h2><span class="sub">주차와 무관하게 참고할 경쟁사 주요 이슈 (최근 1년) · ${bg.length}건</span></div>
     ${bg.length ? `<div class="list">${bg.map(n => newsCard(n)).join('')}</div>` : `<div class="empty">${S.background.length ? '조건에 맞는 배경 자료가 없습니다.' : '등록된 배경 자료가 없습니다.'}</div>`}`;
 }
 
@@ -347,7 +347,7 @@ function renderIssues(){
 /* ---------- 프로필 · 공급사 표 · 업체 현황 ---------- */
 function renderProfiles(){
   if (!S.competitors.length) return '<div class="empty">등록된 경쟁사 프로필이 없습니다.</div>';
-  const order = ['pha','daedong-hilex','hilex','brose','kwangjin'];
+  const order = ['pha','daedong-hilex','hilex','brose','inteva','kwangjin'];
   const list = S.competitors.slice().sort((a,b) => (order.indexOf(a.id)+99)%99 - (order.indexOf(b.id)+99)%99);
   return `<div class="profiles">${list.map(p => `<article class="pcard${p.self?' self':''}">
     <div class="pcard-h"><h3>${esc(p.name)}${p.self?'<span class="badge">자사</span>':''}</h3></div>

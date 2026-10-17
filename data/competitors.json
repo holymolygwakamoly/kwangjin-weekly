@@ -446,6 +446,136 @@
   "updated_at": "2026-09-24T05:59:52.450Z"
  },
  {
+  "id": "inteva",
+  "name": "인테바 (Inteva Products)",
+  "self": false,
+  "overview": "미국 미시간주 트로이에 본사를 둔 자동차 부품사로, 2008년 델파이의 인테리어·클로저 사업부가 독립해 출범했다. 2011년 아빈메리터(ArvinMeritor)의 바디시스템 사업을 인수해 도어시스템·래치·모터 사업을 키웠고, 2019년 루프시스템 사업은 CIE 오토모티브에 매각했다. 현재 도어시스템, 래치, 모터·전장, 인테리어 4개 제품군으로 100곳 이상의 완성차에 공급하며 연 6,500만 개 이상의 래치를 생산한다. 광진과는 도어모듈·윈도우레귤레이터·래치·레귤레이터 모터에서 겹친다.",
+  "ownership": "미국 렌코그룹(The Renco Group, Inc.) 100% 자회사(2011년 회사 발표 기준), 비상장. 한국은 에스엘(SL Corporation)과의 합작법인 KDS(Korean Door Systems) — 1995년 델파이 시절 SL과 50:50으로 설립, 2015년 3월 계약으로 인테바가 과반 지분을 확보.",
+  "revenue": "비상장 — 매출 미공개. 규모: 임직원 약 1만 2,000명, 37개 거점(2025.12 IAC 유럽 사업 일부 인수 후 회사 발표).",
+  "hq": "미국 미시간주 트로이(Troy) — 본사·기술센터",
+  "customers": [
+   "GM (Supplier of the Year 통산 6회, 2025년 계기판·도어시스템 2개 부문)",
+   "현대차·GM코리아·쌍용(현 KG모빌리티)·르노삼성(현 르노코리아) — KDS 고객(2015 발표 기준)",
+   "폭스바겐·PSA(현 스텔란티스)·르노 — KDS 고객(2015 발표 기준)",
+   "메르세데스-벤츠·아우디·스코다 — 폴란드 오폴레 공장 인테리어 부품(2026.10 보도)",
+   "타타모터스·파카(PACCAR)·나비스타 — 공급사 표창 이력"
+  ],
+  "products": [
+   "도어시스템(복합소재 도어모듈, 윈도우레귤레이터 일체형)",
+   "윈도우레귤레이터(복합소재 싱글·듀얼 채널 케이블식)",
+   "도어 래치·스트라이커(연 6,500만 개 이상)",
+   "래치 ECU(신칭·파워 릴리즈 제어, AUTOSAR 호환)",
+   "액추에이터(도어·글로브박스·폴딩미러·에어플랩)",
+   "윈도우레귤레이터 모터(SIM·NEM·NGM)·선루프 모터",
+   "인테리어(계기판·트림, InStitch 로봇 재봉, Inteather 소재)"
+  ],
+  "technologies": [
+   "InDoor 지능형 도어 시스템",
+   "e-Loc 전자식 래치(핸들리스 도어 대응)",
+   "Power Cinching 소프트 클로징",
+   "InLite 경량화",
+   "SuperPlug 복합소재 도어 하드웨어 모듈(SPE 명예의 전당)"
+  ],
+  "plants": [
+   {
+    "country": "미국",
+    "location": "미시간 트로이",
+    "note": "본사·기술센터"
+   },
+   {
+    "country": "미국",
+    "location": "미시간 에이드리언",
+    "note": "생산"
+   },
+   {
+    "country": "미국",
+    "location": "미시간 오번힐스",
+    "note": "생산·시퀀싱 시설 신설(2026.9 발표, 2026년 말 개소·2027년 봄 생산, 38번째 거점)"
+   },
+   {
+    "country": "한국",
+    "location": "KDS (Korean Door Systems)",
+    "note": "SL과 합작, 인테바 과반. 래치·스트라이커·도어핸들·폴딩미러 액추에이터, 모터·전장(2014~). 소재지는 무역 통관 자료상 경북 경산 — 공식 확인 필요"
+   },
+   {
+    "country": "인도",
+    "location": "푸네·벵갈루루",
+    "note": "푸네 생산(2공장 신설, 5억 루피·400명), 벵갈루루 기술센터 320명 이상"
+   },
+   {
+    "country": "중국",
+    "location": "상하이·전장·쓰촨 쑤이닝",
+    "note": "상하이 도어시스템 기술센터, 쑤이닝 공장 개소"
+   },
+   {
+    "country": "멕시코",
+    "location": "마타모로스·케레타로·과나후아토 시아오",
+    "note": "생산, 케레타로 기술센터"
+   },
+   {
+    "country": "체코",
+    "location": "리흐노프",
+    "note": "생산"
+   },
+   {
+    "country": "폴란드",
+    "location": "오폴레",
+    "note": "2025.12 IAC로부터 인수(인테리어), 2026.10 독일 플라틀링 생산 이전"
+   },
+   {
+    "country": "루마니아",
+    "location": "살론타",
+    "note": "생산"
+   },
+   {
+    "country": "글로벌",
+    "location": "13개국 37개 거점",
+    "note": "중국·체코·프랑스·독일·인도·일본·한국·멕시코·모로코·폴란드·루마니아·남아공·미국"
+   }
+  ],
+  "overseas_summary": "북미(본사·미시간·멕시코), 유럽(체코·폴란드·루마니아·독일·프랑스), 아시아(중국·인도·한국·일본), 아프리카(모로코·남아공)에 걸친 13개국 37개 거점. 최근 1년은 확장 국면 — 인도 푸네 2공장(2025.11), IAC 유럽 사업 일부 인수로 독일·폴란드·체코·남아공 인테리어 거점 추가(2025.12), 미시간 오번힐스 생산·시퀀싱 시설 신설(2026.9), 독일 플라틀링 생산의 폴란드 오폴레 이전(2026.10). 한국에서는 SL과의 합작 KDS를 통해 현대차·GM코리아 등에 래치·액추에이터를 공급해 왔다(2015 발표 기준).",
+  "recent_issues": [
+   "2025-11-13 인도 푸네 2공장 신설 발표(5억 루피 투자, 400명 고용) 및 인도 시장용 신제품 공개",
+   "2025-12-01 IAC 그룹 유럽 사업 일부 인수 완료 — 임직원 1.2만 명·37개 거점으로 확대",
+   "2026-06-01 GM 2025 Supplier of the Year 수상(계기판·도어시스템 2개 부문, 통산 6회)",
+   "2026-09-24 미시간 오번힐스 생산·시퀀싱 시설 신설 발표(2027년 봄 생산)",
+   "2026-10-11 독일 플라틀링 공장 생산을 폴란드 오폴레로 이전, 인원 550→약 600명(NTO 보도)"
+  ],
+  "sources": [
+   {
+    "label": "Inteva - About",
+    "url": "https://www.intevaproducts.com/about-inteva/"
+   },
+   {
+    "label": "Inteva - Locations",
+    "url": "https://www.intevaproducts.com/locations/"
+   },
+   {
+    "label": "Inteva - Door Systems",
+    "url": "https://www.intevaproducts.com/products/door-systems/"
+   },
+   {
+    "label": "Inteva - Latch Systems",
+    "url": "https://www.intevaproducts.com/products/latch-systems/"
+   },
+   {
+    "label": "KDS 과반 지분 인수 (2015-04-07)",
+    "url": "https://www.intevaproducts.com/news/press-release/inteva-products-acquires-majority-ownership-kds-joint-venture/"
+   },
+   {
+    "label": "ArvinMeritor 바디시스템 인수 (2011-01-03)",
+    "url": "https://www.intevaproducts.com/news/press-release/inteva-products-strengthens-competitive-position-acquisition-arvinmeritors-body/"
+   },
+   {
+    "label": "Delphi에서 출범 (2008-03-01)",
+    "url": "https://www.intevaproducts.com/news/press-release/inteva-products-llc-launches-more-90-years-tradition-and-expertise/"
+   }
+  ],
+  "updated": "2026-10-17",
+  "edited_by": "claude",
+  "updated_at": "2026-10-17T14:57:17.735Z"
+ },
+ {
   "id": "kwangjin",
   "customers": [
    "GM",
