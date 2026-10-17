@@ -217,7 +217,90 @@ table.grid td.strong{font-weight:600;white-space:nowrap}
 .modal-foot .r{display:flex;gap:8px}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:7px;font-size:13px;z-index:60;box-shadow:var(--shadow)}
 
+/* IR 판매 분석 — 차트 색은 검증된 기본 팔레트(라이트/다크 각각) */
+:root{
+  --viz-1:#2a78d6; --viz-2:#eb6834; --viz-3:#1baf7a; --viz-4:#eda100; --viz-5:#e87ba4; --viz-6:#008300; --viz-7:#6250d6; --viz-8:#e34948;
+  --viz-prev:#b9b8b1; --viz-pos:#2a78d6; --viz-neg:#e34948; --viz-mid:#ecebe7;
+  --viz-seq-1:#cde2fb; --viz-seq-2:#5598e7; --viz-seq-3:#104281;
+  --viz-grid:var(--line-2); --viz-axis:var(--line); --viz-muted:var(--muted); --viz-ink:var(--ink); --viz-ink2:var(--ink-2); --viz-surface:var(--surface);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --viz-1:#3987e5; --viz-2:#d95926; --viz-3:#199e70; --viz-4:#c98500; --viz-5:#d55181; --viz-6:#008300; --viz-7:#9085e9; --viz-8:#e66767;
+    --viz-prev:#56565a; --viz-pos:#3987e5; --viz-neg:#e66767; --viz-mid:#383835;
+    --viz-seq-1:#1b3350; --viz-seq-2:#2a78d6; --viz-seq-3:#9ec5f4;
+  }
+}
+:root[data-theme="dark"]{
+  --viz-1:#3987e5; --viz-2:#d95926; --viz-3:#199e70; --viz-4:#c98500; --viz-5:#d55181; --viz-6:#008300; --viz-7:#9085e9; --viz-8:#e66767;
+  --viz-prev:#56565a; --viz-pos:#3987e5; --viz-neg:#e66767; --viz-mid:#383835;
+  --viz-seq-1:#1b3350; --viz-seq-2:#2a78d6; --viz-seq-3:#9ec5f4;
+}
+.ir{display:flex;flex-direction:column;gap:14px}
+.ir-filters{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:10px 14px;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r);box-shadow:0 4px 12px rgba(20,32,42,.04)}
+.ir-f{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.ir-fl{font-size:11.5px;color:var(--muted);font-weight:600;white-space:nowrap}
+.ir select{padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface-2)}
+.ir-dash{color:var(--muted)}
+.ir-fnote{flex-basis:100%;margin:0;font-size:12px;color:var(--muted)}
+.ir-mini{border:1px solid var(--line);background:var(--surface);border-radius:5px;padding:3px 8px;font-size:12px;cursor:pointer;color:var(--ink-2);white-space:nowrap}
+.ir-mini:hover{border-color:var(--accent);color:var(--accent)}
+.ir-mini[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.ir-body{display:flex;flex-direction:column;gap:14px}
+.ir-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.ir-kpi{background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.ir-kpi-l{font-size:12px;color:var(--ink-2);font-weight:600}
+.ir-kpi-v{font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.ir-kpi-v small{font-size:13px;font-weight:500;color:var(--muted);margin-left:2px}
+.ir-kpi-s{font-size:11.5px;color:var(--muted)}
+.ir-delta{font-size:12.5px;font-weight:600;color:var(--muted)}
+.ir-delta.up{color:var(--ok)} .ir-delta.down{color:var(--hi)}
+.ir-delta-sub{font-weight:400;color:var(--muted)}
+.ir-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ir-card{background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.ir-card.wide{grid-column:1/-1}
+.ir-card-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.ir-card-h h3{margin:0;font-size:15px;letter-spacing:-.01em}
+.ir-card-h p{margin:2px 0 0;font-size:12px;color:var(--muted)}
+.ir-card-act{display:flex;gap:4px;flex:none}
+.ir-chart{width:100%;min-width:0}
+.ir-tbl{overflow:auto;max-height:520px;border:1px solid var(--line-2);border-radius:6px}
+.ir-tbl table{width:100%;border-collapse:collapse;font-size:12.5px}
+.ir-tbl th,.ir-tbl td{padding:6px 10px;border-bottom:1px solid var(--line-2);text-align:left;white-space:nowrap}
+.ir-tbl th{position:sticky;top:0;background:var(--surface-2);color:var(--muted);font-weight:600;font-size:11.5px}
+.ir-tbl .n{text-align:right;font-variant-numeric:tabular-nums}
+.ir-tbl tr:last-child td{border-bottom:0}
+.ir-insight ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px;color:var(--ink-2);font-size:13.5px;max-width:110ch}
+.ir-insight b{color:var(--ink)}
+.ir-builder{gap:8px}
+.ir-b-row{display:flex;gap:8px 10px;align-items:center;flex-wrap:wrap}
+.ir-b-row>.ir-fl{width:60px}
+.ir-b-items{align-items:flex-start}
+.ir-items{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.ir-items-h{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ir-search{padding:6px 9px;border:1px solid var(--line);border-radius:6px;background:var(--surface-2);min-width:160px}
+.ir-chips{display:flex;gap:5px;flex-wrap:wrap;max-height:132px;overflow:auto}
+.ir-chips.static{max-height:none}
+.ir-chip{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:2px 9px;font-size:12px;cursor:pointer;color:var(--ink-2)}
+.ir-chip span{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ir-chip i{width:8px;height:8px;border-radius:2px;display:inline-block}
+.ir-chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--ink)}
+.ir-conds{display:flex;gap:6px 12px;flex-wrap:wrap;align-items:center}
+.ir-cond{display:flex;gap:5px;align-items:center;font-size:12px;color:var(--ink-2)}
+.ir-toolbar{display:flex;gap:8px 14px;align-items:center;flex-wrap:wrap}
+.ir-check{display:flex;gap:6px;align-items:center;font-size:12.5px;color:var(--ink-2);cursor:pointer}
+.ir-note{font-size:12px;color:var(--muted);margin:0}
+.ir-sub{font-size:11px;color:var(--muted)}
+.ir-sup{width:120px;padding:4px 7px;border:1px solid var(--line);border-radius:5px;background:var(--surface-2)}
+.ir-how{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ink-2)}
+.ir-src{font-size:11.5px;color:var(--muted);margin:4px 0 0}
+.ir .seg button:disabled{opacity:.4;cursor:default}
+.ir-door-note{font-size:12.5px}
+
 @media (max-width:860px){
+  .ir-grid{grid-template-columns:minmax(0,1fr)}
+  .ir-filters{position:static}
+  .ir-b-row>.ir-fl{width:auto}
   .app{grid-template-columns:minmax(0,1fr)}
   .rail{position:static;height:auto;flex-direction:column;gap:12px;border-right:0;border-bottom:1px solid var(--line);padding:14px 16px}
   .tabs{flex-direction:row;overflow-x:auto;gap:4px;margin-inline:-4px;padding-bottom:2px}
@@ -256,7 +339,7 @@ table.grid td.strong{font-weight:600;white-space:nowrap}
         <div class="brand-sub">도어모듈 영업 · 현대/기아 · GM · 유럽 3사</div>
       </div>
     </div>
-    <div>
+    <div id="wkBlock">
       <div class="label">주차 (월요일 기준)</div>
       <div class="week-ctrl">
         <button class="icon-btn" id="wkPrev" type="button" aria-label="이전 주">‹</button>
@@ -287,6 +370,7 @@ table.grid td.strong{font-weight:600;white-space:nowrap}
   </main>
 </div>
 
+<script src="ir.js"></script>
 <script>
 (function(){
 "use strict";
@@ -298,14 +382,16 @@ const TABS = {
        cats:['동향','신기술','해외사업'], subs:[['news','주간 뉴스'],['background','배경 자료'],['profiles','경쟁사 프로필'],['matrix','차종별 공급사']]},
   industry:{name:'국내 부품업계', lede:'현대/기아 1차~2차 벤더의 M&A, 신사업 진출, 공장·투자, 실적 동향.',
        cats:['M&A','신사업','공장/투자','실적/재무','정책/지원','기타'], subs:[['news','주간 뉴스'],['directory','업체 현황']]},
+  ir:{name:'IR 판매 분석', lede:'현대차·기아 IR 월별 판매 실적(2025~2026)을 회사·기간·기준을 바꿔가며 비교합니다. 모든 그래프는 표로 볼 수 있고 CSV·이미지로 저장할 수 있습니다.',
+       subs:[['overview','요약'],['explore','자유 분석'],['global','국내·해외 생산'],['export','수출 지역'],['momentum','뜨는 차·지는 차'],['monthly','월별 변동'],['door','도어모듈 물량']]},
 };
-const TAB_ORDER = ['brief','oem','competitor','industry'];
+const TAB_ORDER = ['brief','oem','competitor','industry','ir'];
 const IMP_RANK = {'상':0,'중':1,'하':2};
 const TAG_KINDS = [['models','차종'],['projects','프로젝트'],['regions','지역']];
 
 const S = {
   dbState:'loading', canWrite:false,
-  weeks:[], week:null, tab:'brief', sub:{competitor:'news', industry:'news'},
+  weeks:[], week:null, tab:'brief', sub:{competitor:'news', industry:'news', ir:'overview'},
   news:[], background:[], competitors:[], supply:[], suppliers:[],
   f:{q:'', cat:null, company:null, imp:null, tags:new Set()},
   mx:{oem:null, status:null, supplier:null}, dir:{tier:null},
@@ -375,8 +461,9 @@ function renderRail(){
   $('#wkPrev').disabled = i < 0 || i >= ids.length-1;
   $('#wkNext').disabled = i <= 0;
   $('#wkRange').textContent = S.week ? `${S.week} ~ ${addDays(S.week,6)} 보도 기사` : '';
+  $('#wkBlock').hidden = S.tab === 'ir';
   $('#tabs').innerHTML = TAB_ORDER.map(t => {
-    const c = t === 'brief' ? S.news.length : tabNews(t).length;
+    const c = t === 'ir' ? '' : t === 'brief' ? S.news.length : tabNews(t).length;
     return `<button class="tab" role="tab" type="button" data-tab="${t}" aria-selected="${S.tab===t}"><span>${esc(TABS[t].name)}</span><span class="count">${S.dbState==='ok'?c:''}</span></button>`;
   }).join('');
   const st = $('#dbStatus');
@@ -388,7 +475,7 @@ function renderRail(){
 }
 function renderHead(){
   const t = TABS[S.tab];
-  $('#eyebrow').textContent = S.week ? weekLabel(S.week) : '';
+  $('#eyebrow').textContent = S.tab === 'ir' ? '현대차·기아 IR 월별 판매 실적' : S.week ? weekLabel(S.week) : '';
   $('#title').textContent = t.name;
   $('#lede').textContent = t.lede;
   let a = '';
@@ -413,7 +500,7 @@ function chipRow(label, map, key, cur){
 function renderFilters(){
   const el = $('#filters');
   const sub = S.sub[S.tab];
-  if (S.tab === 'brief' || S.dbState !== 'ok' || (sub && sub !== 'news' && sub !== 'background')){ el.innerHTML = ''; return; }
+  if (S.tab === 'brief' || S.tab === 'ir' || S.dbState !== 'ok' || (sub && sub !== 'news' && sub !== 'background')){ el.innerHTML = ''; return; }
   const list = sub === 'background' ? S.background : tabNews(S.tab);
   const catMap = new Map(TABS[S.tab].cats.map(c => [c,0])); list.forEach(n => catMap.set(n.category,(catMap.get(n.category)||0)+1));
   [...catMap].forEach(([k,v]) => { if (!v) catMap.delete(k); });
@@ -461,6 +548,12 @@ function stateBlock(){
 }
 function renderContent(){
   const el = $('#content');
+  if (S.tab === 'ir'){
+    el.innerHTML = '<div class="ir"></div>';
+    if (window.IR) window.IR.mount(el.firstChild, S.sub.ir);
+    else el.innerHTML = '<div class="notice">분석 화면을 불러오지 못했습니다. 새로고침해 주세요.</div>';
+    return;
+  }
   const sb = stateBlock(); if (sb){ el.innerHTML = sb; return; }
   if (S.tab === 'brief') el.innerHTML = renderBrief();
   else {
