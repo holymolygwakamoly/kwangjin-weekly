@@ -2,7 +2,7 @@
 (function(){
 "use strict";
 const TABS = {
-  brief:{name:'이번 주 브리핑', lede:'월요일 회의용 요약 — 이어지는 이슈, 세 영역의 핵심, IR 최신 숫자를 한 화면에서.'},
+  brief:{name:'주간 브리핑', lede:'월요일 회의용 요약 — 이어지는 이슈, 세 영역의 핵심, IR 최신 숫자를 한 화면에서.'},
   oem:{name:'완성차 동향', lede:'현대차·기아 글로벌(해외공장 포함) + GM그룹(한국GM 포함) 동향, 폭스바겐그룹·스텔란티스·르노(르노코리아 포함)의 주요 동향과 신기술.',
        cats:['신차/생산','판매/실적','전략/투자','신기술','구매/공급망','정책/통상','노사']},
   competitor:{name:'도어모듈 경쟁사', lede:'PHA · 대동하이렉스 · 하이렉스 · 브로제 · 인테바의 동향, 신기술, 해외사업 현황.',
@@ -44,11 +44,11 @@ function ymd(d){ return d.toISOString().slice(0,10); }
 function addDays(s,n){ const d = toDate(s); d.setUTCDate(d.getUTCDate()+n); return ymd(d); }
 function mondayOf(s){ const d = toDate(s); const day = d.getUTCDay() || 7; d.setUTCDate(d.getUTCDate()-(day-1)); return ymd(d); }
 function todayStr(){ const n = new Date(); return ymd(new Date(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()))); }
-function isoWeek(s){ const t = toDate(s); const day = t.getUTCDay() || 7; t.setUTCDate(t.getUTCDate()+4-day); const y0 = Date.UTC(t.getUTCFullYear(),0,1); return {year:t.getUTCFullYear(), week:Math.ceil(((t - y0)/86400000 + 1)/7)}; }
 const md = s => s ? s.slice(5).replace('-','.') : '';
-function weekCode(w){ const {year,week} = isoWeek(w); return `${year} W${String(week).padStart(2,'0')}`; }
-const wShort = w => `W${String(isoWeek(w).week).padStart(2,'0')}`;
-function weekLabel(w){ return `${weekCode(w)} · ${md(w)}–${md(addDays(w,6))}`; }
+// 주차는 업데이트한 날(그 주가 끝난 다음 월요일)로 부른다 — 예: 10/5~10/11 기사 → '10월 12일'
+const updDay = w => addDays(w,7);
+function weekLabel(w){ const d = updDay(w); return `${+d.slice(5,7)}월 ${+d.slice(8,10)}일`; }
+const wShort = w => md(updDay(w));
 
 /* ---------- 데이터 ---------- */
 const weekIds = () => S.weeks.map(w => w.id).sort().reverse();
@@ -111,11 +111,11 @@ function writeHash(){
 function render(){ renderRail(); renderHead(); renderSubnav(); renderFilters(); renderContent(); writeHash(); }
 function renderRail(){
   const sel = $('#wkSel'), ids = weekIds();
-  sel.innerHTML = ids.length ? ids.map(id => `<option value="${esc(id)}"${id===S.week?' selected':''}>${wShort(id)} · ${esc(md(id))}–${esc(md(addDays(id,6)))}</option>`).join('') : '<option>—</option>';
+  sel.innerHTML = ids.length ? ids.map(id => `<option value="${esc(id)}"${id===S.week?' selected':''}>${esc(weekLabel(id))}</option>`).join('') : '<option>—</option>';
   const i = ids.indexOf(S.week);
   $('#wkPrev').disabled = i < 0 || i >= ids.length-1;
   $('#wkNext').disabled = i <= 0;
-  $('#wkRange').textContent = S.week ? `${S.week} ~ ${addDays(S.week,6)} 보도 기사` : '';
+  $('#wkRange').textContent = S.week ? `${updDay(S.week).slice(0,4)}년 ${weekLabel(S.week)} 업데이트` : '';
   const strip = ids.slice().reverse().slice(-10);
   const counts = strip.map(w => ALL_NEWS.filter(n => n.week === w).length), max = Math.max(1, ...counts);
   $('#wkStrip').innerHTML = strip.map((w, k) => `<button type="button" data-week="${esc(w)}" aria-current="${w===S.week}" title="${esc(weekLabel(w))} · ${counts[k]}건" style="height:${Math.max(4, counts[k]/max*26)}px"></button>`).join('');
@@ -187,7 +187,7 @@ function newsCard(n, opt = {}){
   const url = safeUrl(n.url), open = S.expandAll || S.openIds.has(n.id), details = arr(n.details);
   const issues = arr(n.issues).map(id => `<button type="button" class="issue-chip" data-issue="${esc(id)}">${esc(issueTitle(id))}</button>`).join('');
   return `<article class="news imp-${esc(n.importance)}" id="n-${esc(n.id)}" data-id="${esc(n.id)}">
-    <div class="news-side"><div class="news-date mono">${esc(opt.showWeek ? wShort(n.week) + ' · ' : '')}${esc(md(n.date))}</div><span class="imp ${esc(n.importance)}">${esc(n.importance||'—')}</span></div>
+    <div class="news-side"><div class="news-date mono">${esc(md(n.date))}</div><span class="imp ${esc(n.importance)}">${esc(n.importance||'—')}</span></div>
     <div class="news-body">
       <div class="meta"><span class="co">${esc(n.company)}</span><span class="cat">${esc(n.category)}</span><span>${esc(n.source)}</span>${opt.showTab ? `<span class="cat">${esc(TABS[n.tab]?.name||'')}</span>` : ''}</div>
       <h3>${url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(n.title)}<span class="ext" aria-hidden="true">↗</span></a>` : esc(n.title)}</h3>
@@ -230,7 +230,7 @@ function renderContent(){
 }
 function groupedByWeek(items, opt){
   const weeks = [...new Set(items.map(n => n.week))].sort().reverse();
-  return weeks.map(w => `<div class="week-h"><b>${esc(weekCode(w))}</b><span>${esc(md(w))}–${esc(md(addDays(w,6)))} · ${items.filter(n => n.week === w).length}건</span></div><div class="list">${sortNews(items.filter(n => n.week === w)).map(n => newsCard(n, opt)).join('')}</div>`).join('');
+  return weeks.map(w => `<div class="week-h"><b>${esc(weekLabel(w))}</b><span>${items.filter(n => n.week === w).length}건</span></div><div class="list">${sortNews(items.filter(n => n.week === w)).map(n => newsCard(n, opt)).join('')}</div>`).join('');
 }
 function renderNews(){
   const base = tabNews(S.tab), items = applyFilters(base);
@@ -339,7 +339,7 @@ function renderIssues(){
   const detail = `<div class="idetail">
     <section class="ihead">
       <div class="icard-h"><h2>${esc(cur.title)}</h2><span class="status ${STATUS_CLASS(cur.status)}">${esc(cur.status)}</span></div>
-      <div class="meta"><span>첫 보도 <b>${st.first ? esc(weekCode(st.first)) : '—'}</b></span><span>최근 <b>${st.last ? esc(weekCode(st.last)) : '—'}</b></span><span>기사 <b>${st.total}</b>건</span><span>이번 주 <b>${st.thisWeek}</b>건</span>${cur.updated_at ? `<span>요약 기준 ${esc(String(cur.updated_at).slice(0,10))}</span>` : ''}</div>
+      <div class="meta"><span>첫 보도 <b>${st.first ? esc(weekLabel(st.first)) : '—'}</b></span><span>최근 <b>${st.last ? esc(weekLabel(st.last)) : '—'}</b></span><span>기사 <b>${st.total}</b>건</span><span>이번 주 <b>${st.thisWeek}</b>건</span>${cur.updated_at ? `<span>요약 기준 ${esc(String(cur.updated_at).slice(0,10))}</span>` : ''}</div>
       <p>${esc(cur.summary)}</p>
       ${cur.kj_impact ? `<div class="impact"><b>광진 영향</b>${esc(cur.kj_impact)}</div>` : ''}
       ${models ? `<div class="tags">${models}<span class="sub" style="font-size:11.5px;color:var(--muted)">↗ 누르면 IR 판매 숫자로</span></div>` : ''}
