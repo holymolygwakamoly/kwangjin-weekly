@@ -10,7 +10,7 @@ const PGROUP_OF = {'한국':'국내','미국':'미국','인도':'인도','중국
 const PGROUPS = ['국내','미국','유럽','인도','중남미','중국','아시아 기타','기타'];
 const AREAS = ['북미','유럽','아시아·태평양','중동·아프리카','중남미','러시아·동유럽·CIS'];
 const BRANDS = ['현대','기아','제네시스'];
-const SUPPLIERS = ['광진','PHA','대동하이렉스','하이렉스','브로제','기타'];
+const SUPPLIERS = ['광진','PHA','대동하이렉스','하이렉스','브로제','인테바','기타'];
 
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt = n => n == null || !isFinite(n) ? '—' : Math.round(n).toLocaleString('ko-KR');
@@ -576,7 +576,7 @@ function vDoor(c){
     {html: `<b>${esc(r.eff)}</b>`},
   ]);
   const kpi = (l, v, s) => `<div class="ir-kpi"><div class="ir-kpi-l">${esc(l)}</div><div class="ir-kpi-v">${v}</div><div class="ir-kpi-s">${esc(s)}</div></div>`;
-  return `<div class="notice ir-door-note"><b>공급사는 이 화면에서 직접 입력할 수 있습니다.</b> 입력값은 <b>이 브라우저에만 저장</b>되고 공개 사이트에는 올라가지 않습니다. 입력이 없으면 '차종별 공급사' 표의 공개 자료(확인·추정)를 씁니다. 물량은 차량 대수 기준입니다(도어 수 아님).</div>
+  return `<div class="notice ir-door-note"><b>공급사는 이 화면에서 직접 입력할 수 있습니다.</b> 입력값은 <b>이 브라우저에만 저장</b>되고 공개 사이트에는 올라가지 않습니다. 입력한 공급사는 같은 브라우저의 '도어모듈 경쟁사 → 차종별 공급사' 표에도 표시됩니다. 입력이 없으면 그 표의 공개 자료(확인·추정)를 씁니다. 물량은 차량 대수 기준입니다(도어 수 아님).</div>
     <div class="ir-toolbar"><label class="ir-check"><input type="checkbox" data-ir-toggle="dr.pv"${dr.pv ? ' checked' : ''}> 승용·RV만 (상용·특장 제외)</label>
       <input type="search" class="ir-search" placeholder="차종·공장 찾기" value="${esc(q)}" data-ir-door-q aria-label="차종 찾기">
       ${Object.keys(doorMine).length ? `<button type="button" class="ir-mini" data-ir-act="door-export">내 입력 내보내기(JSON)</button><button type="button" class="ir-mini" data-ir-act="door-reset">내 입력 모두 지우기 (${Object.keys(doorMine).length}건)</button>` : ''}</div>
@@ -675,8 +675,27 @@ let resizeT;
 window.addEventListener('resize', () => { clearTimeout(resizeT); resizeT = setTimeout(() => charts.forEach(ch => { try{ ch.resize(); }catch(e){} }), 150); });
 try{ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { if (root && document.body.contains(root)) render(); }); }catch(e){}
 
+/* 경쟁사 탭 '차종별 공급사' 표 연동: 내 입력(이 브라우저)을 공급사 표 행 id별로 묶고, 표에 없는 차종은 extra로 */
+function doorLinks(){
+  if (!D) return null;
+  const bySupply = {}, extra = [], seen = new Set();
+  for (const s of PROD){
+    if (s.loc === 'CKD') continue;
+    const k = `${s.c}|${s.m}|${s.pl}`, v = doorMine[k];
+    if (!v || seen.has(k)) continue;
+    seen.add(k);
+    // '화성 / 미국 조지아(KaGA)'처럼 국내·해외 공장을 한 줄로 묶은 행은 공장 코드로 한 번 더 찾는다
+    const code = (s.pl.match(/\(([^)]+)\)/) || [])[1];
+    const pub = supplyFor(s) || (code && SUPPLY.find(x => (s.c === 'K' ? x.oem === '기아' : x.oem === '현대' || x.oem === '제네시스') && String(x.model).replace(/\s*\(미국 생산\)\s*/, '').trim() === s.m && String(x.plant).includes(code)));
+    const e = {c: s.c, m: s.m, pl: s.pl, supplier: v};
+    if (pub) (bySupply[pub.id] = bySupply[pub.id] || []).push(e); else extra.push(e);
+  }
+  return {bySupply, extra};
+}
+
 window.IR = {
   snapshot,
+  doorLinks,
   mount(el, sub, params){
     root = el; view = VIEWS[sub] ? sub : 'overview';
     if (params && params.pick){

@@ -374,14 +374,24 @@ function renderProfiles(){
     ${p.updated ? `<div class="srcs">기준일 ${esc(p.updated)}</div>` : ''}
   </article>`).join('')}</div>`;
 }
+// 현대기아 판매 현황 → 도어모듈 물량에서 이 브라우저에 입력한 공급사를 표에 덧입힌다 (공개 데이터는 그대로)
+function mineSupply(){
+  const L = window.IR && window.IR.doorLinks && window.IR.doorLinks();
+  if (!L) return S.supply;
+  const plLabel = pl => pl === '국내공장' ? '국내' : (pl.match(/\(([^)]+)\)/) || [])[1] || pl;
+  const join = es => { const u = [...new Set(es.map(e => e.supplier))]; return u.length === 1 ? u[0] : es.map(e => `${e.supplier}(${plLabel(e.pl)})`).join(', '); };
+  const rows = S.supply.map(r => { const es = L.bySupply[r.id]; return es ? Object.assign({}, r, {pub: r, supplier: join(es), status: '내 입력'}) : r; });
+  const oemOf = e => e.c === 'K' ? '기아' : /^G(V)?\d/.test(e.m) ? '제네시스' : '현대';
+  return rows.concat(L.extra.map(e => ({id: `mine-${e.c}-${e.m}-${e.pl}`, oem: oemOf(e), model: e.m, plant: plLabel(e.pl), supplier: e.supplier, status: '내 입력', evidence: '', note: '공급사 표에 없는 차종 — 판매 현황에서 입력'})));
+}
 function renderMatrix(){
-  const all = S.supply;
+  const all = mineSupply();
   if (!all.length) return '<div class="empty">등록된 차종이 없습니다.</div>';
-  const OEMS = ['현대','기아','제네시스','GM'], sts = ['확인','추정','미확인'];
+  const OEMS = ['현대','기아','제네시스','GM'], sts = ['내 입력','확인','추정','미확인'].filter(s => s !== '내 입력' || all.some(r => r.status === s));
   const stCount = sts.map(s => [s, all.filter(r => (r.status||'미확인')===s).length]);
-  const col = {'확인':'var(--ok)','추정':'var(--mid)','미확인':'var(--lo-soft)'};
+  const col = {'내 입력':'var(--accent)','확인':'var(--ok)','추정':'var(--mid)','미확인':'var(--lo-soft)'};
   const supMap = new Map();
-  all.filter(r => r.status !== '미확인' && r.supplier).forEach(r => String(r.supplier).split(/[,/]/).map(s => s.trim()).filter(Boolean).forEach(s => supMap.set(s,(supMap.get(s)||0)+1)));
+  all.filter(r => r.status !== '미확인' && r.supplier).forEach(r => String(r.supplier).split(/[,/]/).map(s => s.replace(/\(.*\)$/, '').trim()).filter(Boolean).forEach(s => supMap.set(s,(supMap.get(s)||0)+1)));
   const suppliers = [...supMap.keys()].sort();
   const mx = S.mx;
   const rows = all.filter(r => (!mx.oem || r.oem===mx.oem) && (!mx.status || (r.status||'미확인')===mx.status) && (!mx.supplier || String(r.supplier||'').includes(mx.supplier)));
@@ -390,8 +400,8 @@ function renderMatrix(){
     const g = rows.filter(r => r.oem === o).sort((a,b) => String(a.model).localeCompare(String(b.model),'ko'));
     if (!g.length) return '';
     return `<tr class="grp"><td colspan="6">${esc(o)} · ${g.length}개 차종</td></tr>` + g.map(r => `<tr>
-      <td class="strong">${esc(r.model)}</td><td>${esc(r.plant)}</td><td class="strong">${esc(r.supplier || '—')}</td>
-      <td><span class="st ${esc(r.status||'미확인')}">${esc(r.status||'미확인')}</span></td>
+      <td class="strong">${esc(r.model)}</td><td>${esc(r.plant)}</td><td class="strong">${esc(r.supplier || '—')}${r.pub ? `<div class="pub-was">공개 자료: ${esc(r.pub.supplier || '—')} · ${esc(r.pub.status || '미확인')}</div>` : ''}</td>
+      <td><span class="st ${r.status === '내 입력' ? 'mine' : esc(r.status||'미확인')}">${esc(r.status||'미확인')}</span></td>
       <td>${esc(r.evidence)}${safeUrl(r.evidence_url) ? ` <a href="${esc(safeUrl(r.evidence_url))}" target="_blank" rel="noopener noreferrer" class="ext">출처↗</a>` : ''}</td>
       <td style="color:var(--muted)">${esc(r.note)}</td></tr>`).join('');
   }).join('');
@@ -402,12 +412,12 @@ function renderMatrix(){
         <div class="bar" role="img" aria-label="${stCount.map(([s,n]) => `${s} ${n}`).join(', ')}">${stCount.map(([s,n]) => n ? `<span style="width:${n/all.length*100}%;background:${col[s]}"></span>` : '').join('')}</div>
         <div class="legend">${stCount.map(([s,n]) => `<span><i style="background:${col[s]}${s==='미확인'?';border:1px dashed var(--lo)':''}"></i>${s} <b class="mono" style="font-weight:500">${n}</b></span>`).join('')}<span style="color:var(--muted)">전체 ${all.length}개 차종</span></div>
       </div></div>
-      ${suppliers.length ? `<div class="frow"><span class="flabel">공급사</span><div class="sup-share">${suppliers.map(s => `<span>${esc(s)}<b>${supMap.get(s)}</b></span>`).join('')}</div><span style="font-size:11.5px;color:var(--muted)">확인·추정 기준</span></div>` : ''}
+      ${suppliers.length ? `<div class="frow"><span class="flabel">공급사</span><div class="sup-share">${suppliers.map(s => `<span>${esc(s)}<b>${supMap.get(s)}</b></span>`).join('')}</div><span style="font-size:11.5px;color:var(--muted)">${all.some(r => r.status === '내 입력') ? '내 입력·' : ''}확인·추정 기준</span></div>` : ''}
       <div class="frow"><span class="flabel">OEM</span>${segBtn('oem','','전체')}${OEMS.map(o => segBtn('oem',o,o)).join('')}</div>
       <div class="frow"><span class="flabel">상태</span>${segBtn('status','','전체')}${sts.map(s => segBtn('status',s,s)).join('')}</div>
       ${suppliers.length ? `<div class="frow"><span class="flabel">공급사</span>${segBtn('supplier','','전체')}${suppliers.map(s => segBtn('supplier',s,s)).join('')}</div>` : ''}
     </div>
-    <p class="lede" style="font-size:12.5px">공개 자료로 확인된 경우만 <b>확인</b>, 간접 근거(공장 위치·업계 보도 등)는 <b>추정</b>입니다. 물량 기준 점유율은 <button type="button" class="linkbtn" data-tab="ir" data-ir-sub="door">현대기아 판매 현황 → 도어모듈 물량</button>에서 직접 입력해 계산할 수 있습니다.</p>
+    <p class="lede" style="font-size:12.5px">공개 자료로 확인된 경우만 <b>확인</b>, 간접 근거(공장 위치·업계 보도 등)는 <b>추정</b>입니다. 물량 기준 점유율은 <button type="button" class="linkbtn" data-tab="ir" data-ir-sub="door">현대기아 판매 현황 → 도어모듈 물량</button>에서 직접 입력해 계산할 수 있고, 거기서 입력한 공급사는 이 표에 <b>내 입력</b>으로 표시됩니다(이 브라우저에만 저장, 공개 사이트에는 올라가지 않음).</p>
     <div class="tbl-wrap"><table class="grid"><thead><tr><th>차종</th><th>생산공장</th><th>도어모듈 공급사</th><th>상태</th><th>근거</th><th>메모</th></tr></thead><tbody>${body || `<tr><td colspan="6" style="color:var(--muted)">조건에 맞는 차종이 없습니다.</td></tr>`}</tbody></table></div>
   </div>`;
 }
@@ -515,7 +525,7 @@ async function boot(){
   }catch(e){ S.dbState = 'none'; }
   render();
   if (window.IR && window.IR.snapshot){
-    window.IR.snapshot().then(snap => { window.__irSnap = snap; const el = document.getElementById('snap'); if (el) el.innerHTML = snapHtml(snap); }).catch(() => {});
+    window.IR.snapshot().then(snap => { window.__irSnap = snap; const el = document.getElementById('snap'); if (el) el.innerHTML = snapHtml(snap); if (S.tab === 'competitor' && S.sub.competitor === 'matrix' && !S.q) renderContent(); }).catch(() => {});
   }
 }
 boot();

@@ -268,6 +268,7 @@ table.grid tr:last-child td{border-bottom:0}
 table.grid td.strong{font-weight:600;white-space:nowrap}
 .grp td{background:var(--surface-2);font-weight:600;font-size:12px;color:var(--ink-2)}
 .st{display:inline-block;font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.st.mine{background:var(--accent-soft);color:var(--accent-ink)} .pub-was{font-size:11.5px;font-weight:400;color:var(--muted);margin-top:2px}
 .st.확인{background:var(--ok-soft);color:var(--ok)} .st.추정{background:var(--mid-soft);color:var(--mid)} .st.미확인{background:transparent;color:var(--lo);border:1px dashed var(--line)}
 .bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--lo-soft);max-width:520px}
 .bar span{display:block;height:100%}
