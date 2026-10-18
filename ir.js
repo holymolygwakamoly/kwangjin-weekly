@@ -39,7 +39,16 @@ const st = Object.assign({
   gl:{}, xp:{}, mo:{scope:'all', pt:false, min:1000}, mm:{by:'m', val:'pct'}, dr:{pv:true, q:''},
 }, store.get('kj.ir') || {});
 st.ex.cond = st.ex.cond || {};
-const doorMine = store.get('kj.ir.door') || {};
+// 도어모듈 공급사 지정: 공개 지정(data/door_assign.json) 위에 이 브라우저에서 바꾼 값(게시 전, '' = 지정 지움)을 얹는다
+const doorLocal = store.get('kj.ir.door') || {};
+let doorPub = {};
+const doorMine = {};
+function rebuildDoor(){
+  for (const k of Object.keys(doorMine)) delete doorMine[k];
+  Object.assign(doorMine, doorPub);
+  for (const [k, v] of Object.entries(doorLocal)){ if (v) doorMine[k] = v; else delete doorMine[k]; }
+}
+rebuildDoor();
 const slotMap = new Map(); // 자유 분석: 항목 -> 색 슬롯 (선택 순서대로 고정, 다른 항목을 빼도 다시 칠하지 않음)
 const save = () => store.set('kj.ir', st);
 
@@ -51,8 +60,11 @@ function loadData(){
   if (!dataLoading) dataLoading = Promise.all([
     fetch('data/ir.json', {cache:'no-cache'}).then(r => { if (!r.ok) throw new Error('ir ' + r.status); return r.json(); }),
     fetch('data/supply.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : []).catch(() => []),
-  ]).then(([ir, supply]) => {
-    D = ir; SUPPLY = supply;
+    fetch('data/door_assign.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : {}).catch(() => ({})),
+  ]).then(([ir, supply, assign]) => {
+    D = ir; SUPPLY = supply; doorPub = assign || {};
+    for (const [k, v] of Object.entries(doorLocal)) if (v === (doorPub[k] || '')) delete doorLocal[k]; // 이미 게시된 값은 정리
+    store.set('kj.ir.door', doorLocal); rebuildDoor();
     PROD = D.series.filter(s => s.d === 'model' || s.d === 'plant').map(s => s.d === 'model' ? Object.assign({}, s, {ct: s.loc === 'CKD' ? 'CKD' : '한국'}) : s);
     const ys = years();
     if (!ys.includes(st.y)) st.y = ys[ys.length - 1];
@@ -557,7 +569,7 @@ function vDoor(c){
   let rows = compare(list, keyOf).map(r => {
     const s = meta.get(r.k), pub = supplyFor(s), mine = doorMine[r.k] || '';
     const pubSup = pub && pub.supplier && (pub.status === '확인' || pub.status === '추정') ? pub.supplier : '';
-    return Object.assign(r, {co: s.c, m: s.m, pl: s.pl, loc: s.loc, pub, mine, eff: mine || pubSup || '미확인', src: mine ? '내 입력' : pubSup ? `공개 자료(${pub.status})` : '—'});
+    return Object.assign(r, {co: s.c, m: s.m, pl: s.pl, loc: s.loc, pub, mine, eff: mine || pubSup || '미확인', src: mine ? '지정' : pubSup ? `공개 자료(${pub.status})` : '—'});
   });
   const q = (dr.q || '').trim();
   const shown = q ? rows.filter(r => (r.m + ' ' + r.pl).includes(q)) : rows;
@@ -576,10 +588,10 @@ function vDoor(c){
     {html: `<b>${esc(r.eff)}</b>`},
   ]);
   const kpi = (l, v, s) => `<div class="ir-kpi"><div class="ir-kpi-l">${esc(l)}</div><div class="ir-kpi-v">${v}</div><div class="ir-kpi-s">${esc(s)}</div></div>`;
-  return `<div class="notice ir-door-note"><b>공급사는 이 화면에서 직접 입력할 수 있습니다.</b> 입력값은 <b>이 브라우저에만 저장</b>되고 공개 사이트에는 올라가지 않습니다. 입력한 공급사는 같은 브라우저의 '도어모듈 경쟁사 → 차종별 공급사' 표에도 표시됩니다. 입력이 없으면 그 표의 공개 자료(확인·추정)를 씁니다. 물량은 차량 대수 기준입니다(도어 수 아님).</div>
+  return `<div class="notice ir-door-note"><b>공급사는 이 화면에서 직접 지정할 수 있습니다.</b> 지정한 공급사는 공개 사이트에서 모두에게 보이고 '도어모듈 경쟁사 → 차종별 공급사' 표에도 <b>지정</b>으로 표시됩니다. 새로 입력·수정한 값은 먼저 이 브라우저에 저장되며(게시 전), <b>공개용 파일 받기</b>로 받은 파일(door_assign.json)이 다음 업데이트 때 공개 사이트에 반영됩니다. 지정이 없으면 공개 자료(확인·추정)를 씁니다. 물량은 차량 대수 기준입니다(도어 수 아님).${Object.keys(doorLocal).length ? ` <b>게시 전 변경 ${Object.keys(doorLocal).length}건</b>` : ''}</div>
     <div class="ir-toolbar"><label class="ir-check"><input type="checkbox" data-ir-toggle="dr.pv"${dr.pv ? ' checked' : ''}> 승용·RV만 (상용·특장 제외)</label>
       <input type="search" class="ir-search" placeholder="차종·공장 찾기" value="${esc(q)}" data-ir-door-q aria-label="차종 찾기">
-      ${Object.keys(doorMine).length ? `<button type="button" class="ir-mini" data-ir-act="door-export">내 입력 내보내기(JSON)</button><button type="button" class="ir-mini" data-ir-act="door-reset">내 입력 모두 지우기 (${Object.keys(doorMine).length}건)</button>` : ''}</div>
+      ${Object.keys(doorMine).length || Object.keys(doorLocal).length ? `<button type="button" class="ir-mini" data-ir-act="door-export">공개용 파일 받기</button>` : ''}${Object.keys(doorLocal).length ? `<button type="button" class="ir-mini" data-ir-act="door-reset">게시 전 변경 되돌리기 (${Object.keys(doorLocal).length}건)</button>` : ''}</div>
     <div class="ir-kpis three">
       ${kpi('대상 물량', fmt(T.c) + '<small>대</small>', `${CO_NAME[st.co]} · ${periodLabel()}`)}
       ${kpi('광진 물량', kj ? fmt(kj.c) + '<small>대</small>' : '—', kj ? `점유율 ${(kj.c / T.c * 100).toFixed(1)}%${hasPrev() && kj.p ? ` · 전년 동기 ${fmtPct(kj.r)}` : ''}` : '아래 표에서 광진 공급 차종을 입력하면 계산됩니다')}
@@ -589,14 +601,15 @@ function vDoor(c){
     ${card({title: '공급사별 물량 추정', sub: '차종·공장별 대수를 공급사에 배분한 합계', opt: donut, h: 320,
       table: {cols: cmpCols('공급사'), num: cmpNum(), csv: '공급사별물량', rows: sup.map(r => cmpRow(r))}})}
     <section class="ir-card"><div class="ir-card-h"><div><h3>이렇게 쓰세요</h3></div></div><ol class="ir-how">
-      <li>아래 표에서 차종·공장별 <b>'내 입력'</b> 칸에 공급사를 적습니다 (목록에서 고르거나 직접 입력).</li>
+      <li>아래 표에서 차종·공장별 <b>'지정'</b> 칸에 공급사를 적습니다 (목록에서 고르거나 직접 입력).</li>
+      <li>다 적었으면 <b>공개용 파일 받기</b> — 받은 파일이 다음 업데이트 때 공개 사이트에 반영됩니다.</li>
       <li>왼쪽 도넛과 위 카드가 바로 다시 계산됩니다 — 광진 점유율, 경쟁사 물량.</li>
       <li>기간·회사를 바꾸면 같은 입력으로 다른 기간 물량을 볼 수 있습니다.</li>
       <li>표 오른쪽 위 <b>CSV</b>로 내려받아 보고서에 붙일 수 있습니다.</li></ol></section>
     </div>
     ${supList}
     ${card({title: '차종·공장별 물량과 공급사', sub: `${shown.length}개 행 · ${periodLabel()}`, wide: true,
-      table: {cols: ['차종', '생산 공장', periodLabel(), ...(hasPrev() ? [periodLabel(st.y - 1), '증감률'] : []), '공개 자료', '내 입력', '적용'], num: [false, false, true, true, true, false, false, false], csv: '도어모듈물량', rows: tRows}})}`;
+      table: {cols: ['차종', '생산 공장', periodLabel(), ...(hasPrev() ? [periodLabel(st.y - 1), '증감률'] : []), '공개 자료', '지정', '적용'], num: [false, false, true, true, true, false, false, false], csv: '도어모듈물량', rows: tRows}})}`;
 }
 
 /* ---------- 렌더 ---------- */
@@ -638,10 +651,10 @@ function onClick(e){
   else if (d.irAct === 'cond-clear'){ st.ex.cond = {}; }
   else if (d.irAct === 'sel-clear'){ st.ex.sel = null; slotMap.clear(); }
   else if (d.irAct === 'door-export'){
-    const rows = Object.entries(doorMine).map(([k, v]) => { const [c, m, pl] = k.split('|'); return {company: c === 'H' ? '현대' : '기아', model: m, plant: pl, supplier: v}; });
-    const blob = new Blob([JSON.stringify(rows, null, 1)], {type: 'application/json'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'door-suppliers-입력.json'; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 0); return;
+    const out = Object.fromEntries(Object.keys(doorMine).sort().map(k => [k, doorMine[k]]));
+    const blob = new Blob([JSON.stringify(out, null, 1)], {type: 'application/json'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'door_assign.json'; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 0); return;
   }
-  else if (d.irAct === 'door-reset'){ if (!confirm('이 브라우저에 저장한 공급사 입력을 모두 지울까요?')) return; for (const k of Object.keys(doorMine)) delete doorMine[k]; store.set('kj.ir.door', doorMine); }
+  else if (d.irAct === 'door-reset'){ if (!confirm('게시 전 변경을 모두 되돌릴까요? 공개 사이트에 반영된 지정은 그대로 남습니다.')) return; for (const k of Object.keys(doorLocal)) delete doorLocal[k]; store.set('kj.ir.door', doorLocal); rebuildDoor(); }
   else return;
   save(); rerenderKeepScroll();
 }
@@ -653,7 +666,7 @@ function onChange(e){
   else if ('irExTop' in d){ st.ex.top = +t.value; st.ex.sel = null; slotMap.clear(); }
   else if ('irMoMin' in d){ st.mo.min = +t.value; }
   else if (d.irToggle){ const [a, b] = d.irToggle.split('.'); if (b) st[a][b] = t.checked; else st[a] = t.checked; }
-  else if (d.irDoor){ const v = t.value.trim(); if (v) doorMine[d.irDoor] = v; else delete doorMine[d.irDoor]; store.set('kj.ir.door', doorMine); }
+  else if (d.irDoor){ const v = t.value.trim(); if (v === (doorPub[d.irDoor] || '')) delete doorLocal[d.irDoor]; else doorLocal[d.irDoor] = v; store.set('kj.ir.door', doorLocal); rebuildDoor(); }
   else return;
   save(); rerenderKeepScroll();
 }
@@ -675,7 +688,7 @@ let resizeT;
 window.addEventListener('resize', () => { clearTimeout(resizeT); resizeT = setTimeout(() => charts.forEach(ch => { try{ ch.resize(); }catch(e){} }), 150); });
 try{ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { if (root && document.body.contains(root)) render(); }); }catch(e){}
 
-/* 경쟁사 탭 '차종별 공급사' 표 연동: 내 입력(이 브라우저)을 공급사 표 행 id별로 묶고, 표에 없는 차종은 extra로 */
+/* 경쟁사 탭 '차종별 공급사' 표 연동: 지정(공개 + 이 브라우저의 게시 전 변경)을 공급사 표 행 id별로 묶고, 표에 없는 차종은 extra로 */
 function doorLinks(){
   if (!D) return null;
   const bySupply = {}, extra = [], seen = new Set();
