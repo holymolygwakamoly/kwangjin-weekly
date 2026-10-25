@@ -10,7 +10,7 @@ const PGROUP_OF = {'한국':'국내','미국':'미국','인도':'인도','중국
 const PGROUPS = ['국내','미국','유럽','인도','중남미','중국','아시아 기타','기타'];
 const AREAS = ['북미','유럽','아시아·태평양','중동·아프리카','중남미','러시아·동유럽·CIS'];
 const BRANDS = ['현대','기아','제네시스'];
-const SUPPLIERS = ['광진','PHA','대동하이렉스','하이렉스','브로제','인테바','기타'];
+const SUPPLIERS = ['광진','PHA','대동하이렉스','하이렉스','브로제','인테바','안톨린','기타'];
 
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt = n => n == null || !isFinite(n) ? '—' : Math.round(n).toLocaleString('ko-KR');

@@ -1,5 +1,110 @@
 [
  {
+  "id": "antolin",
+  "name": "안톨린 (Grupo Antolin)",
+  "self": false,
+  "overview": "스페인 부르고스에 본사를 둔 자동차 내장 부품사로, 안톨린 가문이 소유한 비상장 기업이다. 헤드라이너(천장재)에서 세계 최대 규모이며, '콕핏·도어 시스템' 사업부에서 도어 패널, 도어 하드웨어 모듈(일체형 수지 카세트), 윈도우레귤레이터(케이블식·프레임리스 도어용·전자식), 도어 제어 모듈을 만든다. 광진과는 윈도우레귤레이터·도어 모듈에서 겹친다. 2015년 마그나의 인테리어 사업을 인수해 규모를 키웠으나 2021년 이후 적자가 이어져 공장 매각·구조조정 중이다.",
+  "ownership": "안톨린 가문 소유 비상장 기업. 2026년 2월 에마 안톨린(Emma Antolín)이 사촌 에르네스토 안톨린의 뒤를 이어 회장(집행 회장)에 취임.",
+  "revenue": "2025년 매출 37억2,600만유로(-11.1%), EBITDA 2억9,610만유로, 순손실 8,910만유로(5년 연속 적자), 신규 수주 47억유로(+81%). 2026년 매출 전망 34억~35억유로. 임직원 1만9,148명, 24개국 103개 공장.",
+  "hq": "스페인 부르고스(Burgos)",
+  "customers": [
+   "폭스바겐(T-Roc·ID.Buzz)·BMW(1시리즈 도어 패널)·포드(머스탱 마하-E 도어 패널)·메르세데스-벤츠·NIO — 전시 탑재 차종 기준(MarkLines)",
+   "현대차 체코 노소비체·기아 슬로바키아 질리나 공장 — 도어 패널·헤드라이너 공급 이력(2008·2012 보도 기준, 현재 거래 여부는 미확인)",
+   "아우디 Q5 — 멕시코 틀락스칼라 공장(도어·헤드라이너·필러)"
+  ],
+  "products": [
+   "도어 패널(세계 점유율 10% 이상 — MarkLines)",
+   "도어 하드웨어 모듈(기능 통합 수지 카세트)·도어 트림 캐리어 모듈",
+   "윈도우레귤레이터 — 케이블식·프레임리스 도어용·전자식(점유율 약 12% — MarkLines)",
+   "도어 제어 모듈(Door control modules)",
+   "헤드라이너·선바이저·콕핏(인스트루먼트 패널)·조명·내장 전자"
+  ],
+  "technologies": [
+   "스마트 서피스(내장 표면 터치·조명 일체화)",
+   "다이내믹 라이팅(앰비언트 조명)",
+   "내장 일체형 전자(통합 전장)",
+   "지속가능 소재"
+  ],
+  "plants": [
+   {
+    "country": "스페인",
+    "location": "부르고스",
+    "note": "본사·기술센터"
+   },
+   {
+    "country": "중국",
+    "location": "장쑤성 쿤산",
+    "note": "글로벌 R&D&I 센터 개소(2026.10) — 내장·전자 기술"
+   },
+   {
+    "country": "슬로바키아",
+    "location": "네데자(질리나 인근)·브라티슬라바",
+    "note": "기아 질리나 공장 인근, 도어 패널·헤드라이너(2012 보도)"
+   },
+   {
+    "country": "체코",
+    "location": "오스트라바(CTPark)",
+    "note": "현대차 노소비체 공장 대응 확장(2008 보도)"
+   },
+   {
+    "country": "멕시코",
+    "location": "틀락스칼라·쿠아우티틀란",
+    "note": "아우디 Q5 도어·헤드라이너, 포드 EV 도어 패널·인스트루먼트 패널"
+   },
+   {
+    "country": "미국",
+    "location": "미시간 셸비타운십·사우스캐롤라이나 스파턴버그",
+    "note": "도어 패널·오버헤드 시스템 생산·서열"
+   },
+   {
+    "country": "인도",
+    "location": "차칸·푸네·첸나이",
+    "note": "3개 법인을 SPR Auto Technologies(구 Shriram Pistons & Rings)에 1억5,900만유로에 매각(2025.12 발표, 2026.1 완료)"
+   },
+   {
+    "country": "글로벌",
+    "location": "24개국 103개 공장",
+    "note": "2025년 기준"
+   }
+  ],
+  "overseas_summary": "유럽(스페인·독일·체코·슬로바키아 등)과 미주(미국·멕시코·브라질), 아시아(중국·태국·인도네시아)에 24개국 103개 공장. 최근에는 수익성 회복을 위해 자산을 줄이는 중이다 — 인도 3개 법인 매각(2025.12), 한국 합작사 동원테크놀로지 지분 30% 매각(2024.11, 780만유로), 트렁크 트림 사업 매각(2024.12). 반면 중국은 쿤산에 글로벌 R&D 센터를 열며(2026.10) 중국 완성차의 빠른 개발 속도를 흡수하려 한다. 한국에는 서울에 기술·영업 법인(Grupo Antolin-Korea)을 두고 현대차·기아·르노삼성(현 르노코리아)을 지원한다는 보도가 있었으나(2008~2012) 현재 운영 여부는 확인하지 못했다.",
+  "recent_issues": [
+   "2025-12-05 인도 3개 법인(5개 공장)을 SPR Auto Technologies에 1억5,900만유로에 매각 발표(2026-01 완료)",
+   "2026-02-25 에마 안톨린 회장 취임 — 재무 건전성 강화를 위한 새 전략계획 착수",
+   "2026-04-29 2025년 실적 발표 — 매출 37억2,600만유로(-11.1%), 순손실 8,910만유로, 신규 수주 47억유로(+81%)",
+   "2026-10-21 중국 쿤산에 글로벌 R&D&I 센터 개소(스마트 서피스·조명·통합 전자)"
+  ],
+  "sources": [
+   {
+    "label": "Antolin 공식 사이트",
+    "url": "https://www.antolin.com/"
+   },
+   {
+    "label": "MarkLines — Grupo Antolin 기업 정보(제품·점유율·연혁)",
+    "url": "https://www.marklines.com/ja/top500/grupo-antolin-irausa"
+   },
+   {
+    "label": "El Español — 2025년 실적 (2026-04-29)",
+    "url": "https://www.elespanol.com/motor/20260429/antolin-triplica-perdidas-millones-euros-cambio-coche-electrico/1003744226859_0.html"
+   },
+   {
+    "label": "El Español — 에마 안톨린 회장 취임 (2026-02-25)",
+    "url": "https://www.elespanol.com/castilla-y-leon/economia/empresas/20260225/emma-antolin-asume-presidencia-objetivo-reforzar-solidez-financiera-multinacional/1003744145357_0.html"
+   },
+   {
+    "label": "elDiario.es — 중국 R&D 센터·2025 사업 현황 (2026-10-21)",
+    "url": "https://www.eldiario.es/motor/sector_y_mercado/antolin-recurre-china-acelerar-innovacion_1_13602045.html"
+   },
+   {
+    "label": "just-auto — 슬로바키아 공장 기아 공급 (2012-02-13)",
+    "url": "https://www.just-auto.com/news/slovakia-new-grupo-antolin-plant-starts-kia-supply"
+   }
+  ],
+  "updated": "2026-10-25",
+  "edited_by": "claude",
+  "updated_at": "2026-10-25T12:50:28.174Z"
+ },
+ {
   "id": "brose",
   "customers": [
    "GM(Supplier of the Year 2025, 8회째)",

@@ -273,6 +273,58 @@
   "updated_at": "2026-09-24T05:59:52.450Z"
  },
  {
+  "id": "kgm-actyon",
+  "oem": "KGM",
+  "model": "액티언",
+  "plant": "KGM 평택",
+  "supplier": "",
+  "status": "미확인",
+  "evidence": "",
+  "evidence_url": "",
+  "note": "2026-10-25 고객사 KGM 추가 — 하이브리드 포함, 도어모듈 공급사는 공개 자료로 확인 못 함",
+  "edited_by": "claude",
+  "updated_at": "2026-10-25T12:50:28.174Z"
+ },
+ {
+  "id": "kgm-musso",
+  "oem": "KGM",
+  "model": "무쏘",
+  "plant": "KGM 평택",
+  "supplier": "",
+  "status": "미확인",
+  "evidence": "",
+  "evidence_url": "",
+  "note": "2026-10-25 고객사 KGM 추가 — 픽업, 도어모듈 공급사는 공개 자료로 확인 못 함",
+  "edited_by": "claude",
+  "updated_at": "2026-10-25T12:50:28.174Z"
+ },
+ {
+  "id": "kgm-se10",
+  "oem": "KGM",
+  "model": "SE10",
+  "plant": "KGM 평택",
+  "supplier": "",
+  "status": "미확인",
+  "evidence": "",
+  "evidence_url": "",
+  "note": "체리 기반 PHEV 중형 SUV, 2027년 1월 출시 목표(2026-10 보도) — 생산공장·공급사 미확인",
+  "edited_by": "claude",
+  "updated_at": "2026-10-25T12:50:28.174Z"
+ },
+ {
+  "id": "kgm-torres",
+  "oem": "KGM",
+  "model": "토레스",
+  "plant": "KGM 평택",
+  "supplier": "",
+  "status": "미확인",
+  "evidence": "",
+  "evidence_url": "",
+  "note": "2026-10-25 고객사 KGM 추가 — 하이브리드 포함, 도어모듈 공급사는 공개 자료로 확인 못 함",
+  "edited_by": "claude",
+  "updated_at": "2026-10-25T12:50:28.174Z"
+ },
+ {
   "id": "kia-carnival",
   "edited_by": "claude",
   "evidence": "",
