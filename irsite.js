@@ -311,7 +311,7 @@ function vDocs(k){
   const qs = Array.from(new Set([...D.quarters.H.map(x => x.q), ...D.quarters.K.map(x => x.q)])).sort().reverse();
   const link = (u, t) => u ? {html: `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(t)} ↗</a>`} : '—';
   const rows = qs.map(q => { const h = qmap('H')[q] || {}, kk = qmap('K')[q] || {}; return [qLabel(q), link(h.deck, '현대 실적발표'), link(h.webcast, '현대 웹캐스트'), link(kk.deck, '기아 실적발표'), {html: srcTag(h).html + ' / ' + srcTag(kk).html}]; });
-  const gu = Object.entries(D.guidance_urls || {}).map(([key, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(key.replace('H:', '현대차 ').replace('guidance-', '') + '년 연간 가이던스')} ↗</a></li>`).join('');
+  const gu = Object.entries(D.guidance_urls || {}).map(([key, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(key.replace('H:', '현대차 ').replace('guidance-', '').replace(/^(\d{4})-update$/, '$1년 연간 가이던스 수정치').replace(/^(\d{4})$/, '$1년 연간 가이던스'))} ↗</a></li>`).join('');
   const rep = (D.reports || []).filter(r => !r.guess).sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 8).map(r => `<li><span class="mono">${esc(r.date || '')}</span> ${CO[r.c]} <a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)} ↗</a></li>`).join('');
   const mon = (D.monthly || []).map(m => `<li>${CO[m.c]} <a href="${esc(m.url)}" target="_blank" rel="noopener noreferrer">${esc(m.title)} ↗</a></li>`).join('');
   return `<div class="ir-grid">
